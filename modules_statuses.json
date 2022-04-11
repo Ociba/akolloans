@@ -1,3 +1,7 @@
 {
-    "Admission": true
+    "Admission": true,
+    "Admin": true,
+    "AccountSettings": true,
+    "Investors": true,
+    "Clients": true
 }

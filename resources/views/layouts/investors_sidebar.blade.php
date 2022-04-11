@@ -4,7 +4,7 @@
         <span class="app-brand-logo demo">
             {{--<img src="assets/img/logo.png" alt="Brand Logo" class="img-fluid">--}}
         </span>
-        <a href="index.html" class="app-brand-text demo sidenav-text font-weight-normal ml-2">TECHNEST HOLDING LTD</a>
+        <a href="index.html" class="app-brand-text demo sidenav-text font-weight-normal ml-2">TECH<span style="color:black;">NEST</span> HOLDING LTD</a>
         <a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
             <i class="ion ion-md-menu align-middle"></i>
         </a>
@@ -29,7 +29,7 @@
             </a>
             <ul class="sidenav-menu">
                 <li class="sidenav-item">
-                    <a href="w-simple.html" class="sidenav-link">
+                    <a href="/investors/view-packages" class="sidenav-link">
                         <div>Packages</div>
                     </a>
                 </li>
@@ -43,8 +43,8 @@
             </a>
             <ul class="sidenav-menu">
                 <li class="sidenav-item">
-                    <a href="layouts_sidenav_dark.html" class="sidenav-link" target="_blank">
-                        <div>Expected</div>
+                    <a href="/investors/my-interest" class="sidenav-link">
+                        <div>Expected Interest</div>
                     </a>
                 </li>
             </ul>
@@ -57,13 +57,13 @@
             </a>
             <ul class="sidenav-menu">
                 <li class="sidenav-item">
-                    <a href="layouts_sidenav_dark.html" class="sidenav-link" target="_blank">
+                    <a href="/investors/profile" class="sidenav-link">
                         <div>View Profile</div>
                     </a>
                 </li>
                 <li class="sidenav-item">
-                    <a href="layouts_header_dark.html" class="sidenav-link" target="_blank">
-                        <div>Edit Profile</div>
+                    <a href="/investors/change-password" class="sidenav-link">
+                        <div>Change Password</div>
                     </a>
                 </li>
             </ul>

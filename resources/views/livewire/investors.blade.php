@@ -36,58 +36,26 @@
             <div class="table-responsive">
                 <table id="report-table" class="table table-bordered table-striped mb-0">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th>No.</th>
                             <th>Name</th>
-                            <th width="50%">Description</th>
+                            <th>contact</th>
+                            <th>Package</th>
+                            <th>Deposit</th>
+                            <th>Interest</th>
+                            <th>Period</th>
                             <th>Options</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>1</td>
-                            <td>Anesthetics</td>
-                            <td>There are many variations of passages of Lorem Ipsum ...</td>
-                            <td>
-                                <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Cardiology</td>
-                            <td>There are many variations of passages of Lorem Ipsum ...</td>
-                            <td>
-                                <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Gastroenterology</td>
-                            <td>There are many variations of passages of Lorem Ipsum ...</td>
-                            <td>
-                                <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Anesthetics</td>
-                            <td>There are many variations of passages of Lorem Ipsum ...</td>
-                            <td>
-                                <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Gastroenterology</td>
-                            <td>There are many variations of passages of Lorem Ipsum ...</td>
+                            <td>Opio Mark</td>
+                            <td>0778965783</td>
+                            <td>Gold</td>
+                            <td>60000000</td>
+                            <td>30%</td>
+                            <td>2 Years</td>
                             <td>
                                 <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
                                 <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>

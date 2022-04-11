@@ -5,7 +5,7 @@
         <span class="app-brand-logo demo">
             <img src="assets/img/logo-dark.png" alt="Brand Logo" class="img-fluid">
         </span>
-        <span class="app-brand-text demo font-weight-normal ml-2">TECHNEST HOLDING LTD</span>
+        <span class="app-brand-text demo font-weight-normal ml-2">TECH<span style="color:black;">NEST</span> HOLDING LTD</span>
     </a>
 
     <!-- Sidenav toggle (see assets/css/demo/demo.css) -->
@@ -25,12 +25,12 @@
 
         <div class="navbar-nav align-items-lg-center">
             <!-- Search -->
-            <label class="nav-item navbar-text navbar-search-box p-0 active">
+            {{--<label class="nav-item navbar-text navbar-search-box p-0 active">
                 <i class="feather icon-search navbar-icon align-middle"></i>
                 <span class="navbar-search-input pl-2">
                     <input type="text" class="form-control navbar-text mx-2" placeholder="Search...">
                 </span>
-            </label>
+            </label>--}}
         </div>
 
         <div class="navbar-nav align-items-lg-center ml-auto">

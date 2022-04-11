@@ -50,7 +50,7 @@
                                                 <i class="fas fa-user-md f-36 text-info"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Doctor</h6>
+                                                <h6 class="text-muted m-b-10">Staff</h6>
                                                 <h2 class="m-b-0">35</h2>
                                             </div>
                                         </div>
@@ -65,7 +65,7 @@
                                                 <i class="fas fa-user-injured f-36 text-danger"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Patient</h6>
+                                                <h6 class="text-muted m-b-10">Investors</h6>
                                                 <h2 class="m-b-0">368</h2>
                                             </div>
                                         </div>
@@ -80,7 +80,7 @@
                                                 <i class="fas fa-user-nurse f-36 text-success"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Nurse</h6>
+                                                <h6 class="text-muted m-b-10">Borrowers</h6>
                                                 <h2 class="m-b-0">79</h2>
                                             </div>
                                         </div>
@@ -95,7 +95,7 @@
                                                 <i class="fas fa-prescription-bottle-alt f-36 text-primary"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Pharmacist</h6>
+                                                <h6 class="text-muted m-b-10">Amount Deposited</h6>
                                                 <h2 class="m-b-0">10</h2>
                                             </div>
                                         </div>
@@ -110,7 +110,7 @@
                                                 <i class="fas fa-flask f-36 text-warning"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Laboratories</h6>
+                                                <h6 class="text-muted m-b-10">Amount Borrowed </h6>
                                                 <h2 class="m-b-0">35</h2>
                                             </div>
                                         </div>
@@ -125,7 +125,7 @@
                                                 <i class="fas fa-user-tie f-36 text-primary"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Accountant</h6>
+                                                <h6 class="text-muted m-b-10">Amount Paid</h6>
                                                 <h2 class="m-b-0">368</h2>
                                             </div>
                                         </div>
@@ -140,7 +140,7 @@
                                                 <i class="fas fa-file-invoice-dollar f-36 text-danger"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Payment</h6>
+                                                <h6 class="text-muted m-b-10">Defaulters Amount</h6>
                                                 <h2 class="m-b-0">79</h2>
                                             </div>
                                         </div>
@@ -155,7 +155,7 @@
                                                 <i class="fas fa-pills f-36 text-info"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Medicine</h6>
+                                                <h6 class="text-muted m-b-10">Company Interest</h6>
                                                 <h2 class="m-b-0">10</h2>
                                             </div>
                                         </div>

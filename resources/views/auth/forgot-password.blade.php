@@ -23,7 +23,7 @@
     <!-- [ Preloader ] End -->
 
     <!-- [ content ] Start -->
-    <div class="authentication-wrapper authentication-2 px-4">
+    <div class="authentication-wrapper authentication-2 px-4" style="background-image: url('assets/img/bg/akol1.jpg'); background-repeat: no-repeat; background-size:cover; width:100%;">
         <div class="authentication-inner py-5">
 
             <!-- [ Form ] Start -->

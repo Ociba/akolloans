@@ -4,7 +4,7 @@
         <span class="app-brand-logo demo">
             {{--<img src="assets/img/logo.png" alt="Brand Logo" class="img-fluid">--}}
         </span>
-        <a href="index.html" class="app-brand-text demo sidenav-text font-weight-normal ml-2">TECHNEST HOLDING LTD</a>
+        <a href="index.html" class="app-brand-text demo sidenav-text font-weight-normal ml-2">TECH<span style="color:black;">NEST</span> HOLDING LTD</a>
         <a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
             <i class="ion ion-md-menu align-middle"></i>
         </a>
@@ -32,12 +32,12 @@
             </a>
             <ul class="sidenav-menu">
                 <li class="sidenav-item">
-                    <a href="/admission/investors" class="sidenav-link">
+                    <a href="/admin/investors" class="sidenav-link">
                         <div>List of Investors</div>
                     </a>
                 </li>
                 <li class="sidenav-item">
-                    <a href="/admission/investors" class="sidenav-link">
+                    <a href="/admin/suspended-investors" class="sidenav-link">
                         <div>Suspended Investors</div>
                     </a>
                 </li>
@@ -45,22 +45,38 @@
         </li>
         <li class="sidenav-divider mb-1"></li>
         <li class="sidenav-item">
+            <a href="/admin/get-packages" class="sidenav-link">
+                <i class="sidenav-icon feather icon-grid"></i>
+                <div>Packages</div>
+                <div class="pl-1 ml-auto">
+                    <div class="badge badge-danger">6+</div>
+                </div>
+            </a>
+        </li>
+        
+        <li class="sidenav-divider mb-1"></li>
+        <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon feather icon-layout"></i>
-                <div>Borrowers</div>
+                <div>Clients (Loans)</div>
                 <div class="pl-1 ml-auto">
                     <div class="badge badge-success">30+</div>
                 </div>
             </a>
             <ul class="sidenav-menu">
                 <li class="sidenav-item">
-                    <a href="layouts_sidenav_dark.html" class="sidenav-link" target="_blank">
-                        <div>List of Borrowers</div>
+                    <a href="/admin/all-clients" class="sidenav-link">
+                        <div>List of Clients</div>
                     </a>
                 </li>
                 <li class="sidenav-item">
-                    <a href="layouts_header_dark.html" class="sidenav-link" target="_blank">
-                        <div>Suspended Borrowers</div>
+                    <a href="/admin/clients-with-loans" class="sidenav-link">
+                        <div>Clients with Loans</div>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="/admin/loan-defaulters" class="sidenav-link">
+                        <div>Loan Defaulters</div>
                     </a>
                 </li>
             </ul>
@@ -68,49 +84,22 @@
         <li class="sidenav-divider mb-1"></li>
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
-                <i class="sidenav-icon feather icon-layout"></i>
-                <div>Loans</div>
-                <div class="pl-1 ml-auto">
-                    <div class="badge badge-danger">60+</div>
-                </div>
-            </a>
-            <ul class="sidenav-menu">
-                <li class="sidenav-item">
-                    <a href="layouts_sidenav_dark.html" class="sidenav-link" target="_blank">
-                        <div>Ongoing Loans</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <a href="layouts_header_dark.html" class="sidenav-link" target="_blank">
-                        <div>Paid Loans</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <a href="layouts_header_dark.html" class="sidenav-link" target="_blank">
-                        <div>Loans Defaulters</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
-        <li class="sidenav-divider mb-1"></li>
-        <li class="sidenav-item">
-            <a href="javascript:" class="sidenav-link sidenav-toggle">
-                <i class="sidenav-icon feather icon-layout"></i>
+                <i class="sidenav-icon feather icon-settings"></i>
                 <div>Account Settings</div>
             </a>
             <ul class="sidenav-menu">
                 <li class="sidenav-item">
-                    <a href="layouts_sidenav_dark.html" class="sidenav-link" target="_blank">
+                    <a href="/accountsettings/get-all-users" class="sidenav-link">
                         <div>Users</div>
                     </a>
                 </li>
                 <li class="sidenav-item">
-                    <a href="layouts_header_dark.html" class="sidenav-link" target="_blank">
+                    <a href="/accountsettings/get-roles" class="sidenav-link">
                         <div>Roles</div>
                     </a>
                 </li>
                 <li class="sidenav-item">
-                    <a href="layouts_header_dark.html" class="sidenav-link" target="_blank">
+                    <a href="/accountsettings/get-roles-for-permissions" class="sidenav-link">
                         <div>Permissions</div>
                     </a>
                 </li>

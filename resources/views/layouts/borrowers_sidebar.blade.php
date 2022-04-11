@@ -4,7 +4,7 @@
         <span class="app-brand-logo demo">
             {{--<img src="assets/img/logo.png" alt="Brand Logo" class="img-fluid">--}}
         </span>
-        <a href="index.html" class="app-brand-text demo sidenav-text font-weight-normal ml-2">TECHNEST HOLDING LTD</a>
+        <a href="index.html" class="app-brand-text demo sidenav-text font-weight-normal ml-2">TECH<span style="color:black;">NEST</span> HOLDING LTD</a>
         <a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
             <i class="ion ion-md-menu align-middle"></i>
         </a>
@@ -29,12 +29,12 @@
             </a>
             <ul class="sidenav-menu">
                 <li class="sidenav-item">
-                    <a href="w-simple.html" class="sidenav-link">
+                    <a href="/clients/request-loan" class="sidenav-link">
                         <div>Request Loan</div>
                     </a>
                 </li>
                 <li class="sidenav-item">
-                    <a href="w-simple.html" class="sidenav-link">
+                    <a href="/clients/my-loan-details" class="sidenav-link">
                         <div>Loan Details</div>
                     </a>
                 </li>
@@ -48,12 +48,12 @@
             </a>
             <ul class="sidenav-menu">
                 <li class="sidenav-item">
-                    <a href="layouts_sidenav_dark.html" class="sidenav-link" target="_blank">
+                    <a href="/clients/my-profile" class="sidenav-link">
                         <div>View Profile</div>
                     </a>
                 </li>
                 <li class="sidenav-item">
-                    <a href="layouts_header_dark.html" class="sidenav-link" target="_blank">
+                    <a href="/clients/edit-profile" class="sidenav-link">
                         <div>Edit Profile</div>
                     </a>
                 </li>

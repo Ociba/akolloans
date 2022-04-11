@@ -1,0 +1,13 @@
+{
+    "name": "AccountSettings",
+    "alias": "accountsettings",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\AccountSettings\\Providers\\AccountSettingsServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

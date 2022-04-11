@@ -8,18 +8,18 @@ $(function() {
   var graphChart = new Chart(document.getElementById('chart-graph').getContext("2d"), {
     type: 'line',
     data: {
-      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+      labels: ['Jan', 'Feb', 'Mar', 'April', 'May', 'Jun', 'Jul','Aug','Sep', 'Oct', 'Nov','Dec'],
       datasets: [{
-        label:           'My First dataset',
-        data:            [43, 91, 89, 16, 21, 79, 28],
+        label:           'Debts',
+        data:            [43, 91, 89, 16, 21, 79, 28, 43, 91, 89, 16, 21, 79, 28],
         borderWidth:     1,
         backgroundColor: 'rgba(113, 106, 202, 0.3)',
         borderColor:     '#ff4a00',
         borderDash:      [5, 5],
         fill: false
       }, {
-        label:           'My Second dataset',
-        data:            [24, 63, 29, 75, 28, 54, 38],
+        label:           'Paid',
+        data:            [24, 63, 29, 75, 28, 54, 38,24, 63, 29, 75, 28, 54, 38],
         borderWidth:     1,
         backgroundColor: 'rgba(40, 208, 148, 0.3)',
         borderColor:     '#62d493',
@@ -36,16 +36,16 @@ $(function() {
   var barsChart = new Chart(document.getElementById('chart-bars').getContext("2d"), {
     type: 'bar',
     data: {
-      labels: ['Italy', 'UK', 'USA', 'Germany', 'France', 'Japan'],
+      labels: ['Jan', 'Feb', 'Mar', 'April', 'May', 'Jun', 'Jul','Aug','Sep', 'Oct', 'Nov','Dec'],
       datasets: [{
-        label: '2010 customers #',
-        data: [53, 99, 14, 10, 43, 27],
+        label: 'Debts',
+        data: [53, 99, 14, 10, 43, 27, 53, 99, 14, 10, 43, 27],
         borderWidth: 1,
         backgroundColor: 'rgba(255, 73, 97, 0.3)',
         borderColor: '#FF4961'
       }, {
-        label: '2014 customers #',
-        data: [55, 74, 20, 90, 67, 97],
+        label: 'Paid',
+        data: [55, 74, 20, 90, 67, 97, 55, 74, 20, 90, 67, 97],
         borderWidth: 1,
         backgroundColor: 'rgba(255, 145, 73, 0.3)',
         borderColor: '#f4ab55'
@@ -61,7 +61,7 @@ $(function() {
   var pieChart = new Chart(document.getElementById('chart-pie').getContext("2d"), {
     type: 'pie',
     data: {
-      labels: [ 'Red', 'Blue', 'Yellow' ],
+      labels: [ 'Investors', 'Borrowers', 'Staff' ],
       datasets: [{
         data: [ 180, 272, 100 ],
         backgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ],
@@ -78,7 +78,7 @@ $(function() {
   var pieChart = new Chart(document.getElementById('chart-pie2').getContext("2d"), {
     type: 'pie',
     data: {
-      labels: [ 'Red', 'Blue', 'Yellow' ],
+      labels: [ 'Total Debts', 'Total Amount Paid', 'Actual Amount' ],
       datasets: [{
         data: [ 180, 272, 100 ],
         backgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ],
