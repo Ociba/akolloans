@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthenticationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,11 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard',[AuthenticationController::Class,'getDashboard'])->name('Dashboard');
+    
+    Route::get('/investor',[AuthenticationController::Class, 'investorDashboard']);
+    Route::get('/my-dashboard',[AuthenticationController::Class, 'borrowerDashboard']);
 });
+Route::get('/logout',[AuthenticationController::Class, 'logoutUser']);
+
+

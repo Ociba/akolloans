@@ -1,0 +1,1 @@
+<title>TechNest Holding Limited | {{request()->route()->getName()}}</title>

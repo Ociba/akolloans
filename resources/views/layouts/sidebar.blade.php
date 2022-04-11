@@ -1,118 +1,123 @@
-<div class="app-sidebar sidebar-shadow">
-    <div class="app-header__logo">
-        <div class="logo-src"></div>
-        <div class="header__pane ml-auto">
-            <div>
-                <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
-                <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-                </span>
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="app-header__mobile-menu">
-        <div>
-            <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
-            <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-            </span>
-            </button>
-        </div>
-    </div>
-    <div class="app-header__menu">
-        <span>
-        <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-        <span class="btn-icon-wrapper">
-        <i class="fa fa-ellipsis-v fa-w-6"></i>
+<div id="layout-sidenav" class="layout-sidenav sidenav sidenav-vertical bg-dark logo-dark">
+    <!-- Brand demo (see assets/css/demo/demo.css) -->
+    <div class="app-brand demo bg-primary">
+        <span class="app-brand-logo demo">
+            {{--<img src="assets/img/logo.png" alt="Brand Logo" class="img-fluid">--}}
         </span>
-        </button>
-        </span>
+        <a href="index.html" class="app-brand-text demo sidenav-text font-weight-normal ml-2">TECHNEST HOLDING LTD</a>
+        <a href="javascript:" class="layout-sidenav-toggle sidenav-link text-large ml-auto">
+            <i class="ion ion-md-menu align-middle"></i>
+        </a>
     </div>
-    <div class="scrollbar-sidebar">
-        <div class="app-sidebar__inner">
-            <ul class="vertical-nav-menu">
-                <li class="app-sidebar__heading">Sidebar</li>
-                <li class="mm-active">
-                    <a href="widgets-chart-boxes.html">
-                    <i class="metismenu-icon pe-7s-graph"></i>Dashboard
+    <div class="sidenav-divider mt-0"></div>
+
+    <!-- Links -->
+    <ul class="sidenav-inner py-1">
+
+        <!-- Dashboards -->
+        <li class="sidenav-item open active">
+            <a href="/dashboard" class="sidenav-link">
+                <i class="sidenav-icon feather icon-home"></i>
+                <div>Admin Dashboards</div>
+            </a>
+        </li>
+        <li class="sidenav-divider mb-1"></li>
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon feather icon-layers"></i>
+                <div>Investors</div>
+                <div class="pl-1 ml-auto">
+                    <div class="badge badge-primary">100+</div>
+                </div>
+            </a>
+            <ul class="sidenav-menu">
+                <li class="sidenav-item">
+                    <a href="/admission/investors" class="sidenav-link">
+                        <div>List of Investors</div>
                     </a>
                 </li>
-                <li>
-                    <a href="#">
-                    <i class="metismenu-icon pe-7s-browser"></i>Investors
-                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="pages-login.html">
-                            <i class="metismenu-icon"></i> List of Investors
-                            </a>
-                        </li>
-                        <li>
-                            <a href="pages-login-boxed.html">
-                            <i class="metismenu-icon"></i>Suspended Investors
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">
-                    <i class="metismenu-icon pe-7s-plugin"></i>Borrowers
-                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                    </a>
-                    <ul>
-                        <li>
-                            <a href="apps-mailbox.html">
-                            <i class="metismenu-icon"></i>List of Borrowers
-                            </a>
-                        </li>
-                        <li>
-                            <a href="apps-chat.html">
-                            <i class="metismenu-icon"></i>Suspended Borrowers
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="app-sidebar__heading">Loans</li>
-                <li>
-                    <a href="widgets-chart-boxes.html">
-                    <i class="metismenu-icon pe-7s-graph"></i>Ongoing Loans
-                    </a>
-                </li>
-                <li>
-                    <a href="widgets-chart-boxes.html">
-                    <i class="metismenu-icon pe-7s-graph"></i>Paid Loans
-                    </a>
-                </li>
-                <li>
-                    <a href="widgets-chart-boxes.html">
-                    <i class="metismenu-icon pe-7s-graph"></i>Loan Defaulters
-                    </a>
-                </li>
-                <li class="app-sidebar__heading">Packages</li>
-                <li>
-                    <a href="widgets-chart-boxes.html">
-                    <i class="metismenu-icon pe-7s-graph"></i>View Packages
-                    </a>
-                </li>
-                <li class="app-sidebar__heading">Account Settings</li>
-                <li>
-                    <a href="widgets-chart-boxes.html">
-                    <i class="metismenu-icon pe-7s-graph"></i>Users
-                    </a>
-                </li>
-                <li>
-                    <a href="widgets-chart-boxes.html">
-                    <i class="metismenu-icon pe-7s-graph"></i>Roles
-                    </a>
-                </li>
-                <li>
-                    <a href="widgets-chart-boxes.html">
-                    <i class="metismenu-icon pe-7s-graph"></i>Permissions
+                <li class="sidenav-item">
+                    <a href="/admission/investors" class="sidenav-link">
+                        <div>Suspended Investors</div>
                     </a>
                 </li>
             </ul>
-        </div>
-    </div>
+        </li>
+        <li class="sidenav-divider mb-1"></li>
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon feather icon-layout"></i>
+                <div>Borrowers</div>
+                <div class="pl-1 ml-auto">
+                    <div class="badge badge-success">30+</div>
+                </div>
+            </a>
+            <ul class="sidenav-menu">
+                <li class="sidenav-item">
+                    <a href="layouts_sidenav_dark.html" class="sidenav-link" target="_blank">
+                        <div>List of Borrowers</div>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="layouts_header_dark.html" class="sidenav-link" target="_blank">
+                        <div>Suspended Borrowers</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidenav-divider mb-1"></li>
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon feather icon-layout"></i>
+                <div>Loans</div>
+                <div class="pl-1 ml-auto">
+                    <div class="badge badge-danger">60+</div>
+                </div>
+            </a>
+            <ul class="sidenav-menu">
+                <li class="sidenav-item">
+                    <a href="layouts_sidenav_dark.html" class="sidenav-link" target="_blank">
+                        <div>Ongoing Loans</div>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="layouts_header_dark.html" class="sidenav-link" target="_blank">
+                        <div>Paid Loans</div>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="layouts_header_dark.html" class="sidenav-link" target="_blank">
+                        <div>Loans Defaulters</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidenav-divider mb-1"></li>
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon feather icon-layout"></i>
+                <div>Account Settings</div>
+            </a>
+            <ul class="sidenav-menu">
+                <li class="sidenav-item">
+                    <a href="layouts_sidenav_dark.html" class="sidenav-link" target="_blank">
+                        <div>Users</div>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="layouts_header_dark.html" class="sidenav-link" target="_blank">
+                        <div>Roles</div>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="layouts_header_dark.html" class="sidenav-link" target="_blank">
+                        <div>Permissions</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <!-- Layouts -->
+        <li class="sidenav-divider mb-1"></li>
+    </ul>
 </div>
