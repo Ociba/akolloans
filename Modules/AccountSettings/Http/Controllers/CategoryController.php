@@ -5,6 +5,7 @@ namespace Modules\AccountSettings\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Models\Category;
 
 class CategoryController extends Controller
 {
@@ -18,62 +19,49 @@ class CategoryController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     * @return Renderable
+     * This function saves category information
      */
-    public function create()
+    public function createCategory(Request $request)
     {
-        return view('accountsettings::create');
+        $validated = $request->validate([
+            'category' => 'required|unique:categories',
+        ]);
+        $category_obj  =new Category;
+        $category_obj->category =request()->category;
+        $category_obj->save();
+        return redirect()->back()->with('msg','Operation Successful');
     }
-
     /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Show the specified resource.
+     * This function gets edit form.
      * @param int $id
      * @return Renderable
      */
-    public function show($id)
+    public function editCategory($category_id)
     {
-        return view('accountsettings::show');
+        $edit_category =Category::where('id',$category_id)->get();
+        return view('accountsettings::edit_category',compact('edit_category'));
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * This function updates category.
      * @param int $id
      * @return Renderable
      */
-    public function edit($id)
+    public function updateCategory($category_id)
     {
-        return view('accountsettings::edit');
+        Category::where('id',$category_id)->update(array(
+            'category' =>request()->category
+        ));
+        return redirect('/accountsettings/get-categories')->with('msg','Operation Successful');
     }
-
     /**
-     * Update the specified resource in storage.
-     * @param Request $request
+     * This function deletes the category permanently.
      * @param int $id
      * @return Renderable
      */
-    public function update(Request $request, $id)
+    public function deleteCategory($category_id)
     {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
+        Category::where('id',$category_id)->delete();
+        return redirect()->back()->with('msg','Operation Successful');
     }
 }

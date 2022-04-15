@@ -43,6 +43,7 @@
                         <div class="row">
                               <!-- customar project  start -->
                               <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
+                                 @include('layouts.message')
                                  @livewire('category')
                               </div>
                             <!-- customar project  end -->
@@ -77,27 +78,17 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="/accountsettings/create-category" method="get">
+                    @csrf
                     <div class="row">
-                        <div class="col-sm-6">
+                        <div class="col-sm-12">
                             <div class="form-group">
-                                <label class="floating-label" for="Name">Name</label>
-                                <input type="text" class="form-control" id="Name" placeholder="">
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="form-group fill">
-                                <label class="floating-label" for="Icon">Icon</label>
-                                <input type="file" class="form-control" id="Icon" placeholder="sdf">
+                                <label class="floating-label" for="Name">Category</label>
+                                <input type="text" class="form-control" id="category" name="category" placeholder="Category" required>
                             </div>
                         </div>
                         <div class="col-sm-12">
-                            <div class="form-group">
-                                <label class="floating-label" for="Description">Description</label>
-                                <textarea class="form-control" id="Description" rows="3"></textarea>
-                            </div>
-                            <button class="btn btn-primary">Submit</button>
-                            <button class="btn btn-danger">Clear</button>
+                            <button type="submit" class="btn btn-primary">Submit Category</button>
                         </div>
                     </div>
                 </form>

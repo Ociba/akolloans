@@ -26,7 +26,7 @@
     <div class="layout-wrapper layout-2">
         <div class="layout-inner">
             <!-- [ Layout sidenav ] Start -->
-            @include('layouts.sidebar')
+            @include('layouts.investors_sidebar')
             <!-- [ Layout sidenav ] End -->
             <!-- [ Layout container ] Start -->
             <div class="layout-container">
@@ -43,8 +43,7 @@
                         <div class="row">
                               <!-- customar project  start -->
                               <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
-                                 @include('layouts.message')
-                                 @livewire('district')
+                                 @livewire('investors-packages-bought')
                               </div>
                             <!-- customar project  end -->
                         </div>
@@ -68,34 +67,6 @@
     
     <!-- Core scripts -->
    @include('layouts.javascript')
-   <div class="modal fade" id="modal-report" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Add Districs</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="/accountsettings/add-district">
-                    @csrf
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="form-group">
-                                <label class="floating-label" for="district">District</label>
-                                <input type="text" class="form-control" name="district" id="district" placeholder="Enter District" required>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <button type="submit" class="btn btn-primary">Submit district</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 </body>
 </html>

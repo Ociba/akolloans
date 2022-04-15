@@ -16,8 +16,10 @@ Route::prefix('accountsettings')->group(function() {
     Route::get('/get-roles-for-permissions', 'PermissionsController@getRolesForPermissions')->name('Roles For Permissions');
     Route::get('/get-roles', 'RolesController@getRoles')->name('Roles');
     Route::get('/get-all-users', 'UsersController@getUsers')->name('Users');
-    Route::get('/get-all-users', 'UsersController@getUsers')->name('Users');
+    Route::get('/get-all-users', 'UsersController@getUsers')->name('Users'); 
     Route::get('/get-categories', 'CategoryController@getCategory')->name('Category');
+    Route::get('/create-category', 'CategoryController@createCategory'); 
     Route::get('/get-districts', 'DistrictController@getDistrict')->name('Districts');
+    Route::get('/add-district', 'DistrictController@createDistrict');
     
 });

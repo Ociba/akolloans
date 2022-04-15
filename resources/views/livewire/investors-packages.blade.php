@@ -6,7 +6,7 @@
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6">
                         <label class="form-label">Entries</label>
-                        <select class="custom-select">
+                        <select class="custom-select" wire:mode='per_page'>
                             <option>10</option>
                             <option>20</option>
                             <option>30</option>
@@ -22,7 +22,7 @@
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6 align-items-right">
                         <label class="form-label">Search</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" wire:model="searchTerm">
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -42,8 +42,17 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($packages as $i=>as $package)
                         <tr>
-                            <td>1</td>
+                            @php
+                                if( $packages->currentPage() == 1){
+                                $i = $i+1;
+                                }else{
+                                $i = ($i+1) + 10*($packages->currentPage()-1);
+                                }
+                            @endphp
+                            <td>{{$i}}</td>
+                            <td>{{$package->package_name}}</td>
                             <td>Opio Mark</td>
                             <td>0778965783</td>
                             <td>Gold</td>

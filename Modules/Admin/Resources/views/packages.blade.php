@@ -43,6 +43,7 @@
                         <div class="row">
                               <!-- customar project  start -->
                               <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
+                                 @include('layouts.message')
                                  @livewire('packages')
                               </div>
                             <!-- customar project  end -->
@@ -77,27 +78,41 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form action="/admin/create-package" method="get">
+                 @csrf
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="floating-label" for="Name">Name</label>
-                                <input type="text" class="form-control" id="Name" placeholder="">
+                                <label class="floating-label" for="package_name">Package Name</label>
+                                <input type="text" class="form-control" id="package_name" name="package_name" placeholder="Package">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group fill">
-                                <label class="floating-label" for="Icon">Icon</label>
-                                <input type="file" class="form-control" id="Icon" placeholder="sdf">
+                                <label class="floating-label" for="from">From Amount</label>
+                                <input type="number" class="form-control" id="from" name="from" placeholder="Amount">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="to">To Amount</label>
+                                <input type="number" class="form-control" id="to" name="to" placeholder="Amount">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="investor_interest">Investors Interest</label>
+                                <input type="number" class="form-control" id="investor_interest" name="investor_interest" placeholder="eg,10,20">
                             </div>
                         </div>
                         <div class="col-sm-12">
-                            <div class="form-group">
-                                <label class="floating-label" for="Description">Description</label>
-                                <textarea class="form-control" id="Description" rows="3"></textarea>
+                            <div class="form-group fill">
+                                <label class="floating-label" for="client_interests">Clients Interest (Borrower)</label>
+                                <input type="number" class="form-control" id="client_interests" name="client_interests" placeholder="eg. 15, 30">
                             </div>
-                            <button class="btn btn-primary">Submit</button>
-                            <button class="btn btn-danger">Clear</button>
+                        </div>
+                        <div class="col-sm-12 text-center">
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>

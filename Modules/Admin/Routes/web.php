@@ -18,5 +18,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/all-clients', 'ClientsController@getClients')->name('All Clients');
     Route::get('/clients-with-loans', 'ClientsController@getClientsWithLoans')->name('Clients With Loans');
     Route::get('/loan-defaulters', 'ClientsController@getClientsLoanDefaulters')->name('Loan Defaulters');
-    Route::get('/get-packages', 'PackagesController@getPackages')->name('Packages');
+    Route::get('/get-packages', 'PackagesController@getPackages')->name('Packages'); 
+    Route::get('/create-investor', 'InvestorsController@validatecreateInvestor');
+    Route::get('/create-package', 'PackagesController@createPackage');
 });

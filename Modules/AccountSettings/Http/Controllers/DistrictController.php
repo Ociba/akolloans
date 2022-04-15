@@ -5,6 +5,7 @@ namespace Modules\AccountSettings\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Models\District;
 
 class DistrictController extends Controller
 {
@@ -18,62 +19,48 @@ class DistrictController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     * @return Renderable
+     * This function creates district
      */
-    public function create()
+    public function createDistrict(Request $request)
     {
-        return view('accountsettings::create');
+        $validated = $request->validate([
+            'district' => 'required|unique:districts',
+        ]);
+        $district_obj =new District;
+        $district_obj->district=request()->district;
+        $district_obj->save();
+        return redirect()->back()->with('msg','Operation Successful');
     }
-
     /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Show the specified resource.
+     * This function gets edit form .
      * @param int $id
-     * @return Renderable
      */
-    public function show($id)
+    public function editDistrict($district_id)
     {
-        return view('accountsettings::show');
+        $edit_district =District::where('id',$district_id)->get();
+        return view('accountsettings::edit_district', compact('edit_district'));
     }
 
     /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('accountsettings::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
+     * Update the specified district in storage.
      * @param Request $request
      * @param int $id
      * @return Renderable
      */
-    public function update(Request $request, $id)
+    public function update($district_id)
     {
-        //
+        District::where('id',$district_id)->update(array());
+        return redirect('/accountsettings/get-districts')->with('msg','Operation Successful');
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified district from storage.
      * @param int $id
      * @return Renderable
      */
-    public function destroy($id)
+    public function deleteDistrict($district_id)
     {
-        //
+        District::where('id',$district_id)->delete();
+        return redirect()->back()->with('msg','Operation Successful');
     }
 }

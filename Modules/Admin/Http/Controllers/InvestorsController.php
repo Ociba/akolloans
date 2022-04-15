@@ -5,6 +5,9 @@ namespace Modules\Admin\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Models\User;
+use Hash;
+use Auth;
 
 class InvestorsController extends Controller
 {
@@ -25,62 +28,56 @@ class InvestorsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     * @return Renderable
+     *This function creates approved investor
      */
-    public function create()
+    private function createInvestor()
     {
-        return view('admin::create');
+        $user_obj = new User;
+        $user_obj->email              = request()->email;
+        $user_obj->name               = request()->name;
+        $user_obj->category_id               ="2";
+        $user_obj->password    = Hash::make(request()->password);
+        $user_obj->save();
+        return redirect()->back()->with('msg','Operation Successful');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
+   /**
+     * This function validates Investor created
      */
-    public function store(Request $request)
-    {
-        //
+    public function validatecreateInvestor(){
+        if(empty(request()->name)){
+            return redirect()->back()->withErrors('Enter name to continue');
+        }elseif(empty(request()->email)){
+            return redirect()->back()->withErrors('Enter Email to continue');
+        }elseif(User::where('email',request()->email)->exists()){
+            return redirect()->back()->withErrors('This  email is already taken');
+        }else{
+            if(request()->password == request()->password_confirmation){
+                return $this->createInvestor();
+            }else{
+                return redirect()->back()->withErrors('Make sure the two passwords match');
+            }
+        }
     }
-
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('admin::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('admin::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
-    }
+     /**
+        * This function suspends the User 
+        */
+        protected function suspendInvestor($investor_id){
+            User::where('id',$investor_id)->update(array('status'=>'suspended'));
+            return redirect()->back()->with('msg', 'You have Successfully suspended this User');
+        }
+        /** 
+         * This function ctivates suspended User
+        */
+        protected function activateInvestor($investor_id){
+            User::where('id',$investor_id)->update(array('status'=>'active'));
+            return redirect()->back()->with('msg', 'You have Successfully activated '.request()->name.'');
+        }
+        /**
+         * This function deletes users permanently
+         */
+        protected function deleteInvestor($investor_id){
+            User::where('id',$investor_id)->delete();
+            return redirect()->back()->with('msg', 'Operation Successful');
+        }
 }
