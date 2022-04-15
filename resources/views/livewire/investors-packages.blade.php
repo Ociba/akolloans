@@ -32,17 +32,15 @@
                     <thead>
                         <tr class="text-center">
                             <th>No.</th>
-                            <th>Name</th>
-                            <th>contact</th>
                             <th>Package</th>
-                            <th>Deposit</th>
-                            <th>Interest</th>
-                            <th>Period</th>
+                            <th>From Amount</th>
+                            <th>To Amount</th>
+                            <th>Interest %</th>
                             <th>Options</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($packages as $i=>as $package)
+                        @foreach($packages as $i=>$package)
                         <tr>
                             @php
                                 if( $packages->currentPage() == 1){
@@ -53,20 +51,17 @@
                             @endphp
                             <td>{{$i}}</td>
                             <td>{{$package->package_name}}</td>
-                            <td>Opio Mark</td>
-                            <td>0778965783</td>
-                            <td>Gold</td>
-                            <td>60000000</td>
-                            <td>30%</td>
-                            <td>2 Years</td>
+                            <td>{{$package->from}}</td>
+                            <td>{{$package->to}}</td>
+                            <td>{{$package->investor_interest}}</td>
                             <td>
-                                <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
+                                <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Deposit</a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
+                {{$packages->links()}}
             </div>
         </div>
     </div>
