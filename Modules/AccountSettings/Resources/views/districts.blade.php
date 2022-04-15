@@ -43,7 +43,7 @@
                         <div class="row">
                               <!-- customar project  start -->
                               <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
-                                 @livewire('category')
+                                 @livewire('district')
                               </div>
                             <!-- customar project  end -->
                         </div>
@@ -71,7 +71,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Add Department</h5>
+                <h5 class="modal-title">Add Districs</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddCategoryColumnsToUsersTable extends Migration
+class CreatePermissionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class AddCategoryColumnsToUsersTable extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('category')->default('user')->after('email');
+        Schema::create('permissions', function (Blueprint $table) {
+            $table->id();
+            $table->string('permission');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class AddCategoryColumnsToUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            Schema::dropIfExists('category');
-        });
+        Schema::dropIfExists('permissions');
     }
 }

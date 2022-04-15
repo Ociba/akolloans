@@ -94,8 +94,13 @@
                     </a>
                 </li>
                 <li class="sidenav-item">
-                    <a href="/accountsettings/get-roles" class="sidenav-link">
-                        <div>Roles</div>
+                    <a href="/accountsettings/get-categories" class="sidenav-link">
+                        <div>Categories</div>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="/accountsettings/get-districts" class="sidenav-link">
+                        <div>Districts</div>
                     </a>
                 </li>
                 <li class="sidenav-item">

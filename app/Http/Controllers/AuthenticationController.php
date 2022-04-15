@@ -24,9 +24,9 @@ class AuthenticationController extends Controller
         return view('admin.borrowers_dashboard');
     }
     protected function getDashboard(){
-        if(auth()->user()->category == 'admin'){
+        if(auth()->user()->category_id == 1){
             return view('admin.admin_dashboard');
-        }elseif(auth()->user()->category == 'investor'){
+        }elseif(auth()->user()->category_id == 2){
             return redirect("/investor");
         }else{
             return redirect('/my-dashboard');
