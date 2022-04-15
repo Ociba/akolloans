@@ -1,11 +1,12 @@
 <div>
     <div class="card">
         <div class="card-body">
+          
             <div class="row">
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6">
                         <label class="form-label">Entries</label>
-                        <select class="custom-select">
+                        <select class="custom-select" wire:mode='per_page'>
                             <option>10</option>
                             <option>20</option>
                             <option>30</option>
@@ -21,7 +22,7 @@
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6 align-items-right">
                         <label class="form-label">Search</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" wire:model="searchTerm">
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -31,32 +32,47 @@
                     <thead>
                         <tr class="text-center">
                             <th>No.</th>
-                            <th>Name</th>
-                            <th>contact</th>
-                            <th>Package</th>
-                            <th>Deposit</th>
-                            <th>Interest</th>
-                            <th>Period</th>
-                            <th>Options</th>
+                            <th>Date Of Birth</th>
+                            <th>Contact</th>
+                            <th>NIN</th>
+                            <th>TIN No.</th>
+                            <th>Computer</th>
+                            <th>Employment Status</th>
+                            <th>Employer</th>
+                            <th>District</th>
+                            <th>Loan Amount</th>
+                            <th>Actual Amount</th>
+                            <th>Loan Status</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($my_loan_request_info as $i=>$loan_request)
                         <tr>
-                            <td>1</td>
-                            <td>Opio Mark</td>
-                            <td>0778965783</td>
-                            <td>Gold</td>
-                            <td>60000000</td>
-                            <td>30%</td>
-                            <td>2 Years</td>
-                            <td>
-                                <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
-                            </td>
+                            @php
+                                if( $my_loan_request_info->currentPage() == 1){
+                                $i = $i+1;
+                                }else{
+                                $i = ($i+1) + 10*($my_loan_request_info->currentPage()-1);
+                                }
+                            @endphp
+                            <td>{{$i}}</td>
+                            <td hidden>{{$loan_request->id}}</td>
+                            <td>{{$loan_request->date_of_birth}}</td>
+                            <td>{{$loan_request->phone_number}}</td>
+                            <td>{{$loan_request->nin_number}}</td>
+                            <td>{{$loan_request->tin_number}}</td>
+                            <td>{{$loan_request->computer_no}}</td>
+                            <td>{{$loan_request->employment_status}}</td>
+                            <td>{{$loan_request->employer}}</td>
+                            <td>{{$loan_request->district}}</td>
+                            <td>{{ number_format($loan_request->loan_amount)}}</td>
+                            <td></td>
+                            <td>{{$loan_request->loan_status}}</td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
+                {{$my_loan_request_info->links()}}
             </div>
         </div>
     </div>

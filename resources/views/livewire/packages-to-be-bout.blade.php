@@ -32,39 +32,37 @@
                     <thead>
                         <tr class="text-center">
                             <th>No.</th>
-                            <th>Contact</th>
                             <th>Package</th>
-                            <th>District</th>
-                            <th>Amount</th>
+                            <th>From Amount</th>
+                            <th>To Amount</th>
                             <th>Interest %</th>
-                            <th>Period</th>
-                            <th>Status</th>
+                            <th>Options</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($my_packages as $i=>$package)
+                        @foreach($packages as $i=>$package)
                         <tr>
                             @php
-                                if( $my_packages->currentPage() == 1){
+                                if( $packages->currentPage() == 1){
                                 $i = $i+1;
                                 }else{
-                                $i = ($i+1) + 10*($my_packages->currentPage()-1);
+                                $i = ($i+1) + 10*($packages->currentPage()-1);
                                 }
                             @endphp
                             <td>{{$i}}</td>
                             <td hidden>{{$package->id}}</td>
-                            <td>{{$package->contact}}</td>
                             <td>{{$package->package_name}}</td>
-                            <td>{{$package->district}}</td>
-                            <td>{{ number_format($package->amount_deposited)}}</td>
+                            <td>{{ number_format($package->from)}}</td>
+                            <td>{{ number_format($package->to)}}</td>
                             <td>{{$package->investor_interest}}</td>
-                            <td>{{$package->period}} {{$package->state}}</td>
-                            <td>{{$package->investor_status}}</td>
+                            <td>
+                                <a href="/investors/deposit/{{$package->id}}" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Deposit</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-                {{$my_packages->links()}}
+                {{$packages->links()}}
             </div>
         </div>
     </div>

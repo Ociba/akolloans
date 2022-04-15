@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Investor extends Model
 {
     use HasFactory;
-    protected $fillable =['bought_by','district_id','package_id','amount_deposited','period','contact','photo','investor_status','expiry_date'];
+    protected $fillable =['bought_by','district_id','package_id','amount_deposited','period','state','contact','investor_status'];
 }

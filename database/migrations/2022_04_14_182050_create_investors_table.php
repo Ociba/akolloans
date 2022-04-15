@@ -20,9 +20,7 @@ class CreateInvestorsTable extends Migration
             $table->foreignId('package_id');
             $table->string('amount_deposited');
             $table->string('period');
-            $table->string('expiry_date');
             $table->string('contact');
-            $table->string('photo');
             $table->enum('investor_status',['active','suspended'])->default('active');
             $table->timestamps();
         });

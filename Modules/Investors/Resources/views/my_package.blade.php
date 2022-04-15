@@ -43,7 +43,7 @@
                         <div class="row">
                               <!-- customar project  start -->
                               <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
-                                 @livewire('packages-to-be-bout')
+                                 @livewire('investors-packages')
                               </div>
                             <!-- customar project  end -->
                         </div>

@@ -26,7 +26,7 @@
     <div class="layout-wrapper layout-2">
         <div class="layout-inner">
             <!-- [ Layout sidenav ] Start -->
-            @include('layouts.investors_sidebar')
+            @include('layouts.borrowers_sidebar')
             <!-- [ Layout sidenav ] End -->
             <!-- [ Layout container ] Start -->
             <div class="layout-container">
@@ -43,7 +43,7 @@
                         <div class="row">
                               <!-- customar project  start -->
                               <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
-                                 @livewire('packages-to-be-bout')
+                                 @livewire('clients-packages-table')
                               </div>
                             <!-- customar project  end -->
                         </div>

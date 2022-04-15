@@ -15,5 +15,8 @@ Route::prefix('investors')->group(function() {
     Route::get('/my-interest', 'InvestorsController@getMyInterest')->name('Interest');
     Route::get('/view-packages', 'PackagesController@getPackages')->name('Packages'); 
     Route::get('/change-password', 'ChangePasswordController@changePassword')->name('Change Password');
-    Route::get('/profile', 'ProfileController@getMyProfile')->name('Profile');
+    Route::get('/profile', 'ProfileController@getMyProfile')->name('Profile'); 
+    Route::get('/deposit/{package_id}', 'PackagesController@getPackageDepositForm')->name('Deposit Package Amount');  
+    Route::get('/my-package', 'PackagesController@myPackageInformation')->name('My Package Details'); 
+    Route::post('/save-my-package/{package_id}', 'PackagesController@validatecreatePackage'); 
 });

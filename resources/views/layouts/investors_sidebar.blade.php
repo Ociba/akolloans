@@ -25,12 +25,17 @@
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon feather icon-layers"></i>
-                <div>Packages</div>
+                <div>Packages</div> 
             </a>
             <ul class="sidenav-menu">
                 <li class="sidenav-item">
                     <a href="/investors/view-packages" class="sidenav-link">
                         <div>Packages</div>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="/investors/my-package" class="sidenav-link">
+                        <div>My Package</div>
                     </a>
                 </li>
             </ul>

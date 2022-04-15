@@ -32,39 +32,35 @@
                     <thead>
                         <tr class="text-center">
                             <th>No.</th>
-                            <th>Contact</th>
-                            <th>Package</th>
-                            <th>District</th>
-                            <th>Amount</th>
+                            {{--<th>Package</th>--}}
+                            <th>Amount Range</th>
                             <th>Interest %</th>
-                            <th>Period</th>
-                            <th>Status</th>
+                            <th>Options</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($my_packages as $i=>$package)
-                        <tr>
+                        @foreach($packages as $i=>$package)
+                        <tr class="text-center">
                             @php
-                                if( $my_packages->currentPage() == 1){
+                                if( $packages->currentPage() == 1){
                                 $i = $i+1;
                                 }else{
-                                $i = ($i+1) + 10*($my_packages->currentPage()-1);
+                                $i = ($i+1) + 10*($packages->currentPage()-1);
                                 }
                             @endphp
                             <td>{{$i}}</td>
                             <td hidden>{{$package->id}}</td>
-                            <td>{{$package->contact}}</td>
-                            <td>{{$package->package_name}}</td>
-                            <td>{{$package->district}}</td>
-                            <td>{{ number_format($package->amount_deposited)}}</td>
-                            <td>{{$package->investor_interest}}</td>
-                            <td>{{$package->period}} {{$package->state}}</td>
-                            <td>{{$package->investor_status}}</td>
+                            {{--<td>{{$package->package_name}}</td>--}}
+                            <td>{{ number_format($package->from)}}-{{ number_format($package->to)}}</td>
+                            <td>{{$package->client_interests}}</td>
+                            <td>
+                                <a href="/clients/request-for-loan/{{$package->id}}" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Request For Loan</a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-                {{$my_packages->links()}}
+                {{$packages->links()}}
             </div>
         </div>
     </div>

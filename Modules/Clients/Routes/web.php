@@ -13,8 +13,10 @@
 
 Route::prefix('clients')->group(function() { 
     Route::get('/', 'ClientsController@index');
-    Route::get('/request-loan', 'LoansController@requestLoan')->name('Request Loan');
+    Route::get('/request-for-loan/{package_id}', 'LoansController@requestLoan')->name('Request Loan');
     Route::get('/my-loan-details', 'LoansController@myLoanDetails')->name('My Loan Details');
-    Route::get('/my-profile', 'ProfileController@myProfile')->name('My Profile');
-    Route::get('/edit-profile', 'ProfileController@editProfile')->name('Edit Profile');
+    Route::get('/my-profile', 'ProfileController@myProfile')->name('My Profile'); 
+    Route::get('/edit-profile', 'ProfileController@editProfile')->name('Edit Profile'); 
+    Route::post('/send-loan-request', 'LoansController@validateLoanRequest');
+    Route::get('/request-loan', 'LoansController@clientsPackageInfo');
 });

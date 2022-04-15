@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Package;
+use App\Models\Investor;
 use Livewire\WithPagination;
 
 class InvestorsPackages extends Component
@@ -11,7 +11,7 @@ class InvestorsPackages extends Component
     use WithPagination;
     public $searchTerm;
     public $per_page="10";
-    public $package_name,$from,$to,$investor_interest;
+    public $package_id,$district_id,$bought_by,$amount_deposited,$period,$state,$contact;
 
      //using the tailwind pagination theme
      protected $paginationTheme = 'bootstrap';
@@ -25,8 +25,12 @@ class InvestorsPackages extends Component
     {
         $searchTerm = '%'.$this->searchTerm.'%';
         return view('livewire.investors-packages',[
-            'packages' =>Package::where('package_name','like',$searchTerm)
-            ->Paginate($this->per_page)
+            'my_packages' =>Investor::join('districts','districts.id','investors.district_id')
+            ->join('packages','packages.id','investors.package_id')
+            ->join('users','users.id','investors.bought_by')
+            ->where('users.id',auth()->user()->id)
+            ->where('investors.created_at','like',$searchTerm)
+            ->Paginate($this->per_page,['investors.*','districts.district','packages.package_name','packages.investor_interest'])
         ]);
     }
 }

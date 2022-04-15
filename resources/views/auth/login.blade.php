@@ -27,7 +27,7 @@
 
             <!-- [ Side container ] Start -->
             <!-- Do not display the container on extra small, small and medium screens -->
-            <div class="d-none d-lg-flex col-lg-8 align-items-center ui-bg-cover ui-bg-overlay-container p-5" style="background-image: url('assets/img/bg/akol1.jpg');">
+            <div class="d-none d-lg-flex col-lg-8 align-items-center ui-bg-cover ui-bg-overlay-container p-2" style="background-image: url('assets/img/bg/akol1.jpg'); height:100%;">
                 <div class="ui-bg-overlay bg-dark opacity-50"></div>
                 <!-- [ Text ] Start -->
                 {{--<div class="w-100 text-white px-5">
@@ -35,8 +35,7 @@
                     <div class="text-large font-weight-light">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula ex eu gravida faucibus. Suspendisse viverra pharetra purus. Proin fringilla ac lorem at sagittis. Proin tincidunt dui et nunc ultricies dignissim.
                     </div>
-                </div>
-                --}}
+                </div>--}}
                 <!-- [ Text ] End -->
             </div>
             <!-- [ Side container ] End -->
@@ -56,7 +55,7 @@
                     @endif
                         <!-- [ Logo ] Start -->
                         <div class="d-flex justify-content-center align-items-center">
-                            <div class="ui-w-60">
+                            <div class="">
                                 <div class="w-100 position-relative">
                                     <img src="{{ asset('assets/img/bg/akol2.jpg')}}" alt="Brand Logo" style="width:100%; height:100%" class="img-flui">
                                     <div class="clearfix"></div>
@@ -65,7 +64,7 @@
                         </div>
                         <!-- [ Logo ] End -->
 
-                        <h4 class="text-center text-lighter font-weight-normal mt-5 mb-0">Login to Your Account</h4>
+                        <h4 class="text-center text-lighter font-weight-normal mt-5 mb-4">Login to Your Account</h4>
 
                         <!-- [ Form ] Start -->
                         <form method="POST" action="{{ route('login') }}" class="my-5">
@@ -82,7 +81,7 @@
                                         <a href="{{ route('password.request') }}" class="d-block small">Forgot password?</a>
                                         @endif  
                                     </label>
-                                <input id="password" type="password" class="form-control" name="password" required >
+                                <input type="password" id="password" class="form-control" name="password" required >
                                 <div class="clearfix"></div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center m-0">
@@ -114,4 +113,3 @@
 
 </body>
 </html>
-

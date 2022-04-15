@@ -16,16 +16,17 @@ class CreateClientsTable extends Migration
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('package_id');
+            $table->foreignId('package_id')->nullable();
+            $table->foreignId('district_id');
             $table->string('phone_number');
             $table->string('nin_number');
             $table->string('tin_number')->nullable();
-            $table->string('computer_no');
+            $table->string('computer_no')->nullable();
             $table->string('date_of_birth');
             $table->string('employment_status');
             $table->string('employer');
             $table->string('loan_amount');
-            $table->string('loan_due_date');
+            $table->string('loan_due_date')->nullable();
             $table->enum('loan_status',['active','paid','overdue'])->default('active');
             $table->timestamps();
         });
