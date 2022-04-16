@@ -52,9 +52,10 @@
                             <td hidden>{{$package->id}}</td>
                             {{--<td>{{$package->package_name}}</td>--}}
                             <td>{{ number_format($package->from)}}-{{ number_format($package->to)}}</td>
-                            <td>{{$package->client_interests}}</td>
+                            <td>{{$package->client_interests}}</td> 
                             <td>
-                                <a href="/clients/request-for-loan/{{$package->id}}" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Request For Loan</a>
+                                <a href="/clients/request-for-loan/{{$package->id}}" class="btn btn-warning btn-sm"><i class="feather icon-plus"></i>Request For First Time Loan</a>
+                                <a href="/clients/new-loan/{{$package->id}}" class="btn btn-success btn-sm"><i class="feather icon-plus"></i>Request For New Loan</a>
                             </td>
                         </tr>
                         @endforeach

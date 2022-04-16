@@ -17,6 +17,8 @@ Route::prefix('clients')->group(function() {
     Route::get('/my-loan-details', 'LoansController@myLoanDetails')->name('My Loan Details');
     Route::get('/my-profile', 'ProfileController@myProfile')->name('My Profile'); 
     Route::get('/edit-profile', 'ProfileController@editProfile')->name('Edit Profile'); 
-    Route::post('/send-loan-request', 'LoansController@validateLoanRequest');
-    Route::get('/request-loan', 'LoansController@clientsPackageInfo');
+    Route::post('/send-loan-request', 'LoansController@validateLoanRequest'); 
+    Route::get('/request-loan', 'LoansController@clientsPackageInfo')->name('Amount Range'); 
+    Route::get('/new-loan/{package_id}', 'LoansController@newLoanForm')->name('Request New Loan');
+    Route::get('/request-new-loan', 'LoansController@requestNewLoan');
 });

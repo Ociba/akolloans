@@ -66,7 +66,13 @@
                             <td>{{$loan_request->employer}}</td>
                             <td>{{$loan_request->district}}</td>
                             <td>{{ number_format($loan_request->loan_amount)}}</td>
-                            <td></td>
+                            @php
+                            $client_interest =\DB::table('packages')->where('id',$loan_request->package_id)->value('client_interests');
+                            $loan_amount=\DB::table('clients')->where('id',$loan_request->id)->value('loan_amount');
+                            $actual_intest_amount=($client_interest/100)*$loan_amount;
+                            $dabt =$actual_intest_amount + $loan_amount;
+                            @endphp
+                            <td>{{ number_format($dabt)}}</td>
                             <td>{{$loan_request->loan_status}}</td>
                         </tr>
                         @endforeach

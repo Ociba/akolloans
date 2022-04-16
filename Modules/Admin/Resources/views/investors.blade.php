@@ -84,25 +84,25 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label class="floating-label" for="name">Name</label>
-                                <input type="text" class="form-control" name="name" :value="old('name')"  id="name" placeholder="" required>
+                                <input type="text" class="form-control" name="name" :value="old('name')"  id="name" data-toggle="tooltip" data-placement="bottom" title="Enter Your Name" placeholder="" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group fill">
                                 <label class="floating-label" for="email">Email</label>
-                                <input type="email" class="form-control" name="email" :value="old('email')" id="email" placeholder="example@gmail.com" required>
+                                <input type="email" class="form-control" name="email" :value="old('email')" id="email" data-toggle="tooltip" data-placement="bottom" title="Enter Your Email" placeholder="example@gmail.com" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group fill">
                                 <label class="floating-label" for="password">Password</label>
-                                <input type="password" class="form-control" name="password" id="password" required>
+                                <input type="password" class="form-control" name="password" id="password" data-toggle="tooltip" data-placement="bottom" title="Enter Your Password" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group fill">
                                 <label class="floating-label" for="password_confirmation">Confirm Password</label>
-                                <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" required>
+                                <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" data-toggle="tooltip" data-placement="bottom" title="Confirm Your Password" required>
                             </div>
                         </div>
                         <div class="col-sm-12">

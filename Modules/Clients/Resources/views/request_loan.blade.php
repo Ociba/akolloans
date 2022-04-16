@@ -45,10 +45,12 @@
                               <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
                               <div class="card">
                                 <div class="card-body">
+                                @foreach($request_loan_now as $loan_request)
                                 <form action="/clients/send-loan-request" method="post" enctype="multipart/form-data"> 
                                             @csrf
                                         <input type="hidden" name="package_id" class="form-control" value="{{request()->package_id}}">
                                         <input type="hidden" name="user_id" class="form-control" value="{{auth()->user()->id}}">
+                                        <input type="hidden" name="client_interests" class="form-control" value="{{$loan_request->client_interests}}">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label class="form-label">Date of Birth</label>
@@ -128,6 +130,7 @@
                                             </div>
                                             
                                         </form>
+                                        @endforeach
                                 </div>
                             </div>
                             <!-- customar project  end -->
