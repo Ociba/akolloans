@@ -209,6 +209,7 @@
         </div>
         <!-- Overlay -->
         <div class="layout-overlay layout-sidenav-toggle"></div>
+        
     </div>
     <!-- [ Layout wrapper] End -->
 

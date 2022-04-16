@@ -155,17 +155,17 @@
             <div class="demo-navbar-user nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                     <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
-                        <img src="{{ asset('assets/img/avatars/1.png')}}" alt class="d-block ui-w-30 rounded-circle">
+                        <img src="{{ asset('users_photo/'.auth()->user()->getLoggedInUserLogo())}}" alt class="d-block ui-w-30 rounded-circle">
                         <span class="px-1 mr-lg-2 ml-2 ml-lg-0">{{auth()->user()->name}}</span>
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="javascript:" class="dropdown-item">
+                    <a href="/change-password" class="dropdown-item">
                         <i class="feather icon-user text-muted"></i> &nbsp; My profile</a>
-                    <a href="javascript:" class="dropdown-item">
+                    {{--<a href="javascript:" class="dropdown-item">
                         <i class="feather icon-mail text-muted"></i> &nbsp; Messages</a>
                     <a href="javascript:" class="dropdown-item">
-                        <i class="feather icon-settings text-muted"></i> &nbsp; Account settings</a>
+                        <i class="feather icon-settings text-muted"></i> &nbsp; Account settings</a>--}}
                     <div class="dropdown-divider"></div>
                     <a href="/logout" class="dropdown-item">
                         <i class="feather icon-power text-danger"></i> &nbsp; Log Out</a>

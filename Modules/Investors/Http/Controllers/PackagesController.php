@@ -41,7 +41,7 @@ class PackagesController extends Controller
         // }
         $investor_photo = request()->profile_photo_path;
         $investor_photo_original_name = $investor_photo->getClientOriginalName();
-        $investor_photo->move('investors_photo/',$investor_photo_original_name);
+        $investor_photo->move('users_photo/',$investor_photo_original_name);
 
         $deposit_package_amount =new Investor;
         $deposit_package_amount->district_id =request()->district_id;

@@ -24,10 +24,10 @@
         <li class="sidenav-divider mb-1"></li>
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
-                <i class="sidenav-icon feather icon-layers"></i>
+                <i class="sidenav-icon feather icon-users"></i>
                 <div>Investors</div>
                 <div class="pl-1 ml-auto">
-                    <div class="badge badge-primary">100+</div>
+                    <div class="badge badge-primary">{{ auth()->user()->countInvestors()}}+</div>
                 </div>
             </a>
             <ul class="sidenav-menu">
@@ -49,7 +49,7 @@
                 <i class="sidenav-icon feather icon-grid"></i>
                 <div>Packages</div>
                 <div class="pl-1 ml-auto">
-                    <div class="badge badge-danger">6+</div>
+                    <div class="badge badge-danger">{{ auth()->user()->countPackages()}}+</div>
                 </div>
             </a>
         </li>
@@ -59,14 +59,14 @@
             <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon feather icon-layout"></i>
                 <div>Clients (Loans)</div>
-                <div class="pl-1 ml-auto">
-                    <div class="badge badge-success">30+</div>
+                <div class="pl-1 ml-auto"> 
+                    <div class="badge badge-success">{{ auth()->user()->countLoanClients()}}+</div>
                 </div>
             </a>
             <ul class="sidenav-menu">
                 <li class="sidenav-item">
                     <a href="/admin/all-clients" class="sidenav-link">
-                        <div>List of Clients</div>
+                        <div>Clients With Paid Loans</div>
                     </a>
                 </li>
                 <li class="sidenav-item">
@@ -84,6 +84,25 @@
         <li class="sidenav-divider mb-1"></li>
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon feather icon-menu"></i>
+                <div>Other Entries</div>
+            </a>
+            <ul class="sidenav-menu">
+                <li class="sidenav-item">
+                    <a href="/accountsettings/get-categories" class="sidenav-link">
+                        <div>Categories</div>
+                    </a>
+                </li>
+                <li class="sidenav-item">
+                    <a href="/accountsettings/get-districts" class="sidenav-link">
+                        <div>Districts</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidenav-divider mb-1"></li>
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon feather icon-settings"></i>
                 <div>Account Settings</div>
             </a>
@@ -94,13 +113,8 @@
                     </a>
                 </li>
                 <li class="sidenav-item">
-                    <a href="/accountsettings/get-categories" class="sidenav-link">
-                        <div>Categories</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <a href="/accountsettings/get-districts" class="sidenav-link">
-                        <div>Districts</div>
+                    <a href="/change-password" class="sidenav-link">
+                        <div>Change Password</div>
                     </a>
                 </li>
                 <li class="sidenav-item">

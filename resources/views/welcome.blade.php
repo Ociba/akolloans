@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en" class="default-style layout-fixed layout-navbar-fixed">
@@ -10,9 +11,9 @@
     <meta name="description" content="" />
     <meta name="keywords" content="">
     <meta name="author" content="" />
-   @include('layouts.css')
+    @include('layouts.css')
     <!-- Page -->
-    <link rel="stylesheet" href="{{ asset('assets/css/pages/authentication.css')}}">
+    <link rel="stylesheet" href="assets/css/pages/authentication.css">
 </head>
 
 <body>
@@ -21,53 +22,30 @@
         <div class="bg-primary"></div>
     </div>
     <!-- [ Preloader ] End -->
-    <!-- [ content ] Start -->
-    <div class="authentication-wrapper authentication-3">
-        <div class="authentication-inner">
 
-            <!-- [ Side container ] Start -->
-            <!-- Do not display the container on extra small, small and medium screens -->
-            <div class="d-none d-lg-flex col-lg-8 align-items-center ui-bg-cover ui-bg-overlay-container p-2" style="background-image: url('assets/img/bg/akol1.jpg'); height:100%;">
-                <div class="ui-bg-overlay bg-dark opacity-50"></div>
-                <!-- [ Text ] Start -->
-                {{--<div class="w-100 text-white px-5">
-                    <h1 class="display-2 font-weight-bolder mb-4">JOIN OUR COMMUNITY</h1>
-                    <div class="text-large font-weight-light">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vehicula ex eu gravida faucibus. Suspendisse viverra pharetra purus. Proin fringilla ac lorem at sagittis. Proin tincidunt dui et nunc ultricies dignissim.
-                    </div>
-                </div>--}}
-                <!-- [ Text ] End -->
-            </div>
-            <!-- [ Side container ] End -->
+    <!-- [ Content ] Start -->
+    <div class="authentication-wrapper authentication-2 ui-bg-cover ui-bg-overlay-container px-4" style="background-image: url('assets/img/bg/21.jpg');">
+        <div class="ui-bg-overlay bg-orange opacity-50"></div>
 
-            <!-- [ Form container ] Start -->
-            <div class="d-flex col-lg-4 align-items-center bg-white p-5">
-                <!-- Inner container -->
-                <!-- Have to add `.d-flex` to control width via `.col-*` classes -->
-                <div class="d-flex col-sm-7 col-md-5 col-lg-12 px-0 px-xl-4 mx-auto">
-                    <div class="w-100">
-                    <x-jet-validation-errors class="mb-4" />
+        <div class="authentication-inner py-5">
 
-                    @if (session('status'))
-                        <div class="mb-4 font-medium text-sm text-green-600">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                        <!-- [ Logo ] Start -->
-                        <div class="d-flex justify-content-center align-items-center">
-                            <div class="">
-                                <div class="w-100 position-relative">
-                                    <img src="{{ asset('assets/img/bg/akol2.jpg')}}" alt="Brand Logo" style="width:100%; height:100%" class="img-flui">
-                                    <div class="clearfix"></div>
-                                </div>
+            <div class="card">
+                <div class="p-4 p-sm-5">
+                    <!-- [ Logo ] Start -->
+                    {{--<div class="d-flex justify-content-center align-items-center pb-2 mb-4">
+                        <div class="ui-w-60">
+                            <div class="w-100 position-relative">
+                                <img src="assets/img/logo-dark.png" alt="Brand Logo" class="img-fluid">
+                                <div class="clearfix"></div>
                             </div>
                         </div>
-                        <!-- [ Logo ] End -->
+                    </div>--}}
+                    <!-- [ Logo ] End -->
 
-                        <h4 class="text-center text-lighter font-weight-normal mt-5 mb-4">Login to Your Account</h4>
+                    <h5 class="text-center text-muted font-weight-normal mb-4">LOGIN INTO YOU ACCOUNT</h5>
 
-                        <!-- [ Form ] Start -->
-                        <form method="POST" action="{{ route('login') }}" class="my-5">
+                    <!-- Form -->
+                    <form method="POST" action="{{ route('login') }}" class="my-5">
                          @csrf
                             <div class="form-group">
                                 <label class="form-label">Email</label>
@@ -92,24 +70,25 @@
                                 <button type="submit" class="btn btn-primary">Sign In</button>
                             </div>
                         </form>
-                        <!-- [ Form ] End -->
+                    <!-- [ Form ] End -->
 
-                        <div class="text-center text-muted">
-                            Don't have an account yet?
-                            <a href="{{ route('register') }}">Sign Up</a>
-                        </div>
-
+                </div>
+                <div class="card-footer py-3 px-4 px-sm-5">
+                    <div class="text-center text-muted">
+                    Don't have an account yet?
+                    <a href="{{ route('register') }}">Sign Up</a>
                     </div>
                 </div>
             </div>
-            <!-- [ Form container ] End -->
 
         </div>
     </div>
-    <!-- [ content ] End -->
+    <!-- / Content -->
 
     <!-- Core scripts -->
+    @include('layouts.modal')
     @include('layouts.javascript')
-
 </body>
 </html>
+
+

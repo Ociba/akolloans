@@ -7,25 +7,23 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                     <div class="text-center">
-                        <h3 class="mt-3">Welcome To <span class="text-primary">Empire</span><sup>v1.0.1</sup></h3>
+                        <h3 class="mt-3">Welcome To <span class="text-primary">TECHNEST HOLDING LIMITED</span><sup>Loans</sup></h3>
                     </div>
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-interval="50000">
                             <div class="row align-items-center">
                                 <div class="col-md-6 text-center">
-                                    <img src="assets/img/pages/welcome.png" class="img-fluid my-4" alt="images">
+                                    <img style="height:350px;" src="{{ asset('assets/img/bg/akol1.jpg')}}" class="img-fluid my-4" alt="images">
                                 </div>
                                 <div class="col-md-6">
-                                    <p class="f-16"><strong>Empire Admin v1.0.1</strong> will come with new prebuild mini admins.</p>
-                                    <p class="f-16"> it include <strong>8+ New Admin Panels</strong> like</p>
-                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>Hospital</p>
-                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>Project & CRM</p>
-                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>Membership</p>
-                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>Helpdesk</p>
-                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>School</p>
-                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>SIS</p>
-                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>Crypto</p>
-                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>E-Commerce</p>
+                                    <p class="f-16"><strong>Welcome To TECHNEST HOLDING LIMITED</strong> gives you Loans with Affordable Interests Rate.</p>
+                                    <p class="f-16"> We also Offer <strong>The following Services</strong> like</p>
+                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>Supplies & Logistics Management</p>
+                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>Civil & Engineering Works</p>
+                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>IT & Software Solutions</p>
+                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>System Developers</p>
+                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>Telecommunication Service</p>
+                                    <p class="mb-2 f-16"><i class="feather icon-check-circle mr-2 text-primary"></i>Others</p>
                                 </div>
                             </div>
                             <div class="row justify-content-center">
@@ -34,7 +32,7 @@
                             </div>
                         </div>
                         <div class="carousel-item" data-interval="50000">
-                            <img src="assets/img/pages/admin.png" class="img-fluid mt-0" alt="images">
+                            <img style="height:400px;" src="{{ asset('assets/img/bg/akol2.jpg')}}" class="img-fluid mt-0" alt="images">
                         </div>
                     </div>
                 </div>

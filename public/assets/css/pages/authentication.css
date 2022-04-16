@@ -31,3 +31,6 @@
     min-height: inherit;
     width: 0;
     font-size: 0; } }
+    .bg-orange {
+      color: rgb(255, 102, 0);
+    }

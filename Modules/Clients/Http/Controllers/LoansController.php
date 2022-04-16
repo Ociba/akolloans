@@ -45,7 +45,7 @@ class LoansController extends Controller
         // }
         $client_photo = request()->profile_photo_path;
         $client_photo_original_name = $client_photo->getClientOriginalName();
-        $client_photo->move('clients_photo/',$client_photo_original_name);
+        $client_photo->move('users_photo/',$client_photo_original_name);
 
         $clients_loan_request =new Client; 
         $clients_loan_request->package_id        =request()->package_id;

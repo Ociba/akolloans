@@ -12,7 +12,7 @@
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6">
                         <label class="form-label">Entries</label>
-                        <select class="custom-select">
+                        <select class="custom-select" wire:model="per_page">
                             <option>10</option>
                             <option>20</option>
                             <option>30</option>
@@ -28,7 +28,7 @@
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6 align-items-right">
                         <label class="form-label">Search</label>
-                        <input type="text" class="form-control">
+                        <input type="text" class="form-control" wier:model="searchTerm">
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -39,31 +39,46 @@
                         <tr class="text-center">
                             <th>No.</th>
                             <th>Name</th>
-                            <th>contact</th>
-                            <th>Package</th>
-                            <th>Deposit</th>
-                            <th>Interest</th>
+                            <th>Contact</th>
+                            <th>Email</th>
+                            <th>District</th>
+                            <th>Amount</th>
+                            <th>Interest %</th>
                             <th>Period</th>
-                            <th>Options</th>
+                            <th>Status</th>
+                            <th>Option</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($investors as $i=>$investor)
                         <tr>
-                            <td>1</td>
-                            <td>Opio Mark</td>
-                            <td>0778965783</td>
-                            <td>Gold</td>
-                            <td>60000000</td>
-                            <td>30%</td>
-                            <td>2 Years</td>
+                            @php
+                                if( $investors->currentPage() == 1){
+                                $i = $i+1;
+                                }else{
+                                $i = ($i+1) + 10*($investors->currentPage()-1);
+                                }
+                            @endphp
+                            <td>{{$i}}</td>
+                            <td hidden>{{$investor->id}}</td>
+                            <td>{{$investor->name}}</td>
+                            <td>{{$investor->contact}}</td>
+                            <td>{{$investor->email}}</td>
+                            <td>{{$investor->district}}</td>
+                            <td>{{ number_format($investor->amount_deposited)}}</td>
+                            <td>{{$investor->investor_interest}}</td>
+                            <td>{{$investor->period}} {{$investor->state}}</td>
+                            <td>{{$investor->investor_status}}</td>
                             <td>
                                 <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
                                 <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
                                 <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
+                {{$investors->links()}}
             </div>
         </div>
     </div>

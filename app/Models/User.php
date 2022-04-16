@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use DB;
 
 class User extends Authenticatable
 {
@@ -59,4 +60,32 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+    /**
+     * This function counts the investors
+     */
+    public function countInvestors(){
+        return DB::table('investors')->count();
+    }
+    /**
+     * This function counts number of available packages
+     */
+    public function countPackages(){
+        return DB::table('packages')->count();
+    }
+      /**
+     * This function counts number of clients with Loans
+     */
+    public function countLoanClients(){
+        return DB::table('clients')->count();
+    }
+     /**
+     * get profile picture
+     */
+    public function getLoggedInUserLogo(){
+        $user_logo = User::where('id', '=', $this->id)->value('profile_photo_path');;
+        if(empty($user_logo)){
+            $user_logo = 'ociba.jpeg';
+        }
+        return $user_logo;
+    }
 }

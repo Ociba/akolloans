@@ -38,32 +38,44 @@
                     <thead>
                         <tr class="text-center">
                             <th>No.</th>
-                            <th>Name</th>
-                            <th>contact</th>
-                            <th>Package</th>
-                            <th>Deposit</th>
-                            <th>Interest</th>
-                            <th>Period</th>
-                            <th>Options</th>
+                            <th>Package Name</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Investors Interest %</th>
+                            <th>Client Interest %</th>
+                            <th>Company Interest</th>
+                            <th>Created By</th>
+                            <th>Option</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($packages as $i=>$package)
                         <tr>
-                            <td>1</td>
-                            <td>Opio Mark</td>
-                            <td>0778965783</td>
-                            <td>Gold</td>
-                            <td>60000000</td>
-                            <td>30%</td>
-                            <td>2 Years</td>
+                            @php
+                                if( $packages->currentPage() == 1){
+                                $i = $i+1;
+                                }else{
+                                $i = ($i+1) + 10*($packages->currentPage()-1);
+                                }
+                            @endphp
+                            <td>{{$i}}</td>
+                            <td hidden>{{$package->id}}</td>
+                            <td>{{$package->package_name}}</td>
+                            <td>{{ number_format($package->from)}}</td>
+                            <td>{{ number_format($package->to)}}</td>
+                            <td>{{$package->investor_interest}}</td>
+                            <td>{{$package->client_interests}}</td>
+                            <td>{{$package->client_interests -$package->investor_interest}}</td>
+                            <td>{{$package->name}}</td>
                             <td>
-                                <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
                                 <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
                                 <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                             </td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
+                {{$packages->links()}}
             </div>
         </div>
     </div>
