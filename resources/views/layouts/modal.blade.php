@@ -10,7 +10,7 @@
                         <h3 class="mt-3">Welcome To <span class="text-primary">TECHNEST HOLDING LIMITED</span><sup>Loans</sup></h3>
                     </div>
                     <div class="carousel-inner">
-                        <div class="carousel-item active" data-interval="50000000">
+                        <div class="carousel-item active" data-interval="800000">
                             <div class="row align-items-center">
                                 <div class="col-md-6 text-center">
                                     <img style="height:350px;" src="{{ asset('assets/img/bg/akol1.jpg')}}" class="img-fluid my-4" alt="images">
@@ -31,37 +31,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item" data-interval="50000000">
+                        <div class="carousel-item" data-interval="800000">
                             <img style="height:400px;" src="{{ asset('assets/img/bg/akol2.jpg')}}" class="img-fluid mt-0" alt="images">
-                        </div>
-                        <div class="carousel-item" data-interva="500000000">
-                             <!-- Form -->
-                         <form method="POST" action="{{ route('login') }}" class="my-5">
-                         @csrf
-                            <div class="form-group">
-                                <label class="form-label">Email</label>
-                                <input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label d-flex justify-content-between align-items-end">
-                                        <span>Password</span>
-                                        @if (Route::has('password.request'))
-                                        <a href="{{ route('password.request') }}" class="d-block small">Forgot password?</a>
-                                        @endif  
-                                    </label>
-                                <input type="password" id="password" class="form-control" name="password" required >
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center m-0">
-                                <label class="custom-control custom-checkbox m-0">
-                                        <input id="remember_me" type="checkbox" class="custom-control-input" name="remember">
-                                        <span class="custom-control-label">Remember me</span>
-                                    </label>
-                                <button type="submit" class="btn btn-primary">Sign In</button>
-                            </div>
-                        </form>
-                    <!-- [ Form ] End -->
                         </div>
                     </div>
                 </div>
@@ -70,7 +41,6 @@
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                         <!-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
                     </ol>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

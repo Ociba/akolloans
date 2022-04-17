@@ -45,15 +45,16 @@ class LoansController extends Controller
 
     private function createLoanRequest()
     {
+        if(Package::where('package_id','package_id')
+        ->where(request()->loan_amount < 'from' || request()->loan_amount > 'to')){
+           return redirect()->back()->withErrors('The amount entered is not within this package Range');
+       }else{
        
         $client_photo = request()->profile_photo_path;
         $client_photo_original_name = $client_photo->getClientOriginalName();
         $client_photo->move('users_photo/',$client_photo_original_name);
 
-        if(Package::where('package_id',request()->package_id)->where('loan_amount',request()->loan_amount < 'from')
-         ->orwhere('loan_amount',request()->loan_amount > 'to')){
-            return redirect()->back()->withErrors('The amount entered is not within this package Range');
-        }else{
+      
         $clients_loan_request =new Client; 
         $clients_loan_request->package_id        =request()->package_id;
         $clients_loan_request->district_id       =request()->district_id;
@@ -67,7 +68,7 @@ class LoansController extends Controller
         $clients_loan_request->loan_amount       =request()->loan_amount;
         $clients_loan_request->user_id           =Auth::user()->id;
         $clients_loan_request->save();
-        }
+      
 
         //This saves profile photo in users table
          User::where('id',auth()->user()->id)->update(array('profile_photo_path' =>$client_photo_original_name));
@@ -85,6 +86,7 @@ class LoansController extends Controller
 
         return redirect('/clients/my-loan-details')->with('msg','Operation Successful');
     }
+    }
 
     /* This function validates the investor details created
     */
@@ -95,10 +97,6 @@ class LoansController extends Controller
            return redirect()->back()->withErrors('Enter Phone Number to proceed');
        }elseif(empty(request()->nin_number)){
            return redirect()->back()->withErrors('Enter Nin Number to proceed');
-       }elseif(empty(request()->tin_number)){
-        return redirect()->back()->withErrors('Enter TIN Number to proceed');
-       }elseif(empty(request()->computer_no)){
-        return redirect()->back()->withErrors('Enter Computer Number to proceed');
        }elseif(empty(request()->loan_amount)){
         return redirect()->back()->withErrors('Enter E to proceed');
        }else{

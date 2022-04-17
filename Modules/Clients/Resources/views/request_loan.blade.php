@@ -40,6 +40,7 @@
                     <!-- [ content ] Start -->
                     <div class="container-fluid flex-grow-1 container-p-y">
                         @include('layouts.breadcrumbs')
+                        @include('layouts.message')
                         <div class="row">
                               <!-- customar project  start -->
                               <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
@@ -70,14 +71,14 @@
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                 <label class="form-label">Tax Identification Number</label>
-                                                    <input type="text" name="tin_number" class="form-control" maxlength="14" placeholder="" required>
+                                                    <input type="text" name="tin_number" class="form-control" maxlength="14" placeholder="" >
                                                     <div class="clearfix"></div>
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                 <label class="form-label">Computer Number</label>
-                                                <input type="text" name="computer_no" class="form-control" maxlength="12" placeholder="" required>
+                                                <input type="text" name="computer_no" class="form-control" maxlength="12" placeholder="" >
                                                     <div class="clearfix"></div>
                                                 </div>
                                                 <div class="form-group col-md-6">

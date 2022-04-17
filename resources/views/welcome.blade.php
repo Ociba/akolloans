@@ -24,7 +24,7 @@
     <!-- [ Preloader ] End -->
 
     <!-- [ Content ] Start -->
-    <div class="authentication-wrapper authentication-2 ui-bg-cover ui-bg-overlay-container px-4" style="background-image: url('assets/img/bg/21.jp'); background-color:rgb(255, 102, 0,0.9);">
+    <div class="authentication-wrapper authentication-2 ui-bg-cover ui-bg-overlay-container px-4" style="background-image: url('assets/img/bg/21.jpg'); background-colo:rgb(255, 102, 0,0.9);">
         <div class="ui-bg-overlay bg-orange opacity-50"></div>
 
         <div class="authentication-inner py-5">
