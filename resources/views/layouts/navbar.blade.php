@@ -160,8 +160,9 @@
                     </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="/change-password" class="dropdown-item">
-                        <i class="feather icon-user text-muted"></i> &nbsp; My profile</a>
+                <a href="#" class="dropdown-item">
+                        <span style="color:orange;"><i class="fas fa-handshake text-muted"></i> &nbsp; Thank You </span>
+                </a>
                     {{--<a href="javascript:" class="dropdown-item">
                         <i class="feather icon-mail text-muted"></i> &nbsp; Messages</a>
                     <a href="javascript:" class="dropdown-item">

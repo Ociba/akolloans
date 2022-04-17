@@ -5,25 +5,56 @@ namespace Modules\Clients\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Models\Package;
+use App\Models\Client;
+use App\Models\LoanDebt;
+use App\Models\Interest;
 
 class ClientsController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     * @return Renderable
+     * This function gets form for paying loan.
      */
-    public function index()
-    {
-        return view('clients::index');
+    public function payLoanForm($client_id){
+        $get_package_details =Package::where('id',$client_id)->get(['client_interests','id','investor_interest']);
+        $pay_loan =Client::where('id',$client_id)->get();
+        return view('clients::pay_loan_form',compact('pay_loan','get_package_details'));
     }
 
     /**
-     * Show the form for creating a new resource.
-     * @return Renderable
+     *This function saves loan payments
      */
-    public function create()
+    public function payLoan($client_id)
     {
-        return view('clients::create');
+        // if(LoanDebt::where(request()->loan_payments_amount < 'debt')->where('borrowed_by',auth()->user()->id)){
+        //     return redirect()->back()->withErrors('The amount entered is less than your Debt, Please pay the right Amount');
+        // }else{
+        $package_id =Client::where('id',$client_id)->value('package_id');
+
+        $investors_interes =Package::where('id',$package_id)->value('investor_interest');
+
+        $client_interes =Package::where('id',$package_id)->value('client_interests');
+        //get amount for the investor
+        $investor_interest_amount =request()->loan_payments_amount *($investors_interes/100);
+        //get interest amount for company
+        $company_interes =$client_interes -$investors_interes;
+        $company_interest_amount =request()->loan_payments_amount *($company_interes/100);
+        //save the loan payment amount 
+        LoanDebt::where('borrowed_by',auth()->user()->id)->update(array(
+            'loan_payments_amount' =>request()->loan_payments_amount,
+        ));
+        //update client loan status
+        Client::where('user_id',auth()->user()->id)->update(array('loan_status' =>'paid'));
+
+        //this function saves the interests for company and investor
+        $interest_obj =new Interest;
+        $interest_obj ->user_id              =auth()->user()->id;
+        $interest_obj->paid_amount           =request()->loan_payments_amount;
+        $interest_obj->interest_for_investor =$investor_interest_amount;
+        $interest_obj->company_interest      =$company_interest_amount;
+        $interest_obj->save();
+        return redirect()->back()->with('msg','Operation successful');
+      
     }
 
     /**

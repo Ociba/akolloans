@@ -41,13 +41,272 @@
                     <div class="container-fluid flex-grow-1 container-p-y">
                         @include('layouts.breadcrumbs')
                         <div class="row">
-                              <!-- customar project  start -->
-                              <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
-                                 @livewire('clients-profile')
-                              </div>
-                            <!-- customar project  end -->
+                             <!-- customar project  start -->
+                             <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
+                            <div class="card overflow-hidden">
+                            <div class="row no-gutters row-bordered row-border-light">
+                                <div class="col-md-3 pt-0">
+                                    <div class="list-group list-group-flush account-settings-links">
+                                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
+                                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
+                                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
+                                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Social links</a>
+                                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">Connections</a>
+                                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-notifications">Notifications</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="account-general">
+
+                                            <div class="card-body media align-items-center">
+                                                @foreach($get_my_profile as $logged_user)
+                                                <img src="{{ asset('users_photo/'.$logged_user->profile_photo_path)}}" alt="" class="d-block ui-w-80">
+                                                
+                                                @endforeach
+                                            </div>
+                                            <hr class="border-light m-0">
+
+                                            <div class="card-body">
+                                                @foreach($get_my_profile as $logged_user)
+                                                <div class="form-group">
+                                                    <label class="form-label">Username</label>
+                                                    <input type="text" name="name" class="form-control mb-1" value="{{$logged_user->name}}" readonly>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">E-mail</label>
+                                                    <input type="text" name="email" class="form-control mb-1" value="{{$logged_user->email}}" readonly>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Category</label>
+                                                    <input type="text" class="form-control" value="{{$logged_user->category}}" readonly>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="account-change-password">
+                                            <form action="/clients/update-password" method="get">
+                                             @csrf
+                                            <div class="card-body pb-2">
+                                                <div class="form-group">
+                                                    <label class="form-label">Current password</label>
+                                                    <input type="password" id="current_password" name="current_password" class="form-control">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">New password</label>
+                                                    <input type="password" id="new_password" name="new_password" class="form-control">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Repeat new password</label>
+                                                    <input type="password" id="confirm_password" name="confirm_password" class="form-control">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                            <div class="text-right mt-3 pb-3">
+                                            <button type="submit" class="btn btn-primary">Save changes</button>&nbsp;
+                                            <button type="button" class="btn btn-default">Cancel</button>
+                                            </form>
+                                        </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="account-info">
+                                            @foreach($get_clients_info as $info)
+                                            <div class="card-body pb-2">
+                                                <div class="form-group">
+                                                    <label class="form-label">Bio Data Information</label>
+                                                    {{--<textarea class="form-control" rows="5"></textarea>--}}
+                                                </div>
+                                                <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label">Birthday</label>
+                                                    <input type="text" class="form-control" value="{{$info->date_of_birth}}">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label">District</label>
+                                                    <input type="text" class="form-control" value="{{$info->district}}">
+                                                </div>
+                                                </div>
+                                                <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label">Phone Number</label>
+                                                    <input type="text" class="form-control" value="{{$info->phone_number}}">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label">Nin Number</label>
+                                                    <input type="text" class="form-control" value="{{$info->nin_number}}">
+                                                </div>
+                                                </div>
+                                                <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label">Tin Number</label>
+                                                    <input type="text" class="form-control" value="{{$info->tin_number}}">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label">Computer Number</label>
+                                                    <input type="text" class="form-control" value="{{$info->computer_number}}">
+                                                </div>
+                                                </div>
+                                                <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label">Employment Status</label>
+                                                    <input type="text" class="form-control" value="{{$info->employment_status}}">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label">Employer</label>
+                                                    <input type="text" class="form-control" value="{{$info->employer}}">
+                                                </div>
+                                                </div>
+                                                <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label">Loan Amount</label>
+                                                    <input type="text" class="form-control" value="{{$info->loan_amount}}">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label class="form-label">Loan Status</label>
+                                                    <input type="text" class="form-control" value="{{$info->loan_status}}">
+                                                </div>
+                                                </div>
+                                            </div>
+                                           
+                                            <hr class="border-light m-0">
+                                            @endforeach
+                                        </div>
+                                        <div class="tab-pane fade" id="account-social-links">
+                                            <div class="card-body pb-2">
+                                                <div class="form-group">
+                                                    <label class="form-label">Twitter</label>
+                                                    <input type="text" class="form-control" value="https://twitter.com/user">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Facebook</label>
+                                                    <input type="text" class="form-control" value="https://www.facebook.com/user">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Google+</label>
+                                                    <input type="text" class="form-control" value="">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">LinkedIn</label>
+                                                    <input type="text" class="form-control" value="">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Instagram</label>
+                                                    <input type="text" class="form-control" value="https://www.instagram.com/user">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="account-connections">
+                                            <div class="card-body">
+                                                <button type="button" class="btn btn-twitter">Connect to<strong>Twitter</strong></button>
+                                            </div>
+                                            <hr class="border-light m-0">
+                                            <div class="card-body">
+                                                <h5 class="mb-2">
+                                                    <a href="javascript:void(0)" class="float-right text-muted text-tiny">
+                                                        <i class="ion ion-md-close"></i> Remove
+                                                    </a>
+                                                    <i class="ion ion-logo-google text-google"></i>You are connected to Google:
+                                                </h5> nmaxwell@mail.com
+                                            </div>
+                                            <hr class="border-light m-0">
+                                            <div class="card-body">
+                                                <button type="button" class="btn btn-facebook">Connect to<strong>Facebook</strong></button>
+                                            </div>
+                                            <hr class="border-light m-0">
+                                            <div class="card-body">
+                                                <button type="button" class="btn btn-instagram">Connect to<strong>Instagram</strong></button>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="account-notifications">
+                                            <div class="card-body pb-2">
+                                                <h6 class="mb-4">Activity</h6>
+                                                <div class="form-group">
+                                                    <label class="switcher">
+                                                        <input type="checkbox" class="switcher-input" checked>
+                                                        <span class="switcher-indicator">
+                                                            <span class="switcher-yes"></span>
+                                                        <span class="switcher-no"></span>
+                                                        </span>
+                                                        <span class="switcher-label">Email me when someone comments on my article</span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="switcher">
+                                                        <input type="checkbox" class="switcher-input" checked>
+                                                        <span class="switcher-indicator">
+                                                            <span class="switcher-yes"></span>
+                                                        <span class="switcher-no"></span>
+                                                        </span>
+                                                        <span class="switcher-label">Email me when someone answers on my forum thread</span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="switcher">
+                                                        <input type="checkbox" class="switcher-input">
+                                                        <span class="switcher-indicator">
+                              <span class="switcher-yes"></span>
+                                                        <span class="switcher-no"></span>
+                                                        </span>
+                                                        <span class="switcher-label">Email me when someone follows me</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <hr class="border-light m-0">
+                                            <div class="card-body pb-2">
+
+                                                <h6 class="mb-4">Application</h6>
+
+                                                <div class="form-group">
+                                                    <label class="switcher">
+                                                        <input type="checkbox" class="switcher-input" checked>
+                                                        <span class="switcher-indicator">
+                              <span class="switcher-yes"></span>
+                                                        <span class="switcher-no"></span>
+                                                        </span>
+                                                        <span class="switcher-label">News and announcements</span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="switcher">
+                                                        <input type="checkbox" class="switcher-input">
+                                                        <span class="switcher-indicator">
+                              <span class="switcher-yes"></span>
+                                                        <span class="switcher-no"></span>
+                                                        </span>
+                                                        <span class="switcher-label">Weekly product updates</span>
+                                                    </label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="switcher">
+                                                        <input type="checkbox" class="switcher-input" checked>
+                                                        <span class="switcher-indicator">
+                              <span class="switcher-yes"></span>
+                                                        <span class="switcher-no"></span>
+                                                        </span>
+                                                        <span class="switcher-label">Weekly blog digest</span>
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </div></div></div>
                     <!-- [ content ] End -->
 
                     <!-- [ Layout footer ] Start -->
@@ -67,6 +326,5 @@
     
     <!-- Core scripts -->
    @include('layouts.javascript')
-
 </body>
 </html>

@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LoanDebt extends Model
+class Interest extends Model
 {
     use HasFactory;
-    protected $fillable=['borrowed_by','debt','loan_payments_amount'];
+    protected $fillable =['user_id','paid_amount','interest_for_investor','company_interest'];
 }

@@ -32,17 +32,14 @@
                     <thead>
                         <tr class="text-center">
                             <th>No.</th>
-                            <th>Date Of Birth</th>
-                            <th>Contact</th>
                             <th>NIN</th>
                             <th>TIN No.</th>
                             <th>Computer</th>
-                            <th>Employment Status</th>
-                            <th>Employer</th>
                             <th>District</th>
                             <th>Loan Amount</th>
                             <th>Actual Amount</th>
                             <th>Loan Status</th>
+                            <th>Option</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,13 +54,9 @@
                             @endphp
                             <td>{{$i}}</td>
                             <td hidden>{{$loan_request->id}}</td>
-                            <td>{{$loan_request->date_of_birth}}</td>
-                            <td>{{$loan_request->phone_number}}</td>
                             <td>{{$loan_request->nin_number}}</td>
                             <td>{{$loan_request->tin_number}}</td>
                             <td>{{$loan_request->computer_no}}</td>
-                            <td>{{$loan_request->employment_status}}</td>
-                            <td>{{$loan_request->employer}}</td>
                             <td>{{$loan_request->district}}</td>
                             <td>{{ number_format($loan_request->loan_amount)}}</td>
                             @php
@@ -74,6 +67,7 @@
                             @endphp
                             <td>{{ number_format($dabt)}}</td>
                             <td>{{$loan_request->loan_status}}</td>
+                            <td><a href="/clients/pay-loan-form/{{$loan_request->id}}" class="btn btn-sm btn-primary">Pay Loan</a>
                         </tr>
                         @endforeach
                     </tbody>

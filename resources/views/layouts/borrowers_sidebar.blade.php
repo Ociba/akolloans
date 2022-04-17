@@ -48,13 +48,8 @@
             </a>
             <ul class="sidenav-menu">
                 <li class="sidenav-item">
-                    <a href="/change-password" class="sidenav-link">
+                    <a href="/clients/my-profile" class="sidenav-link">
                         <div>View Profile</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <a href="/change-password" class="sidenav-link">
-                        <div>Edit Profile</div>
                     </a>
                 </li>
             </ul>

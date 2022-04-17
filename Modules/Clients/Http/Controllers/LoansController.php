@@ -24,6 +24,9 @@ class LoansController extends Controller
         $request_loan_now =Package::where('id',$package_id)->get(['client_interests','id']);
         return view('clients::request_loan',compact('get_client_district','request_loan_now'));
     }
+    /**
+     * This function gets form to request new loan
+     */
     public function newLoanForm($package_id){
         $request_loan_now =Package::where('id',$package_id)->get(['client_interests','id']);
         return view('clients::old_clients_form',compact('request_loan_now'));
