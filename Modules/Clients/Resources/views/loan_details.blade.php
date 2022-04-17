@@ -40,6 +40,7 @@
                     <!-- [ content ] Start -->
                     <div class="container-fluid flex-grow-1 container-p-y">
                         @include('layouts.breadcrumbs')
+                        @include('layouts.message')
                         <div class="row">
                               <!-- customar project  start -->
                               <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">

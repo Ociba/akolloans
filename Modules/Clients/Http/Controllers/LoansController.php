@@ -45,11 +45,15 @@ class LoansController extends Controller
 
     private function createLoanRequest()
     {
-        if(Package::where('package_id','package_id')
-        ->where(request()->loan_amount < 'from' || request()->loan_amount > 'to')){
+        $package_id =request()->package_id;
+        $from =Package::where('id',$package_id)->value('from');
+        
+        $to =Package::where('id',$package_id)->value('to');
+
+        if(request()->loan_amount < $from || request()->loan_amount > $to){
            return redirect()->back()->withErrors('The amount entered is not within this package Range');
        }else{
-       
+
         $client_photo = request()->profile_photo_path;
         $client_photo_original_name = $client_photo->getClientOriginalName();
         $client_photo->move('users_photo/',$client_photo_original_name);
