@@ -24,7 +24,7 @@
     <!-- [ Preloader ] End -->
 
     <!-- [ Content ] Start -->
-    <div class="authentication-wrapper authentication-2 ui-bg-cover ui-bg-overlay-container px-4" style="background-image: url('assets/img/bg/21.jpg');">
+    <div class="authentication-wrapper authentication-2 ui-bg-cover ui-bg-overlay-container px-4" style="background-image: url('assets/img/bg/14.jpg');">
         <div class="ui-bg-overlay bg-dark opacity-25"></div>
 
         <div class="authentication-inner py-5">
