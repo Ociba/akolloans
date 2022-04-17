@@ -51,7 +51,7 @@ class LoansController extends Controller
         $client_photo->move('users_photo/',$client_photo_original_name);
 
         if(Package::where('package_id',request()->package_id)->where('loan_amount',request()->loan_amount < 'from')
-         ->orwhere('loan_amount',request()->loan_amount < 'to')){
+         ->orwhere('loan_amount',request()->loan_amount > 'to')){
             return redirect()->back()->withErrors('The amount entered is not within this package Range');
         }else{
         $clients_loan_request =new Client; 
