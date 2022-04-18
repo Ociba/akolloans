@@ -68,18 +68,18 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($get_users_and_permission as $i=>$permission)
+                                        @if ($get_users_and_permission->currentPage() > 1)
+                                            @php($i =  1 + (($get_users_and_permission->currentPage() - 1) * $get_users_and_permission->perPage()))
+                                            @else
+                                            @php($i = 1)
+                                            @endif
+                                          @foreach($get_users_and_permission as $i=>$permission)
                                             <tr>
-                                                @if ($get_users_and_permission->currentPage() > 1)
-                                                @php($i =  1 + (($get_users_and_permission->currentPage() - 1) * $get_users_and_permission->perPage()))
-                                                @else
-                                                @php($i = 1)
-                                                @endif
-                                                <td>{{$i}}</td>
+                                                <td>{{$i++ + 1}}</td>
                                                 <td hidden>{{$permission->id}}</td>
                                                 <td>{{$permission->permission}}</td>
                                                 <td>
-                                                    <a href="/admin/unassign-permissions/{{$permission->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Assign or remove prmissions </a>
+                                                    <a href="/admin/unassign-permissions/{{$permission->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;remove prmissions </a>
                                                 </td>
                                             </tr>
                                             @endforeach

@@ -66,21 +66,22 @@
                                         <thead>
                                             <tr class="text-cente">
                                                 <th>No.</th>
-                                                <th><input type="checkbox" class="" id="select_all"/> Select All Permissions</th>
+                                                <th><input type='checkbox' id='select_all_permissions' onclick="selectAll()"> Select All Permissions</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @foreach($get_permissions as $i=>$permission)
-                                            <tr>
+                                       
                                             @if ($get_permissions->currentPage() > 1)
                                             @php($i =  1 + (($get_permissions->currentPage() - 1) * $get_permissions->perPage()))
                                             @else
                                             @php($i = 1)
                                             @endif
-                                                <td>{{$i}}</td>
+                                            @foreach($get_permissions as $i=>$permission)
+                                            <tr>
+                                                <td>{{$i++ + 1}}</td>
                                                 <td hidden>{{$permission->id}}</td>
                                                 <td> <label class="">
-                                                        <input type="checkbox" class="custom-control-inpu" name="user_permisions[]" value="{{$permission->id}}"> {{$permission->permission}}
+                                                        <input type="checkbox" class='check_permission' name="user_permisions[]" value="{{$permission->id}}"> {{$permission->permission}}
                                                     </label>
                                                 </td>
                                             </tr>
@@ -128,27 +129,16 @@
     
     <!-- Core scripts -->
    @include('layouts.javascript')
-   <script type="text/javascript">
-    $(document).ready(function(){
-        $('#select_all').on('click',function(){
-            if(this.checked){
-                $('.checkbox').each(function(){
-                    this.checked = true;
-                });
-            }else{
-                $('.checkbox').each(function(){
-                    this.checked = false;
-                });
+   <script>
+        function selectAll() {
+            var blnChecked = document.getElementById("select_all_permissions").checked;
+            var check_permissions = document.getElementsByClassName("check_permission");
+            var intLength = check_permissions.length;
+            for(var i = 0; i < intLength; i++) {
+                var check_permission = check_permissions[i];
+                check_permission.checked = blnChecked;
             }
-        });
-        $('.checkbox').on('click',function(){
-            if($('.checkbox:checked').length == $('.checkbox').length){
-                $('#select_all').prop('checked',true);
-            }else{
-                $('#select_all').prop('checked',false);
-            }
-        });
-    });
-</script>
+        }
+    </script>
 </body>
 </html>
