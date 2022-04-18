@@ -77,10 +77,10 @@
                                     <div class="card-body">
                                         <div class="row align-items-center m-l-0">
                                             <div class="col-auto">
-                                                <i class="fas fa-user-nurse f-36 text-success"></i>
+                                                <i class="fas fa-user-nurse f-30 text-success"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Borrowers</h6>
+                                                <h6 class="text-muted m-b-10">Borrowers (Clients)</h6>
                                                 <h2 class="m-b-0">{{$clients}}</h2>
                                             </div>
                                         </div>
@@ -195,7 +195,188 @@
     <!-- Core scripts -->
    @include('layouts.javascript')  
    <script src="{{ asset('assets/libs/chartjs/chartjs.js')}}"></script>
-   <script src="{{ asset('assets/js/pages/charts_chartjs.js')}}"></script>
+   <script>
+       $(function() {
+  // Wrap charts
+  $('.chartjs-demo').each(function() {
+    $(this).wrap($('<div style="height:' + this.getAttribute('height') + 'px"></div>'));
+  });
+  var barsChart = new Chart(document.getElementById('chart-bars').getContext("2d"), {
+    type: 'bar',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      datasets: [{
+        label: 'Debts',
+        data: {!! $loan_monthly_debts !!},
+        borderWidth: 1,
+        backgroundColor: 'rgba(255, 0, 0, 0.3)',
+        borderColor: '#FF4961'
+      }, {
+        label: 'Paid',
+        data: {!! $loan_monthly_amount_paid !!},
+        borderWidth: 1,
+        backgroundColor: 'rgba(255, 145, 73, 0.3)',
+        borderColor: '#f4ab55'
+      }]
+    },
 
+    // Demo
+    options: {
+      responsive: false,
+      maintainAspectRatio: false
+    }
+  });
+
+  var graphChart = new Chart(document.getElementById('chart-graph').getContext("2d"), {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+      datasets: [{
+        label:           'Debts',
+        data:            {!! $loan_monthly_debts !!},
+        borderWidth:     1,
+        backgroundColor: 'rgba(255, 0, 0, 0.3)',
+        borderColor:     '#ff4a00',
+        borderDash:      [5, 5],
+        fill: false
+      }, {
+        label:           'Paid',
+        data:            {!! $loan_monthly_amount_paid !!},
+        borderWidth:     1,
+        backgroundColor: 'rgba(255, 145, 73, 0.3)',
+        borderColor:     '#f4ab55',
+      }],
+    },
+
+    // Demo
+    options: {
+      responsive: false,
+      maintainAspectRatio: false
+    }
+  });
+
+ 
+  var pieChart = new Chart(document.getElementById('chart-pie').getContext("2d"), {
+    type: 'pie',
+    data: {
+      labels: [ 'Investors', 'Borrowers (Clients)', 'Staff' ],
+      datasets: [{
+        data: [ {!! $investors!!}, {!! $clients !!}, {!! $staff!!} ],
+        backgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ],
+        hoverBackgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ]
+      }]
+    },
+
+    // Demo
+    options: {
+      responsive: false,
+      maintainAspectRatio: false
+    }
+  });
+  var pieChart = new Chart(document.getElementById('chart-pie2').getContext("2d"), {
+    type: 'pie',
+    data: {
+      labels: [ 'Borrowed Amount', 'Total Amount Paid', 'Amount Not Paid' ],
+      datasets: [{
+        data: [ {!! $amount_loaned !!}, {!! $amount_paid !!}, {!! $amount_not_paid !!} ],
+        backgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ],
+        hoverBackgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ]
+      }]
+    },
+
+    // Demo
+    options: {
+      responsive: false,
+      maintainAspectRatio: false
+    }
+  });
+  var doughnutChart = new Chart(document.getElementById('chart-doughnut').getContext("2d"), {
+    type: 'doughnut',
+    data: {
+      labels: [ 'Red', 'Blue', 'Yellow' ],
+      datasets: [{
+        data: [ 137, 296, 213 ],
+        backgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ],
+        hoverBackgroundColor: [ '#FF4961', '#ff4a00', '#f4ab55' ]
+      }]
+    },
+
+    // Demo
+    options: {
+      responsive: false,
+      maintainAspectRatio: false
+    }
+  });
+  var radarChart = new Chart(document.getElementById('chart-radar').getContext("2d"), {
+    type: 'radar',
+    data: {
+      labels: ['Eating', 'Drinking', 'Sleeping', 'Designing', 'Coding', 'Cycling', 'Running'],
+      datasets: [{
+        label: 'My First dataset',
+        backgroundColor: 'rgba(40, 208, 148, 0.3)',
+        borderColor: '#62d493',
+        pointBackgroundColor: '#62d493',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: '#62d493',
+        data: [39, 99, 77, 38, 52, 24, 89],
+        borderWidth: 1
+      }, {
+        label: 'My Second dataset',
+        backgroundColor: 'rgba(255, 73, 97, 0.3)',
+        borderColor: '#FF4961',
+        pointBackgroundColor: '#FF4961',
+        pointBorderColor: '#fff',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: '#FF4961',
+        data: [6, 33, 14, 70, 58, 90, 26],
+        borderWidth: 1
+      }]
+    },
+
+    // Demo
+    options: {
+      responsive: false,
+      maintainAspectRatio: false
+    }
+  });
+
+  var polarAreaChart = new Chart(document.getElementById('chart-polar-area').getContext("2d"), {
+    type: 'polarArea',
+    data: {
+      datasets: [{
+        data: [ 12, 10, 14, 6, 15 ],
+        backgroundColor: [ '#FF4961', '#62d493', '#f4ab55', '#E7E9ED', '#55a3f4' ],
+        label: 'My dataset'
+      }],
+      labels: [ 'Red', 'Green', 'Yellow', 'Grey', 'Blue' ]
+    },
+
+    // Demo
+    options: {
+      responsive: false,
+      maintainAspectRatio: false
+    }
+  });
+
+  // Resizing charts
+
+  function resizeCharts() {
+    graphChart.resize();
+    barsChart.resize();
+    radarChart.resize();
+    polarAreaChart.resize();
+    pieChart.resize();
+    doughnutChart.resize();
+  }
+
+  // Initial resize
+  resizeCharts();
+
+  // For performance reasons resize charts on delayed resize event
+  window.layoutHelpers.on('resize.charts-demo', resizeCharts);
+});
+
+   </script>
 </body>
 </html>
