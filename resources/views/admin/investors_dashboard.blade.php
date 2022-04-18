@@ -79,7 +79,7 @@
                                     <div class="card-body">
                                         <div class="row align-items-center m-l-0">
                                             <div class="col-auto">
-                                                <i class="fas fa-user-nurse f-36 text-success"></i>
+                                                <i class="fas fa-user-nurse f-30 text-success"></i>
                                             </div>
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Money Loaned</h6>
@@ -94,7 +94,7 @@
                                     <div class="card-body">
                                         <div class="row align-items-center m-l-0">
                                             <div class="col-auto">
-                                                <i class="fas fa-prescription-bottle-alt f-36 text-primary"></i>
+                                                <i class="fas fa-prescription-bottle-alt f-30 text-primary"></i>
                                             </div>
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Total Interests</h6>

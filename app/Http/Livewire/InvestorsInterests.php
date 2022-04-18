@@ -25,6 +25,7 @@ class InvestorsInterests extends Component
             ->join('investors','investors.package_id','interests.package_id')
             ->join('packages','packages.id','investors.package_id')
             ->join('clients','clients.package_id','interests.package_id')
+            ->where('clients.loan_status','paid')
             ->where('investors.bought_by', auth()->user()->id)
             ->orderBy('interests.created_at','DESC')
             ->Paginate($this->per_page,['interests.*','users.name','clients.loan_amount','packages.package_name','packages.investor_interest'])

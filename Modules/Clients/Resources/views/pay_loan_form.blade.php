@@ -55,11 +55,17 @@
                                             @foreach($pay_loan as $loan_payment)
                                                 <form action="/clients/pay-loan/{{$loan_payment->id}}" method="get"> 
                                                         @csrf
-                                                    
+                                                        @php
+                                                        $client_interest =\DB::table('packages')->where('id',$loan_payment->package_id)->value('client_interests');
+                                                        $loan_amount=\DB::table('clients')->where('id',$loan_payment->id)->value('loan_amount');
+                                                        $actual_intest_amount=($client_interest/100)*$loan_amount;
+                                                        $dabt =$actual_intest_amount + $loan_amount;
+                                                        @endphp
+                                                        
                                                     <input type="hidden" name="user_id" class="form-control" value="{{auth()->user()->id}}">
                                                         <div class="form-row">
                                                             <div class="form-group col-md-12">
-                                                            <label class="form-label">Amount</label>
+                                                            <label class="form-label">Amount <span class="text-primary">  {{ number_format($dabt)}} </span></label>
                                                             <input type="number" name="loan_payments_amount" class="form-control"  placeholder="" required>
                                                                 <div class="clearfix"></div>
                                                             </div>

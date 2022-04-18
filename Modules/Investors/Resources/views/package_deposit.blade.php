@@ -80,7 +80,7 @@
                                                 <div class="form-row">
                                                     <div class="form-group col-md-6">
                                                     <label class="form-label">Contact</label>
-                                                    <input type="text" name="contact" class="form-control" maxlength="12" placeholder="256*******" required>
+                                                    <input type="text" name="contact" class="form-control" maxlength="10" placeholder="256*******" required>
                                                         <div class="clearfix"></div>
                                                     </div>
                                                     <div class="form-group col-md-6">
