@@ -5,7 +5,7 @@
                 <div class="col-sm-6">
                 </div>
                 <div class="col-sm-6 text-right">
-                    <button class="btn btn-success btn-sm btn-round mb-3" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Add User</button>
+                    <button class="btn btn-success btn-sm btn-round mb-3" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Add Staff Member</button>
                 </div>
             </div>
             <div class="row">

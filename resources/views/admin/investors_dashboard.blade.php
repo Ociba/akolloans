@@ -50,8 +50,10 @@
                                                 <i class="fas fa-user-md f-36 text-info"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Doctor</h6>
-                                                <h2 class="m-b-0">35</h2>
+                                                <h6 class="text-muted m-b-10">Package Name</h6>
+                                                @foreach($packge_name as $package)
+                                                <h2 class="m-b-0">{{$package->package_name}}</h2>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>
@@ -62,11 +64,11 @@
                                     <div class="card-body">
                                         <div class="row align-items-center m-l-0">
                                             <div class="col-auto">
-                                                <i class="fas fa-user-injured f-36 text-danger"></i>
+                                                <i class="fas fa-user-injured f-30 text-danger"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Patient</h6>
-                                                <h2 class="m-b-0">368</h2>
+                                                <h6 class="text-muted m-b-10">Amount Deposited</h6>
+                                                <h2 class="m-b-0">{{ number_format($amount_depositedd)}}</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -80,8 +82,8 @@
                                                 <i class="fas fa-user-nurse f-36 text-success"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Nurse</h6>
-                                                <h2 class="m-b-0">79</h2>
+                                                <h6 class="text-muted m-b-10">Money Loaned</h6>
+                                                <h2 class="m-b-0">{{ number_format($money_loaned)}}</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -95,68 +97,8 @@
                                                 <i class="fas fa-prescription-bottle-alt f-36 text-primary"></i>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Pharmacist</h6>
-                                                <h2 class="m-b-0">10</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                        <div class="row align-items-center m-l-0">
-                                            <div class="col-auto">
-                                                <i class="fas fa-flask f-36 text-warning"></i>
-                                            </div>
-                                            <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Laboratories</h6>
-                                                <h2 class="m-b-0">35</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                        <div class="row align-items-center m-l-0">
-                                            <div class="col-auto">
-                                                <i class="fas fa-user-tie f-36 text-primary"></i>
-                                            </div>
-                                            <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Accountant</h6>
-                                                <h2 class="m-b-0">368</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                        <div class="row align-items-center m-l-0">
-                                            <div class="col-auto">
-                                                <i class="fas fa-file-invoice-dollar f-36 text-danger"></i>
-                                            </div>
-                                            <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Payment</h6>
-                                                <h2 class="m-b-0">79</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                        <div class="row align-items-center m-l-0">
-                                            <div class="col-auto">
-                                                <i class="fas fa-pills f-36 text-info"></i>
-                                            </div>
-                                            <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Medicine</h6>
-                                                <h2 class="m-b-0">10</h2>
+                                                <h6 class="text-muted m-b-10">Total Interests</h6>
+                                                <h2 class="m-b-0">{{ number_format($total_interest)}}</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -168,7 +110,7 @@
                             <div class="col-md-12">
                                 <div class="card mb-4">
                                     <div class="card-body">
-                                        <canvas id="chart-bars" height="250" style="width:100%;" class="chartjs-demo"></canvas>
+                                        <canvas id="chart-bars" height="350" style="width:100%;" class="chartjs-demo"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -195,7 +137,6 @@
     <!-- Core scripts -->
    @include('layouts.javascript')
    <script src="{{ asset('assets/libs/chartjs/chartjs.js')}}"></script>
-   <script src="{{ asset('assets/js/pages/charts_chartjs.js')}}"></script>
    <script>
        $(function() {
   // Wrap charts
@@ -207,14 +148,14 @@
     data: {
       labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       datasets: [{
-        label: 'Package Amount',
-        data: [53, 99, 14, 10, 43, 27,53, 99, 14, 10, 43, 27],
+        label: 'Money Loaned',
+        data: {!! $monthly_money_loaned !!},
         borderWidth: 1,
         backgroundColor: 'rgba(255, 73, 97, 0.3)',
         borderColor: '#FF4961'
       }, {
         label: 'Interest',
-        data: [55, 74, 20, 90, 67, 97, 53, 99, 14, 10, 43, 27],
+        data: {!! $total_monthly_interests !!},
         borderWidth: 1,
         backgroundColor: 'rgba(255, 145, 73, 0.3)',
         borderColor: '#f4ab55'

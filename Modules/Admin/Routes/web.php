@@ -21,5 +21,10 @@ Route::prefix('admin')->group(function() {
     Route::get('/get-packages', 'PackagesController@getPackages')->name('Packages'); 
     Route::get('/create-investor', 'InvestorsController@validatecreateInvestor'); 
     Route::get('/create-package', 'PackagesController@createPackage');
-    Route::get('/get-interests', 'ClientsController@getInterestsList')->name('interests');
+    Route::get('/get-interests', 'ClientsController@getInterestsList')->name('interests'); 
+    Route::get('/add-staff', 'AdminController@validateCreateStaff');  
+    Route::get('/assign-or-remove-permissions/{staff_id}', 'AdminController@getStaffPermissions') ->name('Staff Permissions');
+    Route::get('/add-permission/{staff_id}', 'AdminController@getPermissions') ->name('Permissions'); 
+    Route::get('/assign-permissions/{staff_id}', 'AdminController@assignPermissions');
+    Route::get('/unassign-permissions/{staff_id}', 'AdminController@unsignPermission');
 });

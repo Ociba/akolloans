@@ -40,6 +40,7 @@
                     <!-- [ content ] Start -->
                     <div class="container-fluid flex-grow-1 container-p-y">
                         @include('layouts.breadcrumbs')
+                        @include('layouts.message')
                         <div class="row">
                               <!-- customar project  start -->
                               <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
@@ -71,33 +72,41 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">Add Department</h5>
+                <h5 class="modal-title">Add Staff Member</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+            <form action="/admin/add-staff" method="get">
+                   @csrf
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label class="floating-label" for="Name">Name</label>
-                                <input type="text" class="form-control" id="Name" placeholder="">
+                                <label class="floating-label" for="name">Name</label>
+                                <input type="text" class="form-control" name="name" :value="old('name')"  id="name" data-toggle="tooltip" data-placement="bottom" title="Enter Your Name" placeholder="" required>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group fill">
-                                <label class="floating-label" for="Icon">Icon</label>
-                                <input type="file" class="form-control" id="Icon" placeholder="sdf">
+                                <label class="floating-label" for="email">Email</label>
+                                <input type="email" class="form-control" name="email" :value="old('email')" id="email" data-toggle="tooltip" data-placement="bottom" title="Enter Your Email" placeholder="example@gmail.com" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password" data-toggle="tooltip" data-placement="bottom" title="Enter Your Password" required>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group fill">
+                                <label class="floating-label" for="password_confirmation">Confirm Password</label>
+                                <input type="password" class="form-control" name="password_confirmation" id="password_confirmation" data-toggle="tooltip" data-placement="bottom" title="Confirm Your Password" required>
                             </div>
                         </div>
                         <div class="col-sm-12">
-                            <div class="form-group">
-                                <label class="floating-label" for="Description">Description</label>
-                                <textarea class="form-control" id="Description" rows="3"></textarea>
-                            </div>
-                            <button class="btn btn-primary">Submit</button>
-                            <button class="btn btn-danger">Clear</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                         </div>
                     </div>
                 </form>

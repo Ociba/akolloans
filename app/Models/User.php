@@ -67,16 +67,10 @@ class User extends Authenticatable
         return DB::table('investors')->count();
     }
     /**
-     * This function counts the investors
+     * This function counts number of available packages
      */
     public function countPackages(){
         return DB::table('packages')->count();
-    }
-    /**
-     * This function counts number of users
-     */
-    public function countUsers(){
-        return DB::table('users')->count();
     }
       /**
      * This function counts number of clients with Loans
@@ -94,5 +88,4 @@ class User extends Authenticatable
         }
         return $user_logo;
     }
-  
 }

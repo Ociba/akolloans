@@ -21,7 +21,7 @@ class UsersTable extends Component
     public function render()
     {
         return view('livewire.users-table',[
-            'get_users' =>User::join('categories','categories.id','users.category_id')
+            'get_users' =>User::join('categories','categories.id','users.category_id')->orderBy('users.created_at','DESC')
             ->Paginate($this->per_page,['users.*','categories.category'])
         ]);
     }

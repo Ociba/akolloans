@@ -31,27 +31,25 @@
                     <thead>
                         <tr class="text-cente">
                             <th>No.</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Options</th>  
+                            <th>Permissions</th>
+                            <th>Action</th>  
                         </tr>
                     </thead>
                     <tbody>
-                    @foreach($get_users_for_permission as $i=>$user)
+                    @foreach($get_users_and_permission as $i=>$permission)
                         <tr>
                             @php
-                                if( $get_users_for_permission->currentPage() == 1){
+                                if( $get_users_and_permission->currentPage() == 1){
                                 $i = $i+1;
                                 }else{
-                                $i = ($i+1) + 10*($get_users_for_permission->currentPage()-1);
+                                $i = ($i+1) + 10*($get_users_and_permission->currentPage()-1);
                                 }
                             @endphp
                             <td>{{$i}}</td>
-                            <td hidden>{{$user->id}}</td>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
+                            <td hidden>{{$permission->id}}</td>
+                            <td>{{$permission->permission}}</td>
                             <td>
-                                <a href="/admin/assign-or-remove-permissions/{{$user->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Assign or remove prmissions </a>
+                                <a href="/admin/unassign-permissions/{{$permission->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Assign or remove prmissions </a>
                             </td>
                         </tr>
                         @endforeach
@@ -59,7 +57,7 @@
                 </table>
             </div>
             <div class="row mt-3">
-                {{$get_users_for_permission->links()}}
+                {{$get_users_and_permission->links()}}
             </div>
         </div>
     </div>
