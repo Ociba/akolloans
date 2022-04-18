@@ -13,7 +13,7 @@
                         <div class="carousel-item active" data-interval="800000">
                             <div class="row align-items-center">
                                 <div class="col-md-6 text-center">
-                                    <img style="height:350px;" src="{{ asset('assets/img/bg/akol1.jpg')}}" class="img-fluid my-4" alt="images">
+                                    <img style="height:300px;" src="{{ asset('assets/img/bg/akol1.jpg')}}" class="img-fluid my-4" alt="images">
                                 </div>
                                 <div class="col-md-6">
                                     <p class="f-16"><strong>Welcome To TECHNEST HOLDING LIMITED</strong> gives you Loans with Affordable Interests Rate.</p>
@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div class="carousel-item" data-interval="800000">
-                            <img style="height:400px;" src="{{ asset('assets/img/bg/akol2.jpg')}}" class="img-fluid mt-0" alt="images">
+                            <img style="height:350px;" src="{{ asset('assets/img/bg/akol2.jpg')}}" class="img-fluid mt-0" alt="images">
                         </div>
                     </div>
                 </div>
