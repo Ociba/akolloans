@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\AdminDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,7 +25,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard',[AuthenticationController::Class,'getDashboard'])->name('Dashboard'); 
+    Route::get('/dashboard',[AdminDashboardController::Class,'getDashboard'])->name('Dashboard'); 
     
     Route::get('/investor',[AuthenticationController::Class, 'investorDashboard'])->name('Dashboard');
     Route::get('/my-dashboard',[AuthenticationController::Class, 'borrowerDashboard'])->name('Dashboard'); 

@@ -83,6 +83,13 @@
         </li>
         <li class="sidenav-divider mb-1"></li>
         <li class="sidenav-item">
+            <a href="/admin/get-interests" class="sidenav-link">
+                <i class="sidenav-icon ion ion-md-wallet"></i>
+                <div>Interests</div>
+            </a>
+        </li>
+        <li class="sidenav-divider mb-1"></li>
+        <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon feather icon-menu"></i>
                 <div>Other Entries</div>

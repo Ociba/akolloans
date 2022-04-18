@@ -26,19 +26,22 @@ class ClientsController extends Controller
      */
     public function payLoan($client_id)
     {
-        // if(LoanDebt::where(request()->loan_payments_amount < 'debt')->where('borrowed_by',auth()->user()->id)){
-        //     return redirect()->back()->withErrors('The amount entered is less than your Debt, Please pay the right Amount');
-        // }else{
+        //get the package id this client borrowed loan from
         $package_id =Client::where('id',$client_id)->value('package_id');
-
+        //this function gets the actual amount borrowed
+        $actual_amount_borrowed =Client::where('id',$client_id)->value('loan_amount');
+        //get the investors  interests
         $investors_interes =Package::where('id',$package_id)->value('investor_interest');
-
+        //get the clients interests
         $client_interes =Package::where('id',$package_id)->value('client_interests');
+
+        //this function gets actual interest to be shared both investor and company
+        $interest_to_be_shared =request()->loan_payments_amount -$actual_amount_borrowed;
         //get amount for the investor
-        $investor_interest_amount =request()->loan_payments_amount *($investors_interes/100);
+        $investor_interest_amount =$interest_to_be_shared *($investors_interes/100);
         //get interest amount for company
         $company_interes =$client_interes -$investors_interes;
-        $company_interest_amount =request()->loan_payments_amount *($company_interes/100);
+        $company_interest_amount =$interest_to_be_shared *($company_interes/100);
         //save the loan payment amount 
         LoanDebt::where('borrowed_by',auth()->user()->id)->update(array(
             'loan_payments_amount' =>request()->loan_payments_amount,
@@ -49,6 +52,7 @@ class ClientsController extends Controller
         //this function saves the interests for company and investor
         $interest_obj =new Interest;
         $interest_obj ->user_id              =auth()->user()->id;
+        $interest_obj ->package_id           = $package_id;
         $interest_obj->paid_amount           =request()->loan_payments_amount;
         $interest_obj->interest_for_investor =$investor_interest_amount;
         $interest_obj->company_interest      =$company_interest_amount;

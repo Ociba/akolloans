@@ -51,7 +51,7 @@
                                             </div>
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Staff</h6>
-                                                <h2 class="m-b-0">35</h2>
+                                                <h2 class="m-b-0">{{$staff}}</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                                             </div>
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Investors</h6>
-                                                <h2 class="m-b-0">368</h2>
+                                                <h2 class="m-b-0">{{$investors}}</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -81,7 +81,7 @@
                                             </div>
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Borrowers</h6>
-                                                <h2 class="m-b-0">79</h2>
+                                                <h2 class="m-b-0">{{$clients}}</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -92,77 +92,54 @@
                                     <div class="card-body">
                                         <div class="row align-items-center m-l-0">
                                             <div class="col-auto">
-                                                <i class="fas fa-prescription-bottle-alt f-36 text-primary"></i>
+                                                <i class="fas fa-prescription-bottle-alt f-30 text-primary"></i>
                                             </div>
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Amount Deposited</h6>
-                                                <h2 class="m-b-0">10</h2>
+                                                <h2 class="m-b-0">{{ number_format($investors_deposits)}}</h2>
                                             </div>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- Staustic card 8 Start -->
+                             <div class="col-xl-3 col-md-6">
+                                <div class="card bg-pattern-3-dark mb-4">
+                                    <div class="card-body text-center">
+                                        <i class="feather icon-mail bg-primary ui-rounded-icon"></i>
+                                        <h4 class="mt-2"> Amount Borrowed</h4>
+                                        <p class="mb-3"><h4>{{ number_format($amount_loaned)}}</h4></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                        <div class="row align-items-center m-l-0">
-                                            <div class="col-auto">
-                                                <i class="fas fa-flask f-36 text-warning"></i>
-                                            </div>
-                                            <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Amount Borrowed </h6>
-                                                <h2 class="m-b-0">35</h2>
-                                            </div>
-                                        </div>
+                                <div class="card bg-pattern-3-dark mb-4">
+                                    <div class="card-body text-center">
+                                        <i class="feather icon-twitter bg-success ui-rounded-icon"></i>
+                                        <h4 class="mt-2"> Amount Paid</h4>
+                                        <p class="mb-3"><h4>{{ number_format($amount_paid)}}</h4></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                        <div class="row align-items-center m-l-0">
-                                            <div class="col-auto">
-                                                <i class="fas fa-user-tie f-36 text-primary"></i>
-                                            </div>
-                                            <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Amount Paid</h6>
-                                                <h2 class="m-b-0">368</h2>
-                                            </div>
-                                        </div>
+                                <div class="card bg-pattern-3-dark mb-4">
+                                    <div class="card-body text-center">
+                                        <i class="feather icon-briefcase bg-danger ui-rounded-icon"></i>
+                                        <h4 class="mt-2">Loan Not Paid</h4>
+                                        <p class="mb-3"><h4>{{ number_format($amount_not_paid)}}</h4></p>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                        <div class="row align-items-center m-l-0">
-                                            <div class="col-auto">
-                                                <i class="fas fa-file-invoice-dollar f-36 text-danger"></i>
-                                            </div>
-                                            <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Defaulters Amount</h6>
-                                                <h2 class="m-b-0">79</h2>
-                                            </div>
-                                        </div>
+                                <div class="card bg-pattern-3-dark mb-4">
+                                    <div class="card-body text-center">
+                                        <i class="feather icon-shopping-cart bg-warning ui-rounded-icon"></i>
+                                        <h4 class="mt-2"> Interest Amount</h4>
+                                        <p class="mb-3"><h4>{{ number_format($company_interest)}}</h4></p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card mb-4">
-                                    <div class="card-body">
-                                        <div class="row align-items-center m-l-0">
-                                            <div class="col-auto">
-                                                <i class="fas fa-pills f-36 text-info"></i>
-                                            </div>
-                                            <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Company Interest</h6>
-                                                <h2 class="m-b-0">10</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- customar project  end -->
+                            <!-- Staustic card 8 end -->
                         </div>
                         <div class="row">
                             <div class="col-md-6">
