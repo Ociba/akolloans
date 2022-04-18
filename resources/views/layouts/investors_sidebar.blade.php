@@ -57,18 +57,13 @@
         <li class="sidenav-divider mb-1"></li>
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
-                <i class="sidenav-icon feather icon-layout"></i>
+                <i class="sidenav-icon pe-7s-network"></i>
                 <div>Profile</div>
             </a>
             <ul class="sidenav-menu">
                 <li class="sidenav-item">
-                    <a href="/change-password" class="sidenav-link">
+                    <a href="/investors/my-profile" class="sidenav-link">
                         <div>View Profile</div>
-                    </a>
-                </li>
-                <li class="sidenav-item">
-                    <a href="/change-password" class="sidenav-link">
-                        <div>Change Password</div>
                     </a>
                 </li>
             </ul>

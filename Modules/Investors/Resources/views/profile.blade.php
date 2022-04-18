@@ -41,13 +41,85 @@
                     <div class="container-fluid flex-grow-1 container-p-y">
                         @include('layouts.breadcrumbs')
                         <div class="row">
-                              <!-- customar project  start -->
-                              <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
-                                 @livewire('investors-profile')
-                              </div>
-                            <!-- customar project  end -->
+                             <!-- customar project  start -->
+                             <div class="col-xl-12 col-lg-12 col-xs-12 col-xs-12 col-md-12">
+                            <div class="card overflow-hidden">
+                            <div class="row no-gutters row-bordered row-border-light">
+                                <div class="col-md-3 pt-0">
+                                    <div class="list-group list-group-flush account-settings-links">
+                                        <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
+                                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
+                                        {{--<a class="list-group-item list-group-item-action" data-toggle="list" href="#account-info">Info</a>
+                                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-social-links">Social links</a>
+                                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-connections">Connections</a>
+                                        <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-notifications">Notifications</a>--}}
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade show active" id="account-general">
+
+                                            <div class="card-body media align-items-center">
+                                                @foreach($get_my_profile as $logged_user)
+                                                <img src="{{ asset('users_photo/'.$logged_user->profile_photo_path)}}" alt="" class="d-block ui-w-80">
+                                                
+                                                @endforeach
+                                            </div>
+                                            <hr class="border-light m-0">
+
+                                            <div class="card-body">
+                                                @foreach($get_my_profile as $logged_user)
+                                                <div class="form-group">
+                                                    <label class="form-label">Username</label>
+                                                    <input type="text" name="name" class="form-control mb-1" value="{{$logged_user->name}}" readonly>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">E-mail</label>
+                                                    <input type="text" name="email" class="form-control mb-1" value="{{$logged_user->email}}" readonly>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Category</label>
+                                                    <input type="text" class="form-control" value="{{$logged_user->category}}" readonly>
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane fade" id="account-change-password">
+                                            <form action="/investors/change-password" method="get">
+                                             @csrf
+                                            <div class="card-body pb-2">
+                                                <div class="form-group">
+                                                    <label class="form-label">Current password</label>
+                                                    <input type="password" id="current_password" name="current_password" class="form-control">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">New password</label>
+                                                    <input type="password" id="new_password" name="new_password" class="form-control">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label class="form-label">Repeat new password</label>
+                                                    <input type="password" id="confirm_password" name="confirm_password" class="form-control">
+                                                    <div class="clearfix"></div>
+                                                </div>
+                                            </div>
+                                            <div class="text-right mt-3 pb-3">
+                                            <button type="submit" class="btn btn-primary">Save changes</button>&nbsp;
+                                            <button type="button" class="btn btn-default">Cancel</button>
+                                            </form>
+                                        </div>
+                                        </div>
+                                                </div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </div></div></div>
                     <!-- [ content ] End -->
 
                     <!-- [ Layout footer ] Start -->
@@ -67,6 +139,5 @@
     
     <!-- Core scripts -->
    @include('layouts.javascript')
-
 </body>
 </html>
