@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\ClientsDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,7 @@ Route::middleware([
     Route::get('/dashboard',[AdminDashboardController::Class,'getDashboard'])->name('Dashboard'); 
     
     Route::get('/investor',[AuthenticationController::Class, 'investorDashboard'])->name('Dashboard');
-    Route::get('/my-dashboard',[AuthenticationController::Class, 'borrowerDashboard'])->name('Dashboard'); 
+    Route::get('/my-dashboard',[ClientsDashboardController::Class, 'clientDashboard'])->name('Dashboard'); 
     Route::get('/change-password',[ChangePasswordController::Class, 'changePassword'])->name('Change Password');
     Route::get('/update-password',[ChangePasswordController::Class, 'updateUserPassword']);
 });

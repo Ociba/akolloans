@@ -25,12 +25,7 @@ class AuthenticationController extends Controller
         return view('admin.investors_dashboard', compact('packge_name','amount_depositedd','money_loaned','total_interest',
         'monthly_money_loaned','total_monthly_interests'));
     }
-     /**
-     * This function gets Borrowers dashboard
-     */
-    protected function borrowerDashboard(){
-        return view('admin.borrowers_dashboard');
-    }
+    
     //This fuction gets package name
     private function getPackageName(){
         return DB::table('investors')->join('packages','packages.id','investors.package_id')->where('investors.bought_by',auth()->user()->id)->get('package_name');
