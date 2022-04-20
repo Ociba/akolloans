@@ -1,7 +1,7 @@
 {{--<link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.ico')}}">--}}
 
 <!-- Google fonts -->
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+{{--<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">--}}
 
 <!-- Icon fonts -->
 <link rel="stylesheet" href="{{ asset('assets/fonts/fontawesome.css')}}">
@@ -18,4 +18,4 @@
 
 <!-- Libs -->
 <link rel="stylesheet" href="{{ asset('assets/libs/perfect-scrollbar/perfect-scrollbar.css')}}">
-<link rel="stylesheet" href="{{ asset('assets/libs/flot/flot.css')}}">
+{{--<link rel="stylesheet" href="{{ asset('assets/libs/flot/flot.css')}}">--}}

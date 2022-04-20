@@ -230,8 +230,16 @@
 
     // Demo
     options: {
-      responsive: false,
-      maintainAspectRatio: false
+      responsive: true,
+      maintainAspectRatio: true,
+    tooltips: {
+      callbacks: {
+        label: function (tooltipItem, data) {
+          var tooltipValue = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+          return parseInt(tooltipValue).toLocaleString();
+        }
+      }
+    }
     }
   });
 
@@ -258,8 +266,16 @@
 
     // Demo
     options: {
-      responsive: false,
-      maintainAspectRatio: false
+      responsive: true,
+      maintainAspectRatio: false,
+      tooltips: {
+      callbacks: {
+        label: function (tooltipItem, data) {
+          var tooltipValue = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+          return parseInt(tooltipValue).toLocaleString();
+        }
+      }
+    }
     }
   });
 
@@ -277,8 +293,16 @@
 
     // Demo
     options: {
-      responsive: false,
-      maintainAspectRatio: false
+      responsive: true,
+      maintainAspectRatio: false,  
+      tooltips: {
+      callbacks: {
+        data: function (tooltipItem, data) {
+          var tooltipValue = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+          return parseInt(tooltipValue).toLocaleString();
+        }
+      }
+    }
     }
   });
   var pieChart = new Chart(document.getElementById('chart-pie2').getContext("2d"), {
@@ -293,9 +317,20 @@
     },
 
     // Demo
-    options: {
-      responsive: false,
-      maintainAspectRatio: false
+    tooltips: {
+      callbacks: {
+        label: function(tooltipItem, data) {
+          var dataLabel = data.labels[tooltipItem.index];
+          var value = ': ' + data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index].toLocaleString();
+          if (Chart.helpers.isArray(dataLabel)) {
+            dataLabel = dataLabel.slice();
+            dataLabel[0] += value;
+          } else {
+            dataLabel += value;
+          }
+          return dataLabel;
+        }
+      }
     }
   });
   var doughnutChart = new Chart(document.getElementById('chart-doughnut').getContext("2d"), {
