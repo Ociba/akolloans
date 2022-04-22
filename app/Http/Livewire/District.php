@@ -10,6 +10,7 @@ class District extends Component
 {
     use WithPagination;
     public $per_page="10";
+    public $searchTerm;
 
      //using the tailwind pagination theme
      protected $paginationTheme = 'bootstrap';
@@ -20,8 +21,9 @@ class District extends Component
      }
     public function render()
     {
+        $searchTerm = '%'.$this->searchTerm.'%';
         return view('livewire.district',[
-            'get_districts' =>Districts::Paginate($this->per_page)
+            'get_districts' =>Districts::where('district','like',$searchTerm)->Paginate($this->per_page)
         ]);
     }
 }

@@ -36,9 +36,14 @@ class PackagesController extends Controller
      */
     private function createPackage()
     {
-        // if(request()->amount_deposited < 'from' || request()->amount_deposited >'to' ){
-        //     return redirect()->back()->withErrors('Amount is not in the Package Range');
-        // }
+        $package_id =request()->package_id;
+        $from =Package::where('id',$package_id)->value('from');
+        
+        $to =Package::where('id',$package_id)->value('to');
+
+        if(request()->amount_deposited < $from || request()->amount_deposited >$to ){
+            return redirect()->back()->withErrors('Amount is not in the Package Range, Check the Amount You are Depositing');
+        }else{
         $investor_photo = request()->profile_photo_path;
         $investor_photo_original_name = $investor_photo->getClientOriginalName();
         $investor_photo->move('users_photo/',$investor_photo_original_name);
@@ -57,6 +62,7 @@ class PackagesController extends Controller
          User::where('id',auth()->user()->id)->update(array('profile_photo_path' =>$investor_photo_original_name));
 
         return redirect('/investors/my-package')->with('msg','Operation Successful');
+    }
     }
 
     /* This function validates the investor details created

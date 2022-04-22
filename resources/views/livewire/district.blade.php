@@ -1,4 +1,5 @@
 <div>
+@livewireStyles
     <div class="card">
         <div class="card-body">
             <div class="row align-items-center m-l-0">
@@ -28,7 +29,7 @@
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6 align-items-right">
                         <label class="form-label">Search</label>
-                        <input type="text" class="form-control" >
+                        <input type="text" class="form-control" wire:model="searchTerm">
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -70,3 +71,4 @@
         </div>
     </div>
 </div>
+@livewireScripts
