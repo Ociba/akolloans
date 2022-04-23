@@ -92,11 +92,11 @@
                                     <div class="card-body">
                                         <div class="row align-items-center m-l-0">
                                             <div class="col-auto">
-                                                <i class="fas fa-prescription-bottle-alt f-30 text-primary"></i>
+                                            <h6 class="text-muted m-b-10">Amount Deposited</h6>
                                             </div>
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Amount Deposited</h6>
-                                                <h2 class="m-b-0">{{ number_format($investors_deposits)}}</h2>
+                                                
+                                                <h2 class="m-b-0">{{ number_format($investors_deposits)}} /=</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +109,7 @@
                                         <i class="feather icon-mail bg-primary ui-rounded-icon"></i>
                                         <h4 class="mt-2"> Amount Borrowed</h4>
                                         <p class="mb-3 text-primary">Without Interest</p>
-                                        <p class="mb-3"><h4>{{ number_format($amount_loaned)}}</h4></p>
+                                        <p class="mb-3"><h4>{{ number_format($amount_loaned)}} /=</h4></p>
                                     </div>
                                 </div>
                             </div>
@@ -119,7 +119,7 @@
                                         <i class="feather icon-twitter bg-success ui-rounded-icon"></i>
                                         <h4 class="mt-2"> Amount Paid</h4>
                                         <p class="mb-3 text-primary">Without Interest</p>
-                                        <p class="mb-3"><h4>{{ number_format($amount_paid)}}</h4></p>
+                                        <p class="mb-3"><h4>{{ number_format($amount_paid)}} /=</h4></p>
                                     </div>
                                 </div>
                             </div>
@@ -129,7 +129,7 @@
                                         <i class="feather icon-briefcase bg-danger ui-rounded-icon"></i>
                                         <h4 class="mt-2">Loan Not Paid</h4>
                                         <p class="mb-3 text-primary">Without Interest</p>
-                                        <p class="mb-3"><h4>{{ number_format($amount_not_paid)}}</h4></p>
+                                        <p class="mb-3"><h4>{{ number_format($amount_not_paid)}} /=</h4></p>
                                     </div>
                                 </div>
                             </div>
@@ -139,7 +139,7 @@
                                         <i class="feather icon-shopping-cart bg-warning ui-rounded-icon"></i>
                                         <h4 class="mt-2"> Interest Amount</h4>
                                         <p class="mb-3 text-primary">For Company</p>
-                                        <p class="mb-3"><h4>{{ number_format($company_interest)}}</h4></p>
+                                        <p class="mb-3"><h4>{{ number_format($company_interest)}} /=</h4></p>
                                     </div>
                                 </div>
                             </div>

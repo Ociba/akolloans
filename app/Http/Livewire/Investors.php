@@ -30,7 +30,7 @@ class Investors extends Component
             ->where('investors.investor_status','active')
             ->where('name','like',$searchTerm)
             ->orderBy('investors.created_at','DESC')
-            ->Paginate($this->per_page,['investors.*','users.name','users.email','districts.district','packages.package_name','packages.investor_interest'])
+            ->Paginate($this->per_page,['investors.*','users.name','users.id','users.status','users.email','districts.district','packages.package_name','packages.investor_interest'])
         ]);
     }
 }

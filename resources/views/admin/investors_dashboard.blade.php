@@ -68,7 +68,7 @@
                                             </div>
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Amount Deposited</h6>
-                                                <h2 class="m-b-0">{{ number_format($amount_depositedd)}}</h2>
+                                                <h2 class="m-b-0">{{ number_format($amount_depositedd)}} /=</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -83,7 +83,7 @@
                                             </div>
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Money Loaned</h6>
-                                                <h2 class="m-b-0">{{ number_format($money_loaned)}}</h2>
+                                                <h2 class="m-b-0">{{ number_format($money_loaned)}} /=</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -98,7 +98,7 @@
                                             </div>
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Total Interests</h6>
-                                                <h2 class="m-b-0">{{ number_format($total_interest)}}</h2>
+                                                <h2 class="m-b-0">{{ number_format($total_interest)}} /=</h2>
                                             </div>
                                         </div>
                                     </div>

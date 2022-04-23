@@ -13,9 +13,12 @@
 
 Route::prefix('admin')->group(function() {   
     Route::get('/', 'AdminController@index');
-    Route::get('/investors', 'InvestorsController@getInvestors')->name('Investors');
+    Route::get('/investors', 'InvestorsController@getInvestors')->name('Investors'); 
     Route::get('/suspended-investors', 'InvestorsController@getSuspendedInvestors')->name('Suspended Investors');
-    Route::get('/all-clients', 'ClientsController@getClients')->name('All Clients');
+    Route::get('/all-clients', 'ClientsController@getClients')->name('All Clients'); 
+    Route::get('/suspend-investor/{investor_id}', 'InvestorsController@suspendInvestor');
+    Route::get('/activate-investor/{investor_id}', 'InvestorsController@activateInvestor');
+    Route::get('/delete-investor/{investor_id}', 'InvestorsController@deleteInvestor');
     Route::get('/clients-with-loans', 'ClientsController@getClientsWithLoans')->name('Clients With Loans');
     Route::get('/loan-defaulters', 'ClientsController@getClientsLoanDefaulters')->name('Loan Defaulters');
     Route::get('/get-packages', 'PackagesController@getPackages')->name('Packages'); 

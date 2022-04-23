@@ -58,10 +58,10 @@
                             <td>{{$client->package_name}}</td>
                             <td>{{$client->investor_interest}} %</td>
                             <td>{{$client->client_interests}} %</td>
-                            <td>{{$client->loan_amount}}</td>
-                            <td>{{$client->paid_amount}}</td>
-                            <td>{{$client->interest_for_investor}}</td>
-                            <td>{{$client->company_interest}}</td>
+                            <td>{{ number_format($client->loan_amount)}}</td>
+                            <td>{{ number_format($client->paid_amount)}}</td>
+                            <td>{{ number_format($client->interest_for_investor)}}</td>
+                            <td>{{ number_format($client->company_interest)}}</td>
                             <td>{{ date('d-m-Y', strtotime($client->created_at))}}</td>
                         </tr>
                         @endforeach

@@ -64,7 +64,7 @@
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Loan Amount</h6>
                                                 @foreach($get_loan_status as $status)
-                                                <h2 class="m-b-0">{{ number_format($status->loan_amount)}}</h2>
+                                                <h2 class="m-b-0">{{ number_format($status->loan_amount)}} /=</h2>
                                                 @endforeach
                                             </div>
                                         </div>
@@ -78,7 +78,7 @@
                                             
                                                 <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Interest Amount</h6>
-                                                <h2 class="m-b-0">{{ number_format($get_client_interests)}}</h2>
+                                                <h2 class="m-b-0">{{ number_format($get_client_interests)}} /=</h2>
                                             </div>
                                         </div>
                                     </div>
@@ -90,7 +90,7 @@
                                         <div class="row align-items-center m-l-0">
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Amount To Be Paid</h6>
-                                                <h2 class="m-b-0">{{ number_format($get_client_interests + $actual_loan_amount)}}</h2>
+                                                <h2 class="m-b-0">{{ number_format($get_client_interests + $actual_loan_amount)}} /=</h2>
                                             </div>
                                         </div>
                                     </div>

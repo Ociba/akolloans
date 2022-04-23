@@ -9,6 +9,7 @@ use App\Models\Package;
 use App\Models\Client;
 use App\Models\LoanDebt;
 use App\Models\Interest;
+use DB;
 
 class ClientsController extends Controller
 {
@@ -26,6 +27,9 @@ class ClientsController extends Controller
      */
     public function payLoan($client_id)
     {
+        if(request()->loan_payments_amount < $this->loanAmountTobePaid($client_id)){
+            return redirect()->back()->withErrors('Pay the actual amount for your loan');
+        }else{
         //get the package id this client borrowed loan from
         $package_id =Client::where('id',$client_id)->value('package_id');
         //this function gets the actual amount borrowed
@@ -40,8 +44,8 @@ class ClientsController extends Controller
         //get amount for the investor
         $investor_interest_amount =$interest_to_be_shared *($investors_interes/100);
         //get interest amount for company
-        $company_interes =$client_interes -$investors_interes;
-        $company_interest_amount =$interest_to_be_shared *($company_interes/100);
+        //$company_interest_amount =$interest_to_be_shared *($company_interes/100);
+        $company_interest_amount =$interest_to_be_shared -$investor_interest_amount;
         //save the loan payment amount 
         LoanDebt::where('borrowed_by',auth()->user()->id)->update(array(
             'loan_payments_amount' =>request()->loan_payments_amount,
@@ -58,9 +62,18 @@ class ClientsController extends Controller
         $interest_obj->company_interest      =$company_interest_amount;
         $interest_obj->save();
         return redirect()->back()->with('msg','Operation successful');
-      
     }
-
+    }
+     /**
+      * This function calculates the total loan amount to be paid
+      */
+      private function loanAmountTobePaid($client_id){
+      $client_interest =DB::table('clients')->join('packages','packages.id','clients.package_id')->where('clients.id',$client_id)->value('packages.client_interests');
+      $loan_amount=DB::table('clients')->where('id',$client_id)->value('loan_amount');
+      $actual_intest_amount=($client_interest/100)*$loan_amount;
+      $dabt =$actual_intest_amount + $loan_amount;
+      return $dabt;
+    }
     /**
      * Store a newly created resource in storage.
      * @param Request $request

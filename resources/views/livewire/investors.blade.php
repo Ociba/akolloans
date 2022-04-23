@@ -70,9 +70,13 @@
                             <td>{{$investor->period}} {{$investor->state}}</td>
                             <td>{{$investor->investor_status}}</td>
                             <td>
-                                <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
+                                 @if($investor->status == 'active')
+                                <a href="/admin/suspend-investor/{{$investor->id}}" class="btn btn-success btn-sm"><i class="feather icon-edit"></i>&nbsp;Suspend </a>
+                                @else
+                                    <a href="/admin/activate-investor/{{$investor->id}}" class="btn btn-info btn-sm"><i class="feather icon-check"></i>&nbsp; Activate</a>
+                            
+                                @endif
+                                <a href="/admin/delete-investor/{{$investor->id}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                             </td>
                         </tr>
                         @endforeach
