@@ -10,7 +10,7 @@
     <script src="{{ asset('assets/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
     <script src="{{ asset('assets/libs/eve/eve.js')}}"></script>
     {{--<script src="{{ asset('assets/libs/flot/flot.js')}}"></script>--}}
-    <script src="{{ asset('assets/libs/flot/curvedLines.js')}}"></script>
+    {{--<script src="{{ asset('assets/libs/flot/curvedLines.js')}}"></script>--}}
     <script src="{{ asset('assets/libs/chart-am4/core.js')}}"></script>
     <script src="{{ asset('assets/libs/chart-am4/charts.js')}}"></script>
     <script src="{{ asset('assets/libs/chart-am4/animated.js')}}"></script>

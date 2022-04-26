@@ -48,7 +48,7 @@ class PackagesController extends Controller
      * This function edits packages details.
      * @return Renderable
      */
-    public function editPackage(R$package_id)
+    public function editPackage($package_id)
     {
         $edit_package =Package::where('id',$package_id)->get();
         return view('admin::edit_package', compact('edit_package')); 

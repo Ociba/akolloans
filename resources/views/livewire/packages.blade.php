@@ -68,8 +68,8 @@
                             <td>{{$package->client_interests -$package->investor_interest}}</td>
                             <td>{{$package->name}}</td>
                             <td>
-                                <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
+                                <a href="/admin/edit-package/{{$package->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
+                                <a href="/admin/delete-package/{{$package->id}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                             </td>
                         </tr>
                         @endforeach

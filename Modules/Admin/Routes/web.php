@@ -27,7 +27,13 @@ Route::prefix('admin')->group(function() {
     Route::get('/get-interests', 'ClientsController@getInterestsList')->name('interests'); 
     Route::get('/add-staff', 'AdminController@validateCreateStaff');  
     Route::get('/assign-or-remove-permissions/{staff_id}', 'AdminController@getStaffPermissions') ->name('Staff Permissions');
-    Route::get('/add-permission/{staff_id}', 'AdminController@getPermissions') ->name('Permissions'); 
+    Route::get('/add-permission/{staff_id}', 'AdminController@getPermissions') ->name('Permissions');  
     Route::get('/assign-permissions/{staff_id}', 'AdminController@assignPermissions');
-    Route::get('/unassign-permissions/{staff_id}', 'AdminController@unsignPermission');
+    Route::get('/unassign-permissions/{staff_id}', 'AdminController@unsignPermission'); 
+    Route::get('/edit-package/{package_id}', 'PackagesController@editPackage')->name('Edit Package'); 
+    Route::get('/update-package/{package_id}', 'PackagesController@updatePackage'); 
+    Route::get('/delete-package/{package_id}', 'PackagesController@deletePackage'); 
+    Route::get('/edit/{client_id}', 'ClientsController@editClientInfo')->name('Edit Client Information');
+    Route::get('/update-client-info/{client_id}', 'ClientsController@updateClientInfo');
+    Route::get('/delete-client-info/{client_id}', 'ClientsController@deleteClient');
 });
