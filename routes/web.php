@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\ClientsDashboardController;
+use App\Http\Controllers\SendSMSController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,5 +35,6 @@ Route::middleware([
     Route::get('/update-password',[ChangePasswordController::Class, 'updateUserPassword']);
 });
 Route::get('/logout',[AuthenticationController::Class, 'logoutUser']);
+Route::get('/send-sms', [SendSMSController::class, 'index']);
 
 

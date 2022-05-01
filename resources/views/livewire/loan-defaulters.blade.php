@@ -49,7 +49,9 @@
                             <th>District</th>
                             <th>Amount</th>
                             <th>Interest %</th>
-                            <th>Debt</th>
+                            <th>No. of Overdue Days</th>
+                            <th>Amount With Charge</th>
+                            <th>Total Debt</th>
                             <th>Status</th>
                             <th>Option</th>
                         </tr>
@@ -82,8 +84,13 @@
                             $loan_amount=\DB::table('clients')->where('id',$client->id)->value('loan_amount');
                             $actual_intest_amount=($client_interest/100)*$loan_amount;
                             $dabt =$actual_intest_amount + $loan_amount;
+
+                            $surcharge =1000;
+                            $surcharge_with_overdue_days = Carbon\Carbon::parse($client->overdue_date)->diffInDays() *$surcharge;
                             @endphp
-                            <td>{{ number_format($dabt)}}</td>
+                            <td>{{Carbon\Carbon::parse($client->overdue_date)->diffInDays()}}</td>
+                            <td>{{ number_format($surcharge_with_overdue_days)}}</td>
+                            <td>{{ number_format($dabt + $surcharge_with_overdue_days)}}</td>
                             <td><label class="badge badge-pill badge-danger">{{$client->loan_status}}</label></td>
                             <td>
                                 <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>

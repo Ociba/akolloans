@@ -20,7 +20,7 @@ class LoanOverdue extends Command
      *
      * @var string
      */
-    protected $description = 'This command updates loan status to Overdue';
+    protected $description = 'This command updates loan status to Overdue after 15 days elapse';
 
     /**
      * Create a new command instance.
@@ -39,11 +39,13 @@ class LoanOverdue extends Command
      */
     public function handle()
     {
+        $now = Carbon::now();
         $change_loan_status_to_overdue = \DB::table('clients')
-            ->whereDate('created_at', '>=',Carbon::now()->subdays(15))
+            ->whereDate('created_at', '<=',Carbon::now()->subdays(15))
             ->where('loan_status','active')
             ->update(array(
-                'loan_status' =>'overdue'
+                'loan_status' =>'overdue',
+                'overdue_date' =>$now
             ));
         return $change_loan_status_to_overdue;
     }

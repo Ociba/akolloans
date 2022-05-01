@@ -14,7 +14,8 @@ class ClientsDashboardController extends Controller
         $get_loan_status         =$this->loanStatus();
         $get_client_interests    =$this->getInterestAmount();
         $actual_loan_amount      =$this->actualLoanAmount();
-        return view('admin.borrowers_dashboard',compact('get_loan_status','get_client_interests','actual_loan_amount'));
+        $no_of_overdue_days      =$this->countNumberOverdueDays();
+        return view('admin.borrowers_dashboard',compact('get_loan_status','get_client_interests','actual_loan_amount','no_of_overdue_days'));
     }
     //This function checks for the loan status 
     private function loanStatus(){
@@ -33,4 +34,8 @@ class ClientsDashboardController extends Controller
       private function actualLoanAmount(){
         return DB::table('clients')->where('user_id',auth()->user()->id)->latest()->value('loan_amount');        
     }
+    //get number of days after overdue and overdue amount
+    private function countNumberOverdueDays(){
+        return DB::table('clients')->where('user_id',auth()->user()->id)->where('loan_status','overdue')->get('overdue_date');
+    } 
 }

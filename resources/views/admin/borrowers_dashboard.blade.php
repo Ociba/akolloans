@@ -49,7 +49,13 @@
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">Loan Status</h6>
                                                 @foreach($get_loan_status as $status)
-                                                <h2 class="m-b-0">{{$status->loan_status}}</h2>
+                                                @if($status->loan_status == 'overdue')
+                                                <h2 class="m-b-0 text-primary">{{$status->loan_status}}</h2>
+                                                @elseif($status->loan_status == 'paid')
+                                                <h2 class="m-b-0 text-success">{{$status->loan_status}}</h2>
+                                                @else
+                                                <h2 class="m-b-0 text-info">{{$status->loan_status}}</h2>
+                                                @endif
                                                 @endforeach
                                             </div>
                                         </div>
@@ -89,8 +95,66 @@
                                     <div class="card-body">
                                         <div class="row align-items-center m-l-0">
                                             <div class="col-auto">
-                                                <h6 class="text-muted m-b-10">Amount To Be Paid</h6>
+                                                <h6 class="text-muted m-b-10">Overdue Date</h6>
+                                                @foreach($no_of_overdue_days as $overdue)
+                                                <h2 class="m-b-0">{{ date('d-m-Y',strtotime($overdue->overdue_date))}}</h2>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <div class="row align-items-center m-l-0">
+                                            <div class="col-auto">
+                                                <h6 class="text-muted m-b-10">Number of Overdue Days</h6>
+                                                @foreach($no_of_overdue_days as $overdue)
+                                                <h2 class="m-b-0">{{ Carbon\Carbon::parse($overdue->overdue_date)->diffInDays()}} Days</h2>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <div class="row align-items-center m-l-0">
+                                            <div class="col-auto">
+                                                <h6 class="text-muted m-b-10">Overdue Charge Now</h6>
+                                                @foreach($no_of_overdue_days as $overdue)
+                                                @php
+                                                $surcharge =1000;
+                                                $surcharge_with_overdue_days = Carbon\Carbon::parse($overdue->overdue_date)->diffInDays() *$surcharge;
+                                                @endphp
+                                                <h2 class="m-b-0">{{ number_format($surcharge_with_overdue_days)}} /=</h2>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <div class="row align-items-center m-l-0">
+                                            <div class="col-auto">
+                                                <h6 class="text-muted m-b-10">To Be Paid Without Charge</h6>
                                                 <h2 class="m-b-0">{{ number_format($get_client_interests + $actual_loan_amount)}} /=</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <div class="row align-items-center m-l-0">
+                                            <div class="col-auto">
+                                                <h6 class="text-muted m-b-10">To Be Paid With Charge</h6>
+                                                <h2 class="m-b-0">{{ number_format($get_client_interests + $actual_loan_amount + $surcharge_with_overdue_days)}} /=</h2>
                                             </div>
                                         </div>
                                     </div>
