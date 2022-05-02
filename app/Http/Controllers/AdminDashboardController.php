@@ -19,8 +19,10 @@ class AdminDashboardController extends Controller
             $company_interest         =$this->totalCompanyInterest();
             $loan_monthly_debts       =$this->getMonthlyDebts();
             $loan_monthly_amount_paid =$this->getMonthlyAmountPaid();
+            $overdue_clients_count    =$this->countOverdueClients();
+            $overdue_amount           =$this->overDueAmount();
             return view('admin.admin_dashboard',compact('staff','investors','clients','investors_deposits','amount_loaned','amount_paid','amount_not_paid',
-              'company_interest','loan_monthly_debts','loan_monthly_amount_paid'));
+              'company_interest','loan_monthly_debts','loan_monthly_amount_paid','overdue_clients_count','overdue_amount'));
         }elseif(auth()->user()->category_id == 2){
             return redirect("/investor");
         }else{
@@ -82,5 +84,17 @@ class AdminDashboardController extends Controller
             array_push($paid_amount,DB::table('loan_debts')->whereMonth('created_at', $i+1)->whereNotNull('loan_payments_amount')->sum('loan_payments_amount'));
         }
         return json_encode($paid_amount);  
+    }
+    /**
+     * This function counts clients with overdue loans
+     */
+    private function countOverdueClients(){
+        return DB::table('clients')->where('loan_status','overdue')->count();
+    }
+    /**
+    * get overdue amount
+    */
+    private function overDueAmount(){
+        return DB::table('interests')->sum('overdue_interest');
     }
 }

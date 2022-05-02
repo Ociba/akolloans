@@ -154,7 +154,13 @@
                                         <div class="row align-items-center m-l-0">
                                             <div class="col-auto">
                                                 <h6 class="text-muted m-b-10">To Be Paid With Charge</h6>
+                                                @foreach($no_of_overdue_days as $overdue)
+                                                @php
+                                                $surcharge =1000;
+                                                $surcharge_with_overdue_days = Carbon\Carbon::parse($overdue->overdue_date)->diffInDays() *$surcharge;
+                                                @endphp
                                                 <h2 class="m-b-0">{{ number_format($get_client_interests + $actual_loan_amount + $surcharge_with_overdue_days)}} /=</h2>
+                                                @endforeach
                                             </div>
                                         </div>
                                     </div>

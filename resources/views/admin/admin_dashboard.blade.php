@@ -146,6 +146,71 @@
                             <!-- Staustic card 8 end -->
                         </div>
                         <div class="row">
+                          <!-- Staustic card 11 Start -->
+                          <div class="col-xl-3 col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h5>Overdue Charge Amount</h5>
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <label class="badge badge-pill text-white badge-warning">1,000 Per Day <i class="m-l-10 feather icon-arrow-down"></i></label>
+                                            </div>
+                                        </div>
+                                        <div class="progress mt-1">
+                                            <div class="progress-bar bg-warning" style="width:35%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="col-xl-3 col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h5>No. of Overdue Clients</h5>
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <label class="badge badge-pill badge-primary">{{$overdue_clients_count}} <i class="m-l-10 feather icon-arrow-up"></i></label>
+                                            </div>
+                                        </div>
+                                        <div class="progress mt-1">
+                                            <div class="progress-bar bg-primary" style="width:35%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h5>Total Overdue Amount</h5>
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <label class="badge badge-pill badge-success">{{ number_format($overdue_amount)}} /= <i class="m-l-10 feather icon-arrow-down"></i></label>
+                                            </div>
+                                        </div>
+                                        <div class="progress mt-1">
+                                            <div class="progress-bar bg-success" style="width:85%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card mb-4">
+                                    <div class="card-body">
+                                        <h5>Overdue + Interest</h5>
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <label class="badge badge-pill badge-danger">{{number_format($overdue_amount + $company_interest)}}/= <i class="m-l-10 feather icon-arrow-down"></i></label>
+                                            </div>
+                                        </div>
+                                        <div class="progress mt-1">
+                                            <div class="progress-bar bg-danger" style="width:15%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Staustic card 11 end -->
+                        </div>
+                        <div class="row">
                             <div class="col-md-6">
                                 <div class="card mb-4">
                                     <div class="card-body">

@@ -56,10 +56,13 @@
                                                 <form action="/clients/pay-loan/{{$loan_payment->id}}" method="get"> 
                                                         @csrf
                                                         @php
+                                                        $surcharge =1000;
+                                                        $surcharge_with_overdue_days = Carbon\Carbon::parse($loan_payment->overdue_date)->diffInDays() *$surcharge;
+
                                                         $client_interest =\DB::table('packages')->where('id',$loan_payment->package_id)->value('client_interests');
                                                         $loan_amount=\DB::table('clients')->where('id',$loan_payment->id)->value('loan_amount');
                                                         $actual_intest_amount=($client_interest/100)*$loan_amount;
-                                                        $dabt =$actual_intest_amount + $loan_amount;
+                                                        $dabt =$actual_intest_amount + $loan_amount + $surcharge_with_overdue_days;
                                                         @endphp
                                                         
                                                     <input type="hidden" name="user_id" class="form-control" value="{{auth()->user()->id}}">

@@ -49,11 +49,11 @@
                             <th>District</th>
                             <th>Amount</th>
                             <th>Interest %</th>
-                            <th>No. of Overdue Days</th>
+                            <th>Overdue</th>
                             <th>Amount With Charge</th>
                             <th>Total Debt</th>
                             <th>Status</th>
-                            <th>Option</th>
+                            {{--<th>Option</th>--}}
                         </tr>
                     </thead>
                     <tbody>
@@ -88,15 +88,16 @@
                             $surcharge =1000;
                             $surcharge_with_overdue_days = Carbon\Carbon::parse($client->overdue_date)->diffInDays() *$surcharge;
                             @endphp
-                            <td>{{Carbon\Carbon::parse($client->overdue_date)->diffInDays()}}</td>
+                            <td>{{Carbon\Carbon::parse($client->overdue_date)->diffInDays()}} Days</td>
                             <td>{{ number_format($surcharge_with_overdue_days)}}</td>
                             <td>{{ number_format($dabt + $surcharge_with_overdue_days)}}</td>
                             <td><label class="badge badge-pill badge-danger">{{$client->loan_status}}</label></td>
-                            <td>
+                            {{--<td>
                                 <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
                                 <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
                                 <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                             </td>
+                            --}}
                         </tr>
                         @endforeach
                     </tbody>

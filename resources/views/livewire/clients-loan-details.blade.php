@@ -60,14 +60,23 @@
                             <td>{{$loan_request->district}}</td>
                             <td>{{ number_format($loan_request->loan_amount)}}</td>
                             @php
+                            $surcharge =1000;
+                            $surcharge_wiloan_paymentth_overdue_days = Carbon\Carbon::parse($loan_request->overdue_date)->diffInDays() *$surcharge;
+
                             $client_interest =\DB::table('packages')->where('id',$loan_request->package_id)->value('client_interests');
                             $loan_amount=\DB::table('clients')->where('id',$loan_request->id)->value('loan_amount');
                             $actual_intest_amount=($client_interest/100)*$loan_amount;
-                            $dabt =$actual_intest_amount + $loan_amount;
+                            $dabt =$actual_intest_amount + $loan_amount + $surcharge_wiloan_paymentth_overdue_days;
                             @endphp
                             <td>{{ number_format($dabt)}}</td>
                             <td>{{$loan_request->loan_status}}</td>
-                            <td><a href="/clients/pay-loan-form/{{$loan_request->id}}" class="btn btn-sm btn-primary">Pay Loan</a>
+                            <td>
+                               @if($loan_request->loan_status == 'paid')
+                               <button class="btn btn-sm btn-success">Loan Cleared</button>
+                               @else
+                               <a href="/clients/pay-loan-form/{{$loan_request->id}}" class="btn btn-sm btn-primary">Pay Loan</a>
+                               @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

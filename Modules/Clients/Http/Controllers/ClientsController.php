@@ -10,6 +10,7 @@ use App\Models\Client;
 use App\Models\LoanDebt;
 use App\Models\Interest;
 use DB;
+use Carbon\Carbon;
 
 class ClientsController extends Controller
 {
@@ -45,7 +46,7 @@ class ClientsController extends Controller
         $investor_interest_amount =$interest_to_be_shared *($investors_interes/100);
         //get interest amount for company
         //$company_interest_amount =$interest_to_be_shared *($company_interes/100);
-        $company_interest_amount =$interest_to_be_shared -$investor_interest_amount;
+        $company_interest_amount =($interest_to_be_shared -$investor_interest_amount) + $this->overDueAmount($client_id);
         //save the loan payment amount 
         LoanDebt::where('borrowed_by',auth()->user()->id)->update(array(
             'loan_payments_amount' =>request()->loan_payments_amount,
@@ -60,68 +61,32 @@ class ClientsController extends Controller
         $interest_obj->paid_amount           =request()->loan_payments_amount;
         $interest_obj->interest_for_investor =$investor_interest_amount;
         $interest_obj->company_interest      =$company_interest_amount;
+        $interest_obj->overdue_interest      =$this->overDueAmount($client_id);
         $interest_obj->save();
-        return redirect()->back()->with('msg','Operation successful');
+        return redirect('/clients/my-loan-details')->with('msg','Operation successful');
     }
     }
      /**
       * This function calculates the total loan amount to be paid
       */
       private function loanAmountTobePaid($client_id){
+        $surcharge =1000;
+        $overduedate=DB::table('clients')->where('id',$client_id)->value('overdue_date');
+        $surcharge_with_overdue_days = \Carbon\Carbon::parse($overduedate)->diffInDays() *$surcharge;
+        
       $client_interest =DB::table('clients')->join('packages','packages.id','clients.package_id')->where('clients.id',$client_id)->value('packages.client_interests');
       $loan_amount=DB::table('clients')->where('id',$client_id)->value('loan_amount');
       $actual_intest_amount=($client_interest/100)*$loan_amount;
-      $dabt =$actual_intest_amount + $loan_amount;
+      $dabt =$actual_intest_amount + $loan_amount + $surcharge_with_overdue_days;
       return $dabt;
     }
-    /**
-     * Store a newly created resource in storage.
-     * @param Request $request
-     * @return Renderable
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Show the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function show($id)
-    {
-        return view('clients::show');
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     * @param int $id
-     * @return Renderable
-     */
-    public function edit($id)
-    {
-        return view('clients::edit');
-    }
-
-    /**
-     * Update the specified resource in storage.
-     * @param Request $request
-     * @param int $id
-     * @return Renderable
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     * @param int $id
-     * @return Renderable
-     */
-    public function destroy($id)
-    {
-        //
+   /**
+    * get overdue amount
+    */
+    private function overDueAmount($client_id){
+        $surcharge =1000;
+        $overduedate=DB::table('clients')->where('id',$client_id)->value('overdue_date');
+        $surcharge_with_overdue_days = \Carbon\Carbon::parse($overduedate)->diffInDays() *$surcharge;
+        return $surcharge_with_overdue_days;
     }
 }
