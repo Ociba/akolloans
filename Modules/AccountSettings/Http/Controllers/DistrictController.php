@@ -49,7 +49,9 @@ class DistrictController extends Controller
      */
     public function update($district_id)
     {
-        District::where('id',$district_id)->update(array());
+        District::where('id',$district_id)->update(array(
+            'district' =>request()->district
+        ));
         return redirect('/accountsettings/get-districts')->with('msg','Operation Successful');
     }
 

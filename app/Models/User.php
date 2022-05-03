@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use DB;
+use Auth;
 
 class User extends Authenticatable
 {
@@ -87,5 +88,16 @@ class User extends Authenticatable
             $user_logo = 'ociba.jpeg';
         }
         return $user_logo;
+    }
+    public function getUserPermisions(){
+        $empty_permissions_array = [];
+        $permissions_array = DB::table('staff_permissions')
+        ->join('permissions','permissions.id','staff_permissions.permission_id')
+        ->where('staff_id',Auth::user()->id)
+        ->select('permissions.permission')->get();
+        foreach(json_decode($permissions_array,true) as $permissions){
+                array_push($empty_permissions_array,$permissions["permission"]);
+        }
+        return $empty_permissions_array;
     }
 }

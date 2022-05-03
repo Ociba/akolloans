@@ -5,6 +5,7 @@ namespace Modules\AccountSettings\Http\Controllers;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use App\Models\User;
 
 class UsersController extends Controller
 {
@@ -50,9 +51,10 @@ class UsersController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function edit($id)
+    public function editUser($user_id)
     {
-        return view('accountsettings::edit');
+        $edit_user =User::where('id',$user_id)->get();
+        return view('accountsettings::edit_user',compact('edit_user'));
     }
 
     /**
@@ -71,8 +73,9 @@ class UsersController extends Controller
      * @param int $id
      * @return Renderable
      */
-    public function destroy($id)
+    public function deleteUser($user_id)
     {
-        //
+        User::where('id',$user_id)->delete();
+        return redirect()->back()->with('msg','Operation Successful');
     }
 }

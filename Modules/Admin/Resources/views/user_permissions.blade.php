@@ -76,9 +76,9 @@
                                             @else
                                             @php($i = 1)
                                             @endif
-                                            @foreach($get_permissions as $i=>$permission)
+                                            @foreach($get_permissions as $index=>$permission)
                                             <tr>
-                                                <td>{{$i++ + 1}}</td>
+                                                <td>{{$i++}}</td>
                                                 <td hidden>{{$permission->id}}</td>
                                                 <td> <label class="">
                                                         <input type="checkbox" class='check_permission' name="user_permisions[]" value="{{$permission->id}}"> {{$permission->permission}}

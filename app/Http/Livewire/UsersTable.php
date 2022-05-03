@@ -24,7 +24,7 @@ class UsersTable extends Component
         $searchTerm = '%'.$this->searchTerm.'%';
         return view('livewire.users-table',[
             'get_users' =>User::join('categories','categories.id','users.category_id')
-            ->where('name','like',$searchTerm)
+            ->where('users.name','like',$searchTerm)
             ->orderBy('users.created_at','DESC')
             ->Paginate($this->per_page,['users.*','categories.category'])
         ]);

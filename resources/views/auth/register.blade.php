@@ -31,7 +31,7 @@
             <div class="card">
                 <div class="p-4 p-sm-5">
                     <!-- [ Logo ] Start -->
-                    <div class="d-flex justify-content-center align-items-center pb-2 mb-4">
+                    {{--<div class="d-flex justify-content-center align-items-center pb-2 mb-4">
                         <div class="ui-w-60">
                             <div class="w-100 position-relative">
                                 <img src="assets/img/logo-dark.png" alt="Brand Logo" class="img-fluid">
@@ -39,6 +39,7 @@
                             </div>
                         </div>
                     </div>
+                    --}}
                     <!-- [ Logo ] End -->
 
                     <h5 class="text-center text-muted font-weight-normal mb-4">Create an Account</h5>
@@ -89,7 +90,23 @@
     <!-- / Content -->
 
     <!-- Core scripts -->
-    @include('layouts.javascript')
+    <script src="{{ asset('assets/js/pace.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{ asset('assets/libs/popper/popper.js')}}"></script>
+    <script src="{{ asset('assets/js/bootstrap.js')}}"></script>
+    <script src="{{ asset('assets/js/sidenav.js')}}"></script>
+    <script src="{{ asset('assets/js/layout-helpers.js')}}"></script>
+    <script src="{{ asset('assets/js/material-ripple.js')}}"></script>
+
+    <!-- Libs -->
+    <script src="{{ asset('assets/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+    <script src="{{ asset('assets/libs/eve/eve.js')}}"></script>
+    <script src="{{ asset('assets/libs/chart-am4/core.js')}}"></script>
+    <script src="{{ asset('assets/libs/chart-am4/charts.js')}}"></script>
+    <script src="{{ asset('assets/libs/chart-am4/animated.js')}}"></script>
+
+    <!-- Demo -->
+    <script src="{{ asset('assets/js/analytics.js')}}"></script>
 </body>
 </html>
 

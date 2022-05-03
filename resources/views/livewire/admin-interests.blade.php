@@ -1,4 +1,5 @@
 <div>
+@livewireStyles
     <div class="card">
         <div class="card-body">
             <div class="row">
@@ -21,7 +22,7 @@
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6 align-items-right">
                         <label class="form-label">Search</label>
-                        <input type="text" class="form-control" wier:model="searchTerm">
+                        <input type="text" class="form-control" placeholder="Package Name" wire:model="searchTerm">
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -67,8 +68,11 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="row mt-2">
                 {{$interests->links()}}
+                </div>
             </div>
         </div>
     </div>
+    @livewireScripts
 </div>

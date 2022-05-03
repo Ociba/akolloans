@@ -29,8 +29,8 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard',[AdminDashboardController::Class,'getDashboard'])->name('Dashboard'); 
     
-    Route::get('/investor',[AuthenticationController::Class, 'investorDashboard'])->name('Dashboard');
-    Route::get('/my-dashboard',[ClientsDashboardController::Class, 'clientDashboard'])->name('Dashboard'); 
+    Route::get('/investor',[AuthenticationController::Class, 'investorDashboard'])->name('MY Dashboard');
+    Route::get('/my-dashboard',[ClientsDashboardController::Class, 'clientDashboard'])->name('My Dashboards'); 
     Route::get('/change-password',[ChangePasswordController::Class, 'changePassword'])->name('Change Password');
     Route::get('/update-password',[ChangePasswordController::Class, 'updateUserPassword']);
 });

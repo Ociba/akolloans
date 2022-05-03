@@ -73,9 +73,9 @@
                                             @else
                                             @php($i = 1)
                                             @endif
-                                          @foreach($get_users_and_permission as $i=>$permission)
+                                          @foreach($get_users_and_permission as $index=>$permission)
                                             <tr>
-                                                <td>{{$i++ + 1}}</td>
+                                                <td>{{$i++}}</td>
                                                 <td hidden>{{$permission->id}}</td>
                                                 <td>{{$permission->permission}}</td>
                                                 <td>

@@ -15,12 +15,15 @@
     <ul class="sidenav-inner py-1">
 
         <!-- Dashboards -->
-        <li class="sidenav-item open active">
+        @if(in_array('Can view dashboard', auth()->user()->getUserPermisions()))
+        <li  @if(\Request::route()->getName() == "Dashboard") class="sidenav-item active" @else class="sidenav-item" @endif>
             <a href="/dashboard" class="sidenav-link">
                 <i class="sidenav-icon feather icon-home"></i>
                 <div>Admin Dashboards</div>
             </a>
         </li>
+        @endif
+        @if(in_array('Can view Investors', auth()->user()->getUserPermisions()))
         <li class="sidenav-divider mb-1"></li>
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
@@ -31,20 +34,22 @@
                 </div>
             </a>
             <ul class="sidenav-menu">
-                <li class="sidenav-item">
+                <li @if(\Request::route()->getName() == "Investors") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/admin/investors" class="sidenav-link">
                         <div>List of Investors</div>
                     </a>
                 </li>
-                <li class="sidenav-item">
+                <li @if(\Request::route()->getName() == "Suspended Investors") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/admin/suspended-investors" class="sidenav-link">
                         <div>Suspended Investors</div>
                     </a>
                 </li>
             </ul>
         </li>
+        @endif
+        @if(in_array('Can view Packages', auth()->user()->getUserPermisions()))
         <li class="sidenav-divider mb-1"></li>
-        <li class="sidenav-item">
+        <li  @if(\Request::route()->getName() == "Packages") class="sidenav-item active" @else class="sidenav-item" @endif>
             <a href="/admin/get-packages" class="sidenav-link">
                 <i class="sidenav-icon feather icon-grid"></i>
                 <div>Packages</div>
@@ -53,8 +58,9 @@
                 </div>
             </a>
         </li>
-        
+        @endif
         <li class="sidenav-divider mb-1"></li>
+        @if(in_array('Can view Clients', auth()->user()->getUserPermisions()))
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon feather icon-layout"></i>
@@ -64,74 +70,88 @@
                 </div>
             </a>
             <ul class="sidenav-menu">
-                <li class="sidenav-item">
+                <li @if(\Request::route()->getName() == "All Clients") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/admin/all-clients" class="sidenav-link">
                         <div>Clients With Paid Loans</div>
                     </a>
                 </li>
-                <li class="sidenav-item">
+                <li @if(\Request::route()->getName() == "Clients With Loans") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/admin/clients-with-loans" class="sidenav-link">
                         <div>Clients with Loans</div>
                     </a>
                 </li>
-                <li class="sidenav-item">
+                <li @if(\Request::route()->getName() == "Loan Defaulters") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/admin/loan-defaulters" class="sidenav-link">
                         <div>Loan Defaulters</div>
                     </a>
                 </li>
             </ul>
         </li>
+        @endif
         <li class="sidenav-divider mb-1"></li>
-        <li class="sidenav-item">
+        @if(in_array('Can view Interests', auth()->user()->getUserPermisions()))
+        <li @if(\Request::route()->getName() == "interests") class="sidenav-item active" @else class="sidenav-item" @endif>
             <a href="/admin/get-interests" class="sidenav-link">
                 <i class="sidenav-icon ion ion-md-wallet"></i>
                 <div>Interests</div>
             </a>
         </li>
+        @endif
         <li class="sidenav-divider mb-1"></li>
+        @if(in_array('Can view Other Entries', auth()->user()->getUserPermisions()))
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon feather icon-menu"></i>
                 <div>Other Entries</div>
             </a>
             <ul class="sidenav-menu">
-                <li class="sidenav-item">
+                @if(in_array('Can View categories', auth()->user()->getUserPermisions()))
+                <li @if(\Request::route()->getName() == "Category") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/accountsettings/get-categories" class="sidenav-link">
                         <div>Categories</div>
                     </a>
                 </li>
-                <li class="sidenav-item">
+                @endif
+                @if(in_array('Can view district', auth()->user()->getUserPermisions()))
+                <li @if(\Request::route()->getName() == "Districts") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/accountsettings/get-districts" class="sidenav-link">
                         <div>Districts</div>
                     </a>
                 </li>
+                @endif
             </ul>
         </li>
+        @endif
         <li class="sidenav-divider mb-1"></li>
+        @if(in_array('Can view Account Settings', auth()->user()->getUserPermisions()))
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">
                 <i class="sidenav-icon feather icon-settings"></i>
                 <div>Account Settings</div>
             </a>
             <ul class="sidenav-menu">
-                <li class="sidenav-item">
+                 @if(in_array('Can view Users', auth()->user()->getUserPermisions()))
+                <li @if(\Request::route()->getName() == "Users") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/accountsettings/get-all-users" class="sidenav-link">
                         <div>Users</div>
                     </a>
                 </li>
-                <li class="sidenav-item">
+                @endif
+                <li @if(\Request::route()->getName() == "Change Password") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/change-password" class="sidenav-link">
                         <div>Change Password</div>
                     </a>
                 </li>
-                <li class="sidenav-item">
+                @if(in_array('Can view Permissions', auth()->user()->getUserPermisions()))
+                <li @if(\Request::route()->getName() == "Roles For Permissions") class="sidenav-item active" @else class="sidenav-item" @endif>
                     <a href="/accountsettings/get-roles-for-permissions" class="sidenav-link">
                         <div>Permissions</div>
                     </a>
                 </li>
+                @endif
             </ul>
         </li>
-
+       @endif
         <!-- Layouts -->
         <li class="sidenav-divider mb-1"></li>
     </ul>

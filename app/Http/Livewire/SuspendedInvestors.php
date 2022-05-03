@@ -28,7 +28,7 @@ class SuspendedInvestors extends Component
             ->join('packages','packages.id','investors.package_id')
             ->join('users','users.id','investors.bought_by')
             ->where('investors.investor_status','suspended')
-            ->where('name','like',$searchTerm)
+            ->where('users.name','like',$searchTerm)
             ->orderBy('investors.created_at','DESC')
             ->Paginate($this->per_page,['investors.*','users.name','users.email','districts.district','packages.package_name','packages.investor_interest'])
         ]);

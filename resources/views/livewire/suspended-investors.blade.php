@@ -1,11 +1,12 @@
 <div>
+    @livewireStyles
     <div class="card">
         <div class="card-body">
             <div class="row align-items-center m-l-0">
                 <div class="col-sm-6">
                 </div>
                 <div class="col-sm-6 text-right">
-                    <button class="btn btn-success btn-sm btn-round mb-3" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Add Investor</button>
+                    {{--<button class="btn btn-success btn-sm btn-round mb-3" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Add Investor</button>--}}
                 </div>
             </div>
             <div class="row">
@@ -28,7 +29,7 @@
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6 align-items-right">
                         <label class="form-label">Search</label>
-                        <input type="text" class="form-control" wier:model="searchTerms">
+                        <input type="text" class="form-control" wire:model="searchTerm">
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -46,7 +47,6 @@
                             <th>Interest %</th>
                             <th>Period</th>
                             <th>Status</th>
-                            <th>Option</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,17 +69,15 @@
                             <td>{{$investor->investor_interest}}</td>
                             <td>{{$investor->period}} {{$investor->state}}</td>
                             <td>{{$investor->investor_status}}</td>
-                            <td>
-                                <a href="#!" class="btn btn-primary btn-sm"><i class="feather icon-plus"></i>Manage Facilities</a>
-                                <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-                {{$suspended_investors->links()}}
+                <div class="row mt-2">
+                   {{$suspended_investors->links()}}
+                </div>
             </div>
         </div>
     </div>
+    @livewireScripts
 </div>

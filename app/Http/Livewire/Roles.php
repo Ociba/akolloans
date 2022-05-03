@@ -21,7 +21,7 @@ class Roles extends Component
     public function render()
     {
         return view('livewire.roles',[
-            'get_users_for_permission' =>User::where('users.category_id',1)->orderBy('created_at','DESC')
+            'get_users_for_permission' =>User::where('users.category_id',1)->orwhere('category_id',4)->orderBy('created_at','DESC')
             ->Paginate($this->per_page)
         ]);
     }

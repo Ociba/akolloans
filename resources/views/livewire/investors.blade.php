@@ -1,11 +1,14 @@
 <div>
+    @livewireStyles
     <div class="card">
         <div class="card-body">
             <div class="row align-items-center m-l-0">
                 <div class="col-sm-6">
                 </div>
                 <div class="col-sm-6 text-right">
+                     @if(in_array('Can add Investor', auth()->user()->getUserPermisions()))
                     <button class="btn btn-success btn-sm btn-round mb-3" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Add Investor</button>
+                    @endif
                 </div>
             </div>
             <div class="row">
@@ -28,7 +31,7 @@
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6 align-items-right">
                         <label class="form-label">Search</label>
-                        <input type="text" class="form-control" wier:model="searchTerm">
+                        <input type="text" class="form-control" wire:model="searchTerm">
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -46,7 +49,9 @@
                             <th>Interest %</th>
                             <th>Period</th>
                             <th>Status</th>
+                            @if(in_array('Can view Investor options', auth()->user()->getUserPermisions()))
                             <th>Option</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -69,21 +74,31 @@
                             <td>{{$investor->investor_interest}}</td>
                             <td>{{$investor->period}} {{$investor->state}}</td>
                             <td>{{$investor->investor_status}}</td>
+                            @if(in_array('Can suspend Investor', auth()->user()->getUserPermisions()))
                             <td>
                                  @if($investor->status == 'active')
                                 <a href="/admin/suspend-investor/{{$investor->id}}" class="btn btn-success btn-sm"><i class="feather icon-edit"></i>&nbsp;Suspend </a>
+                                @endif
                                 @else
+                                     @if(in_array('Can activate Investor', auth()->user()->getUserPermisions()))
                                     <a href="/admin/activate-investor/{{$investor->id}}" class="btn btn-info btn-sm"><i class="feather icon-check"></i>&nbsp; Activate</a>
+                                    @endif
                             
                                 @endif
+                                @if(in_array('Can delete Investor', auth()->user()->getUserPermisions()))
                                 <a href="/admin/delete-investor/{{$investor->id}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
+                                
                             </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-                {{$investors->links()}}
+                <div class="row mt-2">
+                    {{$investors->links()}}
+                </div>
             </div>
         </div>
     </div>
 </div>
+@livewireScripts

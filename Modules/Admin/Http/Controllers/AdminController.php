@@ -30,7 +30,7 @@ class AdminController extends Controller
         $staff_obj = new User;
         $staff_obj->email              = request()->email;
         $staff_obj->name               = request()->name;
-        $staff_obj->category_id               ="1";
+        $staff_obj->category_id               ="4";
         $staff_obj->password    = Hash::make(request()->password);
         $staff_obj->save();
         return redirect()->back()->with('msg','Operation Successful');

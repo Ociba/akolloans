@@ -6,7 +6,9 @@
                 <div class="col-sm-6">
                 </div>
                 <div class="col-sm-6 text-right">
+                   @if(in_array('Can add district', auth()->user()->getUserPermisions()))
                     <button class="btn btn-success btn-sm btn-round mb-3" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Add District</button>
+                    @endif
                 </div>
             </div>
             <div class="row">
@@ -40,7 +42,9 @@
                         <tr class="">
                             <th>No.</th>
                             <th>District</th>
+                            @if(in_array('Can view District Option', auth()->user()->getUserPermisions()))
                             <th>Option</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -56,10 +60,14 @@
                             <td>{{$i}}</td>
                             <td hidden>{{$districts->id}}</td>
                             <td>{{$districts->district}}</td>
+                            @if(in_array('Can edit district', auth()->user()->getUserPermisions()))
                             <td>
-                                <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
+                                <a href="/accountsettings/edit-district/{{$districts->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
+                                @endif
+                                @if(in_array('Can delete district', auth()->user()->getUserPermisions()))
+                                <a href="/accountsettings/delete-district/{{$districts->id}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                             </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

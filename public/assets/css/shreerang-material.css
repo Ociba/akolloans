@@ -5459,7 +5459,7 @@ li.ui-timepicker-selected,
 .sidenav.sidenav-vertical.bg-dark .sidenav-inner > .sidenav-item.active > .sidenav-link {
   color: #fff !important; }
 .sidenav.sidenav-vertical.bg-dark .sidenav-item.active > .sidenav-link:not(.sidenav-toggle) {
-  background: rgba(255, 255, 255, 0.08); }
+  background: #ff8000; }
 
 .layout-sidenav,
 .layout-sidenav-horizontal {

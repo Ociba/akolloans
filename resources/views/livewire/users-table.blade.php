@@ -6,7 +6,9 @@
                 <div class="col-sm-6">
                 </div>
                 <div class="col-sm-6 text-right">
+                    @if(in_array('Can add staff member', auth()->user()->getUserPermisions()))
                     <button class="btn btn-success btn-sm btn-round mb-3" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Add Staff Member</button>
+                    @endif
                 </div>
             </div>
             <div class="row">
@@ -43,7 +45,9 @@
                             <th>Email</th>
                             <th>Category</th>
                             <th>Photo</th>
+                            @if(in_array('Can view User Option', auth()->user()->getUserPermisions()))
                             <th>Option</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -62,10 +66,12 @@
                             <td>{{$user->email}}</td>
                             <td>{{$user->category}}</td>
                             <td><img style="with:40px; height:40px;" src="{{ asset('users_photo/'.$user->profile_photo_path)}}"></td>
+                            @if(in_array('Can delete User', auth()->user()->getUserPermisions()))
                             <td>
-                                <a href="#!" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>
-                                <a href="#!" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
+                                {{--<a href="/accountsettings/edit-user/{{$user->id}}" class="btn btn-info btn-sm"><i class="feather icon-edit"></i>&nbsp;Edit </a>--}}
+                                <a href="/accountsettings/delete-user/{{$user->id}}" class="btn btn-danger btn-sm"><i class="feather icon-trash-2"></i>&nbsp;Delete </a>
                             </td>
+                            @endif
                         </tr>
                         @endforeach
                     </tbody>

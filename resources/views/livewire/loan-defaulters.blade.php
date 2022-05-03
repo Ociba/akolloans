@@ -1,11 +1,12 @@
 <div>
+   @livewireStyles
     <div class="card">
         <div class="card-body">
             <div class="row align-items-center m-l-0">
                 <div class="col-sm-6">
                 </div>
                 <div class="col-sm-6 text-right">
-                    <button class="btn btn-success btn-sm btn-round mb-3" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Add client</button>
+                
                 </div>
             </div>
             <div class="row">
@@ -28,7 +29,7 @@
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6 align-items-right">
                         <label class="form-label">Search</label>
-                        <input type="text" class="form-control" wier:model="searchTerm">
+                        <input type="text" class="form-control" placeholder="Computer Number" wire:model="searchTerm">
                         <div class="clearfix"></div>
                     </div>
                 </div>
@@ -102,8 +103,11 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="row mt-2">
                 {{$loan_defaulter->links()}}
+                </div>
             </div>
         </div>
     </div>
+    @livewireScripts
 </div>
