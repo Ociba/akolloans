@@ -268,7 +268,7 @@ div#preloader {
   height: 100%;
   position: fixed;
   display: block;
-  background: #161616;
+  background: rgb(0, 0, 0,0.9);
   opacity: 0.92;
   z-index: -1;
   cursor: url("../images/cursor.png"), auto;
@@ -317,7 +317,7 @@ div#preloader {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  width: 550px;
+  width: 400px;
   background: #F5F7FA;
 }
 .login_signup_option .login_modal_body form .form-group {
@@ -455,6 +455,7 @@ div#preloader {
 }
 .login_signup_option .login_modal_body .register {
   text-align: center;
+  height: 400px;
 }
 .forgot_pass {
   padding: 130px 0;
@@ -976,7 +977,7 @@ header .header_top .info_wrapper .login_info ul li:before {
   background: #ffffff;
   top: 50%;
   left: 10px;
-  transform: translateY(-50%) rotate(20deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 header .header_top .info_wrapper .login_info ul li:first-child {
   padding-left: 0;
@@ -2316,15 +2317,15 @@ footer .shapes1_footer {
 }
 .register_area {
   background: transparent url("../images/banner/counter_bg.jpg") no-repeat center center/cover;
-  min-height: 500px;
+  min-height: 300px;
   position: relative;
-  padding: 130px 0;
+  padding: 60px 0;
   z-index: 1;
 }
 .register_area:before {
   background: transparent;
   content: "";
-  height: 100%;
+  height: 60%;
   position: absolute;
   top: 0;
   right: 0%;
@@ -2573,11 +2574,13 @@ footer .shapes1_footer {
   font-family: "Rubik", sans-serif;
 }
 .testimonial_2 {
-  padding: 130px 0 0px 0;
-  background: linear-gradient(65deg, #5958a0 0%, #111b51 100%);
+  padding: 20px 0 0px 0;
+  background: linear-gradient(65deg, #5958a0 0%, #111b51 40%);
   position: relative;
   z-index: 1;
   overflow: hidden;
+  height:430px;
+  margin-bottom: 8px;
 }
 .testimonial_2:before {
   color: #ff5a2c;
@@ -2895,6 +2898,7 @@ footer .shapes1_footer {
 .header_3 .header_top .info_wrapper .contact_info ul li i:before {
   color: #6a7a83;
   margin: 0;
+  transform: translateY(-50%) rotate(180deg);
 }
 .header_3 .header_top .info_wrapper a {
   background: #ff5a2c;

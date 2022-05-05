@@ -47,11 +47,6 @@
                     </ul>
                 </div>
             </div>
-                <div class="col-12 col-md-12 col-lg-12">
-                <div class="copyright">
-                    <p>&copy; Copyright 2019 Eduwise Design by Ecologytheme</p>
-                </div>
-                </div>
         </div>
     </div>
 </div>
@@ -59,3 +54,9 @@
     <img src="{{ asset('front/images/shapes/testimonial_2_shpe_1.png')}}" alt="" class="shape_3">        
     <img src="{{ asset('front/images/shapes/footer_2.png')}}" alt="" class="shape_1">
 </div> 
+
+<div class="col-12 col-md-12 col-lg-12" style="background-color:#ff5a2c; padding-bottom:5px; bottom:0">
+<div class="text-center">
+    <p style="color:#ffffff;">&copy; Copyright 2022 Technest Design by James</p>
+</div>
+</div>

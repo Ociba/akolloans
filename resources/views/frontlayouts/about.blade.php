@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
             <div class="sub_title">
-                <h2>Unlimited Possibilities</h2>
-                <p>Lorem ipsum dolor sit amet mollis felis dapibus arcu donec viverra. Pede phasellus eget. Etiam maecenas vel vici quis dictum rutrum nec nisi et.</p>  
+                <h3>Quick <span style="color:#ff8000">Loan ?</span> Apply Now On Nest<span style="color:#ff8000"> Tellers</span> </h3>
+                <p>Licensed and Regulated by Uganda Microfinance Regulatory Authority Licensed No. <span style="color:#ff8000"> 0741 ML</span> Register Now as an Investor or Borrower to access Digital Credit</p>  
             </div><!-- ends: .section-header -->
         </div>
         <div class="col-12 col-sm-6 col-md-4 col-lg-4">

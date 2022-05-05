@@ -5,9 +5,9 @@
                 <h2>Start now and turn your knowledge into a profitable online course</h2>
                 <a href="#" title="" class="srtarte_btn">Get Started Now</a>
             </div>   
-            <div class="teamgroup_info_banner">
+            {{--<div class="teamgroup_info_banner">
                 <img src="{{ asset('front/images/banner/teamgroup.png')}}" alt="" class="img-fluid">
-            </div>  
+            </div>--}}  
         </div>
     </div>
 </div> 

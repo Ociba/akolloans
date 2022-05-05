@@ -6,9 +6,9 @@
             </div>
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="testimonial_wrapper_4">
+                <div class="testimonial_wrapper_4" style="margin-top:-100px;">
                 <div class="testimonial_single">
-                    <p>"I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system,<br> and expound the actual teachings."</p>
+                    <p>"I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system"</p>
                     <div class="reviewer_info">
                         <div class="member-img">
                             <img src="{{ asset('front/images/team/team_1.jpg')}}" alt="member img" class="img-fluid  wow zoomIn" data-wow-duration="2s" data-wow-delay=".2s">

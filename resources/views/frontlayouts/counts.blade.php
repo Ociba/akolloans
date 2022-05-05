@@ -44,15 +44,15 @@
             <div class="count_student">
                 <div class="single_count">
                     <span class="counter">54000</span>
-                    <span class="department_name">Students</span>
+                    <span class="department_name">Clients</span>
                 </div>                    
                 <div class="single_count">
                     <span class="counter">1650</span>
-                    <span class="department_name">Scholarships</span>
+                    <span class="department_name">Districts</span>
                 </div>                    
                 <div class="single_count">
                     <span class="counter">150</span>
-                    <span class="department_name">Courses</span>
+                    <span class="department_name">Users</span>
                 </div>
             </div>  
         </div>

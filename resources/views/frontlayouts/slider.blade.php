@@ -19,7 +19,7 @@
                 data-responsive_offset="on" 
                 data-frames='[{"from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","speed":400,"to":"o:1;","delay":100,"split":"chars","splitdelay":0.05,"ease":"Power3.easeInOut"},{"delay":"wait","speed":100,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
 
-                style="z-index: 7; color:#fff; font-family:'Rubik', sans-serif; max-width: auto; max-height: auto; white-space: nowrap; font-weight:500;">The Goal Of Education Is The Advancement Of Knowledge
+                style="z-index: 5; color:#fff; font-family:'Rubik', sans-serif; max-width: auto; max-height: 18px; white-space: nowrap; font-weight:900; font-size:38px;">Your Digital Partner in Global Transformation
             </div>
             <!-- LAYER NR. 2 -->
             <div class="tp-caption NotGeneric-Title   tp-resizeme" 
@@ -39,7 +39,7 @@
                 data-paddingbottom="[10,10,10,10]"
                 data-paddingleft="[0,0,0,0]"
 
-                style="z-index: 5; font-family:'Poppins', sans-serif; font-weight: 700; white-space: nowrap;text-transform:left;">Take Better Education From
+                style="z-index: 5; font-family:'Poppins', sans-serif; font-weight: 700; white-space: nowrap;text-transform:left;">Get Your Loan Today With Low Interest Rate
             </div>
 
             <!-- LAYER NR.3 -->
@@ -61,7 +61,7 @@
                 data-paddingbottom="[10,10,10,10]"
                 data-paddingleft="[0,0,0,0]"
 
-                style="z-index: 5; font-family:'Poppins', sans-serif; font-weight: 700; white-space: nowrap;text-transform:left;">The World Best University
+                style="z-index: 5; font-family:'Poppins', sans-serif; font-weight: 700; white-space: nowrap;text-transform:left;">Tech<span style="color:black;">Nest</span> Holdings Ltd
             </div>
             
             <!-- LAYER NR. 4 -->
@@ -85,7 +85,7 @@
                 data-paddingbottom="[12,12,8,8]"
                 data-paddingleft="[40,40,30,25]"
 
-                style="z-index: 14; white-space: nowrap; font-weight: 500; color: #ffffff;font-family:Rubik; text-transform:uppercase; background-color:#ff5a2c; border-color:rgba(0, 0, 0, 1.00); border-width:2px;  border-radius: 3px;">Get Started Now
+                style="z-index: 14; white-space: nowrap; font-weight: 500; color: #ffffff;font-family:Rubik; text-transform:uppercase; background-color:#ff5a2c; border-color:rgba(0, 0, 0, 1.00); border-width:2px;  border-radius: 3px;">Quick Loan
             </div>
             <!-- LAYER NR. 5 -->
             <div class="tp-caption rev-btn rev-btn right-btn" 
@@ -108,7 +108,7 @@
                 data-paddingbottom="[12,12,8,8]"
                 data-paddingleft="[40,40,30,25]"
 
-            style="z-index: 14; white-space: nowrap;  font-weight:500; color:#ffffff; font-family:Rubik; text-transform:uppercase; background-color:#092ace; letter-spacing:1px; border-radius: 3px;">View Courses
+            style="z-index: 14; white-space: nowrap;  font-weight:500; color:#ffffff; font-family:Rubik; text-transform:uppercase; background-color:#092ace; letter-spacing:1px; border-radius: 3px;">Apply Now 
             </div>
         </li>
 
@@ -130,7 +130,7 @@
                 data-responsive_offset="on" 
                 data-frames='[{"from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","speed":400,"to":"o:1;","delay":100,"split":"chars","splitdelay":0.05,"ease":"Power3.easeInOut"},{"delay":"wait","speed":100,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
 
-                style="z-index: 7; color:#fff; font-family:'Rubik', sans-serif; max-width: auto; max-height: auto; white-space: nowrap; font-weight:500;">The Goal Of Education Is The Advancement Of Knowledge
+                style="z-index: 7; color:#fff; font-family:'Rubik', sans-serif; max-width: auto; max-height: auto; white-space: nowrap; font-weight:500;">Your Digital Partner in Global Transformation
             </div>
             <!-- LAYER NR. 2 -->
             <div class="tp-caption NotGeneric-Title   tp-resizeme" 
@@ -150,7 +150,7 @@
                 data-paddingbottom="[10,10,10,10]"
                 data-paddingleft="[0,0,0,0]"
 
-                style="z-index: 5; font-family:'Poppins', sans-serif; font-weight: 700; white-space: nowrap;text-transform:left;">Take Better Education From
+                style="z-index: 5; font-family:'Poppins', sans-serif; font-weight: 700; white-space: nowrap;text-transform:left;">Just Create an Account With Us,Get Loan Instanty
             </div>
 
             <!-- LAYER NR.3 -->
@@ -172,7 +172,7 @@
                 data-paddingbottom="[10,10,10,10]"
                 data-paddingleft="[0,0,0,0]"
 
-                style="z-index: 5; font-family:'Poppins', sans-serif; font-weight: 700; white-space: nowrap;text-transform:left;">The World Best University
+                style="z-index: 5; font-family:'Poppins', sans-serif; font-weight: 700; white-space: nowrap;text-transform:left;">Tech<span style="color:red;">Nest</span> Holdings Ltd
             </div>
             
             <!-- LAYER NR. 4 -->
@@ -196,7 +196,7 @@
                 data-paddingbottom="[12,12,8,8]"
                 data-paddingleft="[40,40,30,25]"
 
-                style="z-index: 14; white-space: nowrap; font-weight: 500; color: #ffffff;font-family:Rubik; text-transform:uppercase; background-color:#ff5a2c; border-color:rgba(0, 0, 0, 1.00); border-width:2px;  border-radius: 3px;">Get Started Now
+                style="z-index: 14; white-space: nowrap; font-weight: 500; color: #ffffff;font-family:Rubik; text-transform:uppercase; background-color:#ff5a2c; border-color:rgba(0, 0, 0, 1.00); border-width:2px;  border-radius: 3px;">Quick Loan
             </div>
             <!-- LAYER NR. 5 -->
             <div class="tp-caption rev-btn rev-btn right-btn" 
@@ -219,7 +219,7 @@
                 data-paddingbottom="[12,12,8,8]"
                 data-paddingleft="[40,40,30,25]"
 
-            style="z-index: 14; white-space: nowrap;  font-weight:500; color:#ffffff; font-family:Rubik; text-transform:uppercase; background-color:#092ace; letter-spacing:1px; border-radius: 3px;">View Courses
+            style="z-index: 14; white-space: nowrap;  font-weight:500; color:#ffffff; font-family:Rubik; text-transform:uppercase; background-color:#092ace; letter-spacing:1px; border-radius: 3px;">Apply Now 
             </div>
         </li>
     </ul><!-- END SLIDES LIST -->
