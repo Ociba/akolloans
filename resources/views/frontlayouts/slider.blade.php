@@ -1,4 +1,4 @@
-<div id="rev_slider_2" class="rev_slider" style="display:none">
+<div id="rev_slider_2" class="rev_slider" style="display:none;">
     <!-- BEGIN SLIDES LIST -->
     <ul>
         <li data-index="rs-1706" data-transition="fade" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1000"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">

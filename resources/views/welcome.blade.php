@@ -26,7 +26,7 @@
     <!--==================
         Slider
     ===================-->
-    <div class="rev_slider_wrapper">
+    <div class="rev_slider_wrapper" style="margin-top: 50px;">
         @include('frontlayouts.slider')
         <!-- END SLIDER CONTAINER -->
     </div><!-- END SLIDER CONTAINER WRAPPER -->

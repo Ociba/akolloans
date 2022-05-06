@@ -222,15 +222,18 @@ div#preloader {
 .rev_slider_wrapper .tp-bullet {
   width: 3px;
   height: 50px;
+  
 }
 .rev_slider_wrapper .tp-bullet.selected,
 .rev_slider_wrapper .tp-bullet:hover {
   background: #ff5a2c;
+  
 }
 .rev_slider_wrapper #rev_slider_2 .tp-bullet {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+  
 }
 .rev_slider_wrapper #rev_slider_2 .tp-bullet.selected {
   background: #ff5a2c;
@@ -921,6 +924,7 @@ header .header_top {
   z-index: 9;
   overflow: hidden;
   width:100%;
+  margin-top: -50px;
 }
 header .header_top:before {
   position: absolute;
