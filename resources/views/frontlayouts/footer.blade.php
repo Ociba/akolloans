@@ -3,8 +3,14 @@
         <div class="row">
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="footer_single_col footer_intro">
-                    <img src="{{ asset('front/images/logo2.png')}}" alt="" class="f_logo">
-                    <p>Ante amet vitae vulputate odio nulla vel pretium pulvinar aenean. Rhoncus eget adipiscing etiam arcu. Ultricies justo ipsum nec amet.</p>
+                    <img src="{{ asset('front/images/logo.png')}}" alt="" class="f_logo">
+                    <p>Ante amet vitae vulputate odio nulla vel pretium pulvinar aenean. Rhoncus eget adipiscing</p>
+                    <a href="#"><i class="fab fa-facebook-f fb-icon mr-3 text-white"></i></a>
+                    <a href="#"><i class="fab fa-twitter twitt-icon  mr-3 text-white"></i></a>
+                    <a href="#"><i class="fab  fa-youtube twitt-icon  mr-3 text-white"></i></a>
+                    <a href="#"><i class="fab  fa-whatsapp  twitt-icon  mr-3 text-white"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in link-icon  mr-3 text-white"></i></a>
+                    <a href="#"><i class="fab fa-instagram ins-icon  mr-3 text-white"></i></a>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-2">
@@ -32,19 +38,17 @@
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="footer_single_col contact">
+                <div class="footer_single_col contact" style="color:#ffffff;">
                     <h3>Contact Us</h3>
-                    <p>Ante amet vitae vulputate odio nulla vel pretium aenean.</p>
-                    <div class="contact_info">
-                        <span>+000 124 325</span> 
-                        <span class="email">info@eduwise.com</span>
-                    </div>
-                    <ul class="social_items d-flex list-unstyled">
-                        <li><a href="#"><i class="fab fa-facebook-f fb-icon"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter twitt-icon"></i></a></li>
-                        <li><a href="#"><i class="fab fa-linkedin-in link-icon"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram ins-icon"></i></a></li>
+                    <ul class="quick_inf0">
+                    <li>Makerere-Wandegeya, Kampala</li>
+                    <li>info@technestholdings.com</li>
+                    <li>P.O Box 26575, Kampala (U)</li>
+                    <li>+256 701 128 723 | +256 774 712 500</li>
                     </ul>
+                    <div class="contact_info">
+                        <span>www.technestholdings.com</span> 
+                    </div>
                 </div>
             </div>
         </div>

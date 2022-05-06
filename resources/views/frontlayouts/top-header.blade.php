@@ -4,7 +4,7 @@
             <div class="info_wrapper">
                 <div class="contact_info">                   
                     <ul class="list-unstyled">
-                        <li><a class="navbar-brand" href="index.html"><img src="{{ asset('front/images/logo2.png')}}" alt="logo"></a></li>
+                        <li><a class="navbar-brand" href="index.html"><img  style="height:40px;" src="{{ asset('front/images/logo22.png')}}" alt="logo"></a></li>
                         <li><i class="flaticon-phone-receiver"></i>+256-701-128-723</li> 
                         <li>+256-774-712-500</li>
                         <li><i class="flaticon-mail-black-envelope-symbol"></i>info@technestholdings.com</li>

@@ -2025,7 +2025,7 @@ footer .footer_top .footer_single_col .social_items {
   padding: 20px 0 0;
 }
 footer .footer_top .footer_single_col .social_items li {
-  margin-right: 30px;
+  margin-right:10px;
 }
 footer .footer_top .footer_single_col .social_items li:last-child {
   margin-right: 0;
