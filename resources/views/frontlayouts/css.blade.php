@@ -1,5 +1,5 @@
-<title>TechNest - Solutions Limited</title>
-    <link rel="shortcut icon" href="{{ asset('front/images/favicon.ico')}}" type="image/x-icon">
+<title>TechNest Holdings Limited</title>
+    <link rel="shortcut icon" href="{{ asset('front/images/logo.png')}}" type="image/x-icon">
     <!-- Goole Font -->
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> 

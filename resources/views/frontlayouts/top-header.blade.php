@@ -4,7 +4,8 @@
             <div class="info_wrapper">
                 <div class="contact_info">                   
                     <ul class="list-unstyled">
-                        <li><a class="navbar-brand" href="index.html"><img  style="height:40px;" src="{{ asset('front/images/logo22.png')}}" alt="logo"></a></li>
+                        {{--<li><a class="navbar-brand" href="index.html"><img  style="height:40px;" src="{{ asset('front/images/logo22.png')}}" alt="logo"></a></li>--}}
+                        <li style="font-weight:bold;font-size:25px;"><span style="color:black;">Nest</span>Tellers &nbsp;<i class="fa fa-check-circle"></i><span style="color:#000066;">Loans</span></li>
                         <li><i class="flaticon-phone-receiver"></i>+256-701-128-723</li> 
                         <li>+256-774-712-500</li>
                         <li><i class="flaticon-mail-black-envelope-symbol"></i>info@technestholdings.com</li>
