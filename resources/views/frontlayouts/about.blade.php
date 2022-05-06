@@ -12,7 +12,7 @@
                     <i class="flaticon-student"></i>
                 </div>
                 <div class="blog_title">
-                    <h3><a href="#" title="">Next Scheduled</a></h3> 
+                    <h3><a href="#" title="">Vision</a></h3> 
                     <p>Lorem ipsum dolor consectetur sed do tempor incididunt ut laboris ut aliquip ex commodo nt ut laboris ut aliquip ex commodo conquat.</p>                    
                 </div>   
             </div>
@@ -23,7 +23,7 @@
                     <i class="flaticon-university"></i>
                 </div>
                 <div class="blog_title">
-                    <h3><a href="#" title="">Online Courses</a></h3> 
+                    <h3><a href="#" title="">Mission</a></h3> 
                     <p>Lorem ipsum dolor consectetur sed do tempor incididunt ut laboris ut aliquip ex commodo nt ut laboris ut aliquip ex commodo conquat.</p>                    
                 </div>   
             </div>
@@ -34,7 +34,7 @@
                     <i class="flaticon-diploma"></i>
                 </div>
                 <div class="blog_title">
-                    <h3><a href="#" title="">Education Equip</a></h3> 
+                    <h3><a href="#" title="">Objective</a></h3> 
                     <p>Lorem ipsum dolor consectetur sed do tempor incididunt ut laboris ut aliquip ex commodo nt ut laboris ut aliquip ex commodo conquat.</p>
                 </div>   
             </div>

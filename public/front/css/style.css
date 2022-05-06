@@ -917,9 +917,10 @@ header {
 }
 header .header_top {
   background: #ff5a2c;
-  position: relative;
-  z-index: 1;
+  position: fixed;
+  z-index: 9;
   overflow: hidden;
+  width:100%;
 }
 header .header_top:before {
   position: absolute;
@@ -998,7 +999,7 @@ header .header_top .info_wrapper .login_info ul li a i:before {
   padding-right: 10px;
 }
 header .header_top .info_wrapper .login_info .apply_btn {
-  background: #0828c2;
+  background: #ff5a2c;
   height: 54px;
   line-height: 54px;
   color: #fff;
@@ -1290,6 +1291,7 @@ header .edu_nav nav .search_area .navbar-nav li i:before {
 .popular_courses .single-courses .courses_info_wrapper .courses_title h3 {
   margin: 0;
   line-height: 26px;
+  text-align:center;
 }
 .popular_courses .single-courses .courses_info_wrapper .courses_title h3 a {
   color: #323232;
@@ -1298,6 +1300,7 @@ header .edu_nav nav .search_area .navbar-nav li i:before {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
   font-family: "Poppins", sans-serif;
+  text-align:center;
 }
 .popular_courses .single-courses .courses_info_wrapper .courses_title h3 a:hover {
   color: #ff5a2c;
@@ -2474,7 +2477,7 @@ footer .shapes1_footer {
   padding-top: 20px;
 }
 .register_area .form-full-box .register-form .register-btn-box .register-btn {
-  background: #092ace;
+  background: #ff5a2c;
   color: white;
   padding: 0 55px;
   color: #fff;
@@ -2849,7 +2852,7 @@ footer .shapes1_footer {
   cursor: pointer;
 }
 .teamgroup .teamgroup_info_wrapper .srtarte_btn:hover {
-  background: #092ace;
+  background: #ff5a2c;
 }
 .footer_2 {
   padding: 0;

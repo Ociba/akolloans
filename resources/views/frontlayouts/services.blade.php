@@ -12,13 +12,13 @@
             <div class="courses_banner_wrapper">
                 <div class="courses_banner"><a href="#"><img src="{{ asset('front/images/courses/courses_1.jpg')}}" alt="" class="img-fluid"></a></div>
                 <div class="purchase_price">
-                    <a href="#" class="read_more-btn">$150</a>
+                    <a href="#" class="read_more-btn"></a>
                 </div>
             </div>
             <div class="courses_info_wrapper">
                 <div class="courses_title">
-                    <h3><a href="#">Make Better Decisions</a></h3>
-                    <div class="teachers_name">Teacher - <a href="#" title="">Jhonthan Smith</a></div>
+                    <h3><a href="#">Supplies & Logistics Mgt</a></h3>
+                    {{--<div class="teachers_name">Teacher - <a href="#" title="">Jhonthan Smith</a></div>--}}
                 </div>
                 {{--<div class="courses_info">
                     <ul class="list-unstyled">
@@ -38,13 +38,13 @@
             <div class="courses_banner_wrapper">
                 <div class="courses_banner"><a href="#"><img src="{{ asset('front/images/courses/courses_2.jpg')}}" alt="" class="img-fluid"></a></div>
                 <div class="purchase_price">
-                    <a href="#" class="read_more-btn">Free</a>
+                    <a href="#" class="read_more-btn"></a>
                 </div>
             </div>
             <div class="courses_info_wrapper">
                 <div class="courses_title">
-                    <h3><a href="#">How To Be A Speaker</a></h3>
-                    <div class="teachers_name">Teacher - <a href="#" title="">Denise Wood</a></div>
+                    <h3><a href="#">Civil & Engineering Works</a></h3>
+                    {{--<div class="teachers_name">Teacher - <a href="#" title="">Denise Wood</a></div>--}}
                 </div>
                 {{--<div class="courses_info">
                     <ul class="list-unstyled">
@@ -62,13 +62,13 @@
             <div class="courses_banner_wrapper">
                 <div class="courses_banner"><a href="#"><img src="{{ asset('front/images/courses/courses_3.jpg')}}" alt="" class="img-fluid"></a></div>
                 <div class="purchase_price">
-                    <a href="#" class="read_more-btn">120$</a>
+                    <a href="#" class="read_more-btn"></a>
                 </div>
             </div>
             <div class="courses_info_wrapper">
                 <div class="courses_title">
-                    <h3><a href="#">Network Introductions</a></h3>
-                    <div class="teachers_name">Teacher - <a href="#" title="">Preston Marshall</a></div>
+                    <h3><a href="#">IT & Software Solutions</a></h3>
+                    {{--<div class="teachers_name">Teacher - <a href="#" title="">Preston Marshall</a></div>--}}
                 </div>
                 {{--<div class="courses_info">
                     <ul class="list-unstyled">
@@ -87,13 +87,13 @@
             <div class="courses_banner_wrapper">
                 <div class="courses_banner"><a href="#"><img src="{{ asset('front/images/courses/courses_4.jpg')}}" alt="" class="img-fluid"></a></div>
                 <div class="purchase_price">
-                    <a href="#" class="read_more-btn">250$</a>
+                    <a href="#" class="read_more-btn"></a>
                 </div>
             </div>
             <div class="courses_info_wrapper">
                 <div class="courses_title">
-                    <h3><a href="#">Brand Management</a></h3>
-                    <div class="teachers_name">Teacher - <a href="#" title="">John Porter</a></div>
+                    <h3><a href="#">System Developers</a></h3>
+                    {{--<div class="teachers_name">Teacher - <a href="#" title="">John Porter</a></div>--}}
                 </div>
                 {{--<div class="courses_info">
                     <ul class="list-unstyled">
@@ -112,13 +112,13 @@
             <div class="courses_banner_wrapper">
                 <div class="courses_banner"><a href="#"><img src="{{ asset('front/images/courses/courses_5.jpg')}}" alt="" class="img-fluid"></a></div>
                 <div class="purchase_price">
-                    <a href="#" class="read_more-btn">180$</a>
+                    <a href="#" class="read_more-btn"></a>
                 </div>
             </div>
             <div class="courses_info_wrapper">
                 <div class="courses_title">
-                    <h3><a href="#">Moralities Of Everyday</a></h3>
-                    <div class="teachers_name">Teacher - <a href="#" title="">Mittie Hill</a></div>
+                    <h3><a href="#">Telecommunication Services</a></h3>
+                    {{--<div class="teachers_name">Teache - <a href="#" title="">Mittie Hill</a></div>--}}
                 </div>
                 {{--<div class="courses_info">
                     <ul class="list-unstyled">
@@ -136,13 +136,13 @@
             <div class="courses_banner_wrapper">
                 <div class="courses_banner"><a href="#"><img src="{{ asset('front/images/courses/courses_6.jpg')}}" alt="" class="img-fluid"></a></div>
                 <div class="purchase_price">
-                    <a href="#" class="read_more-btn">130$</a>
+                    <a href="#" class="read_more-btn"></a>
                 </div>
             </div>
             <div class="courses_info_wrapper">
                 <div class="courses_title">
-                    <h3><a href="#">Life Coach Training</a></h3>
-                    <div class="teachers_name">Teacher - <a href="#" title="">Marian Dupre</a></div>
+                    <h3><a href="#">Quick Loans</a></h3>
+                    {{--<div class="teachers_name">Teacher - <a href="#" title="">Marian Dupre</a></div>--}}
                 </div>
                 {{--<div class="courses_info">
                     <ul class="list-unstyled">

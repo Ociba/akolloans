@@ -10,7 +10,7 @@
     @include('frontlayouts.css')
 </head>
 <body>
-<header class="header_tow">
+<header class="header_four">
 <!-- Preloader -->
 @include('frontlayouts.preloader')  
     <div class="header_top">

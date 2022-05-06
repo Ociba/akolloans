@@ -7,10 +7,10 @@
         <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
         <img src="{{ asset('front/images/banner/banner_2.jpg')}}" alt="Sky" class="rev-slidebg"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
             <!-- LAYER NR. 1 -->
-            <div class="tp-caption font-lora sfb tp-resizeme letter-space-5 h-p" 
+            <div class="tp-caption font-lora sfb tp-resizeme letter-space-5 h-p"
                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
                 data-y="['middle','middle','middle','middle']" data-voffset="['-300','-280','-250','-200']" 
-                data-fontsize="['40','40','30','18']"
+                data-fontsize="['80','80','40','30']"
                 data-lineheight="['70','80','70','70']"
                 data-width="none"
                 data-height="none"
@@ -19,7 +19,7 @@
                 data-responsive_offset="on" 
                 data-frames='[{"from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","speed":400,"to":"o:1;","delay":100,"split":"chars","splitdelay":0.05,"ease":"Power3.easeInOut"},{"delay":"wait","speed":100,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
 
-                style="z-index: 5; color:#fff; font-family:'Rubik', sans-serif; max-width: auto; max-height: 18px; white-space: nowrap; font-weight:900; font-size:38px;">Your Digital Partner in Global Transformation
+                style="z-index: 5; color:#ff8000; font-family:'Rubik', sans-serif; max-width: auto; max-height: 38px; white-space: nowrap; font-weight:900; font-size:80px;">Your Digital Partner in Global Transformation
             </div>
             <!-- LAYER NR. 2 -->
             <div class="tp-caption NotGeneric-Title   tp-resizeme" 
@@ -80,12 +80,12 @@
                 data-responsive="off"
                 data-frames='[{"from":"x:-50px;opacity:0;","speed":1000,"to":"o:1;","delay":1750,"ease":"Power2.easeOut"},{"delay":"wait","speed":1500,"to":"opacity:0;","ease":"Power4.easeIn"},{"frame":"hover","speed":"300","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:#ffffff;bg:#ff5a2c;bw:2px 2px 2px 2px;"}]'
                 data-textAlign="['left','left','left','left']"
-                data-paddingtop="[12,12,8,8]"
-                data-paddingright="[40,40,30,25]"
+                data-paddingtop="[16,16,10,10]"
+                data-paddingright="[80,80,30,25]"
                 data-paddingbottom="[12,12,8,8]"
                 data-paddingleft="[40,40,30,25]"
 
-                style="z-index: 14; white-space: nowrap; font-weight: 500; color: #ffffff;font-family:Rubik; text-transform:uppercase; background-color:#ff5a2c; border-color:rgba(0, 0, 0, 1.00); border-width:2px;  border-radius: 3px;">Quick Loan
+                style="z-index: 14; white-space: nowrap; font-weight: 500; color: #ffffff;font-family:Rubik; text-transform:uppercase; background-color:#ff5a2c; border-color:rgba(0, 0, 0, 1.00); border-width:2px;  border-radius: 3px; margin-right:3px;">Quick Loan
             </div>
             <!-- LAYER NR. 5 -->
             <div class="tp-caption rev-btn rev-btn right-btn" 
@@ -108,7 +108,7 @@
                 data-paddingbottom="[12,12,8,8]"
                 data-paddingleft="[40,40,30,25]"
 
-            style="z-index: 14; white-space: nowrap;  font-weight:500; color:#ffffff; font-family:Rubik; text-transform:uppercase; background-color:#092ace; letter-spacing:1px; border-radius: 3px;">Apply Now 
+            style="z-index: 14; white-space: nowrap;  font-weight:500; color:#ffffff; font-family:Rubik; text-transform:uppercase; background-color:#092ace; letter-spacing:1px; border-radius: 3px;"><a href="/register" style="color:#ffffff;">Apply Now </a>
             </div>
         </li>
 
@@ -121,7 +121,7 @@
             <div class="tp-caption font-lora sfb tp-resizeme letter-space-5 h-p" 
                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
                 data-y="['middle','middle','middle','middle']" data-voffset="['-300','-280','-250','-200']" 
-                data-fontsize="['40','40','30','18']"
+                data-fontsize="['80','80','40','30']"
                 data-lineheight="['70','80','70','70']"
                 data-width="none"
                 data-height="none"
@@ -130,7 +130,7 @@
                 data-responsive_offset="on" 
                 data-frames='[{"from":"z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;","speed":400,"to":"o:1;","delay":100,"split":"chars","splitdelay":0.05,"ease":"Power3.easeInOut"},{"delay":"wait","speed":100,"to":"y:[100%];","mask":"x:inherit;y:inherit;s:inherit;e:inherit;","ease":"Power2.easeInOut"}]'
 
-                style="z-index: 7; color:#fff; font-family:'Rubik', sans-serif; max-width: auto; max-height: auto; white-space: nowrap; font-weight:500;">Your Digital Partner in Global Transformation
+                style="z-index: 7; color:#ff8000; font-family:'Rubik', sans-serif; max-width: auto; max-height: auto; white-space: nowrap; font-weight:500;">Your Digital Partner in Global Transformation
             </div>
             <!-- LAYER NR. 2 -->
             <div class="tp-caption NotGeneric-Title   tp-resizeme" 
@@ -191,8 +191,8 @@
                 data-responsive="off"
                 data-frames='[{"from":"x:-50px;opacity:0;","speed":1000,"to":"o:1;","delay":1750,"ease":"Power2.easeOut"},{"delay":"wait","speed":1500,"to":"opacity:0;","ease":"Power4.easeIn"},{"frame":"hover","speed":"300","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;","style":"c:#ffffff;bg:#ff5a2c;bw:2px 2px 2px 2px;"}]'
                 data-textAlign="['left','left','left','left']"
-                data-paddingtop="[12,12,8,8]"
-                data-paddingright="[40,40,30,25]"
+                data-paddingtop="[16,16,8,8]"
+                data-paddingright="[80,80,30,25]"
                 data-paddingbottom="[12,12,8,8]"
                 data-paddingleft="[40,40,30,25]"
 
@@ -219,7 +219,7 @@
                 data-paddingbottom="[12,12,8,8]"
                 data-paddingleft="[40,40,30,25]"
 
-            style="z-index: 14; white-space: nowrap;  font-weight:500; color:#ffffff; font-family:Rubik; text-transform:uppercase; background-color:#092ace; letter-spacing:1px; border-radius: 3px;">Apply Now 
+            style="z-index: 14; white-space: nowrap;  font-weight:500; color:#ffffff; font-family:Rubik; text-transform:uppercase; background-color:#092ace; letter-spacing:1px; border-radius: 3px;"><a href="/register" style="color:#ffffff;">Apply Now </a>
             </div>
         </li>
     </ul><!-- END SLIDES LIST -->

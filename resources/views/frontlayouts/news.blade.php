@@ -17,9 +17,9 @@
                 </div>
                 <div class="blog_title">
                     <ul class="post_bloger">
-                        <li><i class="fas fa-user"></i>Jhon Dheo</li> 
-                        <li><i class="fas fa-comment"></i>0 Comments</li>
-                        <li><i class="fas fa-thumbs-up"></i> 0 Like</li>
+                        <li><i class="fas fa-user"></i>Admin</li> 
+                        <li><i class="flaticon-clock-circular-outline"></i>1 minute ago</li>
+                        <li><i class="fas fa-thumbs-up"></i> NestTeller</li>
                     </ul>               
                 </div> 
                 <div class="twitter_post">
@@ -44,9 +44,9 @@
                 </div>
                 <div class="blog_title">
                     <ul class="post_bloger">
-                        <li><i class="fas fa-user"></i>Jhon Dheo</li> 
-                        <li><i class="fas fa-comment"></i>0 Comments</li>
-                        <li><i class="fas fa-thumbs-up"></i> 0 Like</li>
+                        <li><i class="fas fa-user"></i>Admin</li> 
+                        <li><i class="flaticon-clock-circular-outline"></i>2 days</li>
+                        <li><i class="fas fa-thumbs-up"></i> NestTeller</li>
                     </ul>               
                 </div> 
                 <div class="twitter_post">
@@ -70,9 +70,9 @@
                 </div>
                 <div class="blog_title">
                     <ul class="post_bloger">
-                        <li><i class="fas fa-user"></i>Jhon Dheo</li> 
-                        <li><i class="fas fa-comment"></i>0 Comments</li>
-                        <li><i class="fas fa-thumbs-up"></i> 0 Like</li>
+                        <li><i class="fas fa-user"></i>Admin</li> 
+                        <li><i class="flaticon-clock-circular-outline"></i>2 days</li>
+                        <li><i class="fas fa-thumbs-up"></i> NestTeller</li>
                     </ul>               
                 </div> 
                 <div class="twitter_post">
