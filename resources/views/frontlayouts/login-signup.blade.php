@@ -59,7 +59,7 @@
                         <!--/.Panel 1-->
                         <!--Panel 2-->
                         <div class="tab-pane fade" id="panel2" role="tabpanel">
-                            <form action="{{ route('register') }}" class="register" method="POST">
+                            <form action="/register-now" class="register" method="get">
                                @csrf
                                 <div class="row">
                                     <div class="col-12 col-lg-12 col-md-12 col-lg-12">

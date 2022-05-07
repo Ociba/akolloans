@@ -19,10 +19,12 @@ use App\Http\Controllers\FrontController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/register', function () {
+    return redirect('/');
+});
 Route::get('/',[FrontController::Class,'frontPage']);
+Route::get('/login-now',[FrontController::Class,'Login']);
+Route::get('/register-now',[FrontController::Class,'validateregisterClient']);
 
 Route::middleware([
     'auth:sanctum',

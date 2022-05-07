@@ -108,7 +108,7 @@
                 data-paddingbottom="[12,12,8,8]"
                 data-paddingleft="[40,40,30,25]"
 
-            style="z-index: 14; white-space: nowrap;  font-weight:500; color:#ffffff; font-family:Rubik; text-transform:uppercase; background-color:#092ace; letter-spacing:1px; border-radius: 3px;"><a href="/register" style="color:#ffffff;">Apply Now </a>
+            style="z-index: 14; white-space: nowrap;  font-weight:500; color:#ffffff; font-family:Rubik; text-transform:uppercase; background-color:#092ace; letter-spacing:1px; border-radius: 3px;"><a  class="nav-link sign-in js-modal-show" style="color:#ffffff;" href="#">Apply Now</a>
             </div>
         </li>
 
@@ -219,7 +219,7 @@
                 data-paddingbottom="[12,12,8,8]"
                 data-paddingleft="[40,40,30,25]"
 
-            style="z-index: 14; white-space: nowrap;  font-weight:500; color:#ffffff; font-family:Rubik; text-transform:uppercase; background-color:#092ace; letter-spacing:1px; border-radius: 3px;"><a href="/register" style="color:#ffffff;">Apply Now </a>
+            style="z-index: 14; white-space: nowrap;  font-weight:500; color:#ffffff; font-family:Rubik; text-transform:uppercase; background-color:#092ace; letter-spacing:1px; border-radius: 3px;"><a class="nav-link sign-in js-modal-show" style="color:#ffffff;"  href="#">Apply Now</a>
             </div>
         </li>
     </ul><!-- END SLIDES LIST -->
