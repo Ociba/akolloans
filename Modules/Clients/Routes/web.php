@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('clients')->group(function() { 
+Route::group(['prefix'=>'clients', 'middleware'=>['auth']],function(){ 
     Route::get('/pay-loan-form/{client_id}', 'ClientsController@payLoanForm')->name('Pay Loan Form');
     Route::get('/request-for-loan/{package_id}', 'LoansController@requestLoan')->name('Request Loan');
     Route::get('/my-loan-details', 'LoansController@myLoanDetails')->name('My Loan Details');

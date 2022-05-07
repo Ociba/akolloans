@@ -123,6 +123,42 @@
         </li>
         @endif
         <li class="sidenav-divider mb-1"></li>
+        @if(in_array('Can view Front Pages', auth()->user()->getUserPermisions()))
+        <li class="sidenav-item">
+            <a href="javascript:" class="sidenav-link sidenav-toggle">
+                <i class="sidenav-icon feather icon-package"></i>
+                <div>Front Page</div>
+            </a>
+            <ul class="sidenav-menu">
+                <li @if(\Request::route()->getName() == "Slider") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/front/get-slider" class="sidenav-link">
+                        <div>Slider</div>
+                    </a>
+                </li>
+                <li @if(\Request::route()->getName() == "Services") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/front/get-services" class="sidenav-link">
+                        <div>Services</div>
+                    </a>
+                </li>
+                <li @if(\Request::route()->getName() == "Messages") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/front/get-messages" class="sidenav-link">
+                        <div>Messages</div>
+                    </a>
+                </li>
+                <li @if(\Request::route()->getName() == "Happy Clients") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/front/get-happy-clients" class="sidenav-link">
+                        <div>Happy Clients</div>
+                    </a>
+                </li>
+                <li @if(\Request::route()->getName() == "News") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/front/get-news" class="sidenav-link">
+                        <div>News</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+       @endif
+        <li class="sidenav-divider mb-1"></li>
         @if(in_array('Can view Account Settings', auth()->user()->getUserPermisions()))
         <li class="sidenav-item">
             <a href="javascript:" class="sidenav-link sidenav-toggle">

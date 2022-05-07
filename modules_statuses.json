@@ -3,5 +3,6 @@
     "Admin": true,
     "AccountSettings": true,
     "Investors": true,
-    "Clients": true
+    "Clients": true,
+    "Front": true
 }

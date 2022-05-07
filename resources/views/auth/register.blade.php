@@ -109,6 +109,8 @@
     <script src="{{ asset('assets/js/analytics.js')}}"></script>
 </body>
 </html>--}}
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -121,7 +123,7 @@
     @include('frontlayouts.css')
 </head>
 <body>
-<header class="header_tow">
+<header class="header_four">
 <!-- Preloader -->
 @include('frontlayouts.preloader')  
     <div class="header_top">
@@ -137,7 +139,7 @@
     <!--==================
         Slider
     ===================-->
-    <div class="rev_slider_wrapper">
+    <div class="rev_slider_wrapper" style="margin-top: 50px;">
         @include('frontlayouts.slider')
         <!-- END SLIDER CONTAINER -->
     </div><!-- END SLIDER CONTAINER WRAPPER -->
@@ -284,6 +286,10 @@
     {{--@include('frontlayouts.sidemodal')--}}
 </body>
 </html>
+
+
+
+
 
 
 

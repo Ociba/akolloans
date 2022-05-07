@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('investors')->group(function() {
+Route::group(['prefix'=>'investors', 'middleware'=>['auth']],function(){ 
     Route::get('/my-interest', 'InvestorsController@getMyInterest')->name('Interest');
     Route::get('/view-packages', 'PackagesController@getPackages')->name('Packages'); 
     Route::get('/change-password', 'ProfileController@updateUserPassword');

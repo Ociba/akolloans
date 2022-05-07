@@ -75,60 +75,25 @@
                     <p>Lorem ipsum dolor sit amet mollis felis dapibus arcu donec viverra. Pede phasellus eget. Etiam maecenas vel vici quis dictum rutrum nec nisi et.</p>  
                 </div><!-- ends: .section-header -->
             </div>
+            @foreach($mesages as $mesage)
             <div class="single-wrappe col-12 col-sm-6 col-md-4 col-lg-4">
                 <div class="team-single-item">
                     <figure>
                         <div class="member-img">
                             <div class="teachars_pro">
-                                <img src="{{ asset('front/images/team/team_1.jpg')}}" alt="member img" class="img-fluid">
+                                <img src="{{ asset('happy_clients_images/'.$mesage->clients_photo)}}" style="height:250px" alt="member img" class="img-fluid">
                             </div>
                         </div>
                         <figcaption>
                             <div class="member-name">
-                                <h4><a href="#" title="">Jonson Park</a></h4>
-                                <span>Professor</span>
+                                <h4><a href="#" title="">{{$mesage->clients_name}}</a></h4>
+                                <span>Client</span>
                             </div>                            
                         </figcaption>
                     </figure>
                 </div>
             </div>
-            
-            <div class="single-wrapper col-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="team-single-item">
-                    <figure>
-                        <div class="member-img">
-                            <div class="teachars_pro">
-                                <img src="{{ asset('front/images/team/team_2.jpg')}}" alt="member img" class="img-fluid">
-                            </div>
-                        </div>
-                        <figcaption>
-                            <div class="member-name">
-                                <h4><a href="#" title="">Teymoni</a></h4>
-                                <span>Lecturer</span>
-                            </div>                            
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-            
-            <div class="single-wrapper  col-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="team-single-item ">
-                    <figure>
-                        <div class="member-img">
-                            <div class="teachars_pro">
-                                <img src="{{ asset('front/images/team/team_3.jpg')}}" alt="member img" class="img-fluid">
-                            </div>
-                        </div>
-                        <figcaption>
-                            <div class="member-name">
-                                <h4><a href="#" title="">Jonathon Smith</a></h4>
-                                <span>Coordinator</span>
-                            </div>                            
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-                               
+            @endforeach           
         </div>
     </div>
 </section><!-- ./ End Our Instructiors -->

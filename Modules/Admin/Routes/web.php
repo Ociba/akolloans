@@ -11,7 +11,7 @@
 |
 */
 
-Route::prefix('admin')->group(function() {   
+Route::group(['prefix'=>'admin', 'middleware'=>['auth']],function(){  
     Route::get('/', 'AdminController@index');
     Route::get('/investors', 'InvestorsController@getInvestors')->name('Investors'); 
     Route::get('/suspended-investors', 'InvestorsController@getSuspendedInvestors')->name('Suspended Investors');

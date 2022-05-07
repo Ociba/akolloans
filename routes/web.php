@@ -6,6 +6,7 @@ use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\ClientsDashboardController;
 use App\Http\Controllers\SendSMSController;
+use App\Http\Controllers\FrontController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +19,10 @@ use App\Http\Controllers\SendSMSController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/',[FrontController::Class,'frontPage']);
 
 Route::middleware([
     'auth:sanctum',
