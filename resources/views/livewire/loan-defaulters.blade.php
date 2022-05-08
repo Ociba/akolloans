@@ -2,14 +2,16 @@
    @livewireStyles
     <div class="card">
         <div class="card-body">
-            <div class="row align-items-center m-l-0">
+            <div class="row align-items-center m-l-0 mb-2">
                 <div class="col-sm-6">
+                   <a href="/" class="btn btn-sm btn-primary">Export as Excel</a>
                 </div>
                 <div class="col-sm-6 text-right">
-                
+                   <a href="/" class="btn btn-sm btn-primary">Export as PDF</a>
+                    
                 </div>
             </div>
-            <div class="row">
+            <div class="row m-l-0">
                 <div class="col-sm-5">
                     <div class="form-group col-sm-6">
                         <label class="form-label">Entries</label>

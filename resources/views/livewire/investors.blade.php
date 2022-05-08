@@ -3,9 +3,13 @@
     <div class="card">
         <div class="card-body">
             <div class="row align-items-center m-l-0">
-                <div class="col-sm-6">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-1">
+                 <a href="/" class="btn btn-sm btn-primary">Export as Excel</a>
                 </div>
-                <div class="col-sm-6 text-right">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                 <a href="/" class="btn btn-sm btn-primary">Export as PDF</a>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12 text-right">
                      @if(in_array('Can add Investor', auth()->user()->getUserPermisions()))
                     <button class="btn btn-success btn-sm btn-round mb-3" data-toggle="modal" data-target="#modal-report"><i class="feather icon-plus"></i> Add Investor</button>
                     @endif

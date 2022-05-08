@@ -41,8 +41,8 @@
                 <div class="footer_single_col contact" style="color:#ffffff;">
                     <h3>Contact Us</h3>
                     <ul class="quick_inf0">
+                    <li>Naboa Road, Mbale</li>
                     <li>Makerere-Wandegeya, Kampala</li>
-                    <li>info@technestholdings.com</li>
                     <li>P.O Box 26575, Kampala (U)</li>
                     <li>+256 701 128 723 | +256 774 712 500</li>
                     </ul>
@@ -59,7 +59,7 @@
     <img src="{{ asset('front/images/shapes/footer_2.png')}}" alt="" class="shape_1">
 </div> 
 
-<div class="col-12 col-md-12 col-lg-12" style="background-color:#ff5a2c; padding-bottom:5px; bottom:0">
+<div class="col-12 col-md-12 col-lg-12" style="background-color:#ff9900; padding-bottom:5px; bottom:0">
 <div class="text-center">
     <p style="color:#ffffff;">&copy; Copyright 2022 Technest Design by James</p>
 </div>
