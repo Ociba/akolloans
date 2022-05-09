@@ -16,7 +16,7 @@ class FrontController extends Controller
     {
         return view('front::index');
     }
-
+   
     /**
      * Show the form for creating a new resource.
      * @return Renderable

@@ -7,7 +7,10 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\ClientsDashboardController;
 use App\Http\Controllers\SendSMSController;
 use App\Http\Controllers\FrontController;
-
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,5 +43,9 @@ Route::middleware([
 });
 Route::get('/logout',[AuthenticationController::Class, 'logoutUser']);
 Route::get('/send-sms', [SendSMSController::class, 'index']);
+Route::get('/about',[AboutController::Class,'getAbout']);
+Route::get('/services',[ServicesController::Class,'getServices']);
+Route::get('/news',[NewsController::Class,'getNews']);
+Route::get('/contact',[ContactController::Class,'getContact']);
 
 
