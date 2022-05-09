@@ -114,6 +114,7 @@
     <div class="container">  
         <div class="row">        
             <div class="col-12 col-sm-12 col-md-8 col-lg-8" style="margin-top:-300px;">
+            
                 <div class="blog_post">
                     <div class="postpage_content_wrapper">
                         <div class="blog_post_content">
@@ -157,12 +158,12 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @endforeach
                                 </div> 
+                                @endforeach
                             </div>
                         </div>
                     </div>
-                </div>               
+                </div>              
             </div> <!-- End Blog Left Side-->
 
             <div class="col-12 col-sm-12 col-md-4 col-lg-4 blog_wrapper_right " style="margin-top:-200px;">
