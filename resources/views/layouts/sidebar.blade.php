@@ -155,6 +155,11 @@
                         <div>News</div>
                     </a>
                 </li>
+                <li @if(\Request::route()->getName() == "Comments") class="sidenav-item active" @else class="sidenav-item" @endif>
+                    <a href="/front/get-comments" class="sidenav-link">
+                        <div>Comments</div>
+                    </a>
+                </li>
             </ul>
         </li>
        @endif

@@ -1742,7 +1742,7 @@ header .edu_nav nav .search_area .navbar-nav li i:before {
 }
 .blog .single_item:hover .blog_title {
   margin-top: -32px;
-  background: #111b51;
+  background: #ff3300;
 }
 .blog .single_item:hover .blog_title span {
   color: #ffffff;
@@ -1754,13 +1754,14 @@ header .edu_nav nav .search_area .navbar-nav li i:before {
   color: #ffffff;
 }
 .blog .single_item:hover .blog_title .post_bloger .bloger_name {
-  color: #ff3300;
+  color: #fff;
 }
 .blog .single_item .blog-img {
   overflow: hidden;
 }
 .blog .single_item .blog-img img {
   width: 100%;
+  height:300px;
   transition: all 0.3s ease-in-out;
 }
 .blog .single_item .blog_title {

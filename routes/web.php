@@ -47,5 +47,6 @@ Route::get('/about',[AboutController::Class,'getAbout']);
 Route::get('/services',[ServicesController::Class,'getServices']);
 Route::get('/news',[NewsController::Class,'getNews']);
 Route::get('/contact',[ContactController::Class,'getContact']);
+Route::get('/send-comment',[ContactController::Class,'sendComment']);
 
 

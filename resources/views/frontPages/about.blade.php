@@ -183,7 +183,7 @@
                         <div class="items-title">
                             <p>Nest Tellers Spcial Offers</p>
                             <h3>Get 35% Off</h3>
-                            <a href="#" title="">Get Started</a>
+                            <a href="#" title="" style="background:#ff3300;">Get Started</a>
                         </div>
 
                         <img src="{{ asset('front/images/shapes/testimonial_2_shpe_2.png')}}" alt="" class="courses_feaures_shpe">

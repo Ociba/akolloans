@@ -5,7 +5,7 @@
 
         <div class="slider-overlay"></div>
         <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
-        <img src="{{ asset('front/images/banner/comp.jpg')}}" alt="Sky" class="rev-slidebg"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+        <img src="{{ asset('front/images/banner/1.jpg')}}" alt="Sky" class="rev-slidebg"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
             <!-- LAYER NR. 1 -->
             <div class="tp-caption font-lora sfb tp-resizeme letter-space-5 h-p"
                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 

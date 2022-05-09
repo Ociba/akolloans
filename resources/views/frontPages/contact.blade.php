@@ -85,25 +85,21 @@
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-6">
                 <div class="contact_form_wrapper">
-                    <h3 class="title">Get In Touch</h3>
+                    <h3 class="title">Leave Your Comment </h3>
+                     @include('layouts.message')
                     <div class="leave_comment">
                         <div class="contact_form">
-                            <form action="#">
-                                <div class="row">
-                                    <div class="col-12 col-sm-12 col-md-6 form-group">
-                                       <input type="text" class="form-control" id="name"  placeholder="Your Name">
-                                    </div>
-                                    <div class="col-12 col-sm-12 col-md-6 form-group">
-                                        <input type="email" class="form-control" id="email" placeholder="Your E-mail">
-                                    </div>                                    
+                            <form action="/send-comment" method="get">
+                             @csrf
+                                <div class="row">                                 
                                     <div class="col-12 col-sm-12 col-md-12 form-group">
-                                        <input type="text" class="form-control" id="subject" placeholder="Pick Your Subject">
+                                        <input type="text" class="form-control" id="name" name="names" placeholder="Your Name" required>
                                     </div>
                                     <div class="col-12 col-sm-12 col-md-12 form-group">
-                                        <textarea class="form-control" id="comment" placeholder="Your Comment Wite Here ..."></textarea>
+                                        <textarea class="form-control" id="comment" name="comment" placeholder="Your Comment Wite Here ..." required></textarea>
                                     </div>
                                      <div class="col-12 col-sm-12 col-md-12 submit-btn">
-                                        <button type="submit" class="text-center" style="background-color:#ff3300;">Send Massage</button>
+                                        <button type="submit" class="text-center" style="background-color:#ff3300;">Send Comment</button>
                                     </div>
                                 </div>
                             </form>   
@@ -126,6 +122,7 @@
                             <div class="items_title">
                                     <h3 class="title">2 Commnets</h3>
                                 </div>
+                                @foreach($get_comments as $comment)
                                  <div class="comment-list-items">
                                     <div class="comment-list-wrapper">
                                         <div class="comment-list">
@@ -135,14 +132,12 @@
                                             <div class="comment-text">
                                                 <div class="author_info"> 
                                                     <div class="author_name">
-                                                        <a href="#" class="">Adam Smith</a> 
-                                                        <span>20 July 2018 at 10.45 AM</span>
+                                                        <a href="#" class="">{{$comment->names}}</a> 
+                                                        <span>{{ date('F d, Y', strtotime($comment->created_at))}} | {{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
                                                      </div>
-                                                     <div class="reply-comment">
-                                                        <a href="#" title=""> <i class="flaticon-reply-arrow"></i> Reply</a>
-                                                    </div> 
+                                                     
                                                 </div>     
-                                                <p>You need to be sure there isn't anything embarrassing hidden in the repeat predefined chunks as nessing hidden in the repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
+                                                <p>{{$comment->comment}}.</p>
                                             </div>
                                         </div>
 
@@ -153,36 +148,16 @@
                                             <div class="comment-text">
                                                 <div class="author_info"> 
                                                     <div class="author_name">
-                                                        <a href="#" class="">Jonson Park</a> 
-                                                        <span>20 July 2018 at 10.45 AM</span>
+                                                        <a href="#" class="">Admin</a> 
+                                                        <span>{{ date('F d, Y', strtotime($comment->replied_at))}} | {{Carbon\Carbon::parse($comment->replied_at)->diffForHumans()}}</span>
                                                      </div>
-                                                     <div class="reply-comment">
-                                                        <a href="#" title=""> <i class="flaticon-reply-arrow"></i> Reply</a>
-                                                    </div> 
+                                                     
                                                 </div>     
-                                                <p>You need to be sure there isn't anything embarrassing hidden in the repe essary, making this the first true generator on the Internet.</p>
+                                                <p>{{$comment->reply}}.</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="comment-list-wrapper">
-                                        <div class="comment-list">
-                                            <div class="commnet_img">
-                                                <img src="{{ asset('front/images/team/review_2.jpg')}}" alt="member img" class="img-fluid">
-                                            </div>
-                                            <div class="comment-text">
-                                                <div class="author_info"> 
-                                                    <div class="author_name">
-                                                        <a href="#" class="">Jonathon Smith</a> 
-                                                        <span>20 July 2018 at 10.45 AM</span>
-                                                     </div>
-                                                     <div class="reply-comment">
-                                                        <a href="#" title=""> <i class="flaticon-reply-arrow"></i> Reply</a>
-                                                    </div> 
-                                                </div>     
-                                                <p>You need to be sure there isn't anything embarrassing hidden in the repeat predefined chunks as nessing hidden in the repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
-                                            </div>                               
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div> 
                             </div>
                         </div>
