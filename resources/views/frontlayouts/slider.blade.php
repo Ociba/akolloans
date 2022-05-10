@@ -115,7 +115,7 @@
         <li data-index="rs-1708" data-transition="fade" data-slotamount="7" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="1000"  data-rotate="0"  data-saveperformance="off"  data-title="Slide" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
             <div class="slider-overlay"></div>
             <!-- SLIDE'S MAIN BACKGROUND IMAGE -->
-            <img src="{{ asset('front/images/banner/1.jpg')}}" alt="Sky" class="rev-slidebg"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+            <img src="{{ asset('front/images/banner/f11.jpg')}}" alt="Sky" class="rev-slidebg"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina>
             <!-- BEGIN BASIC TEXT LAYER -->
             <!-- LAYER NR. 1 -->
             <div class="tp-caption font-lora sfb tp-resizeme letter-space-5 h-p" 

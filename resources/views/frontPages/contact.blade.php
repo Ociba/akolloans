@@ -125,7 +125,7 @@
                             <!-- Blog Comment Wrappper-->
                             <div class="commnet-wrapper">
                             <div class="items_title">
-                                    <h3 class="title">2 Commnets</h3>
+                                    <h3 class="title">2 Comments</h3>
                                 </div>
                                 @foreach($get_comments as $comment)
                                  <div class="comment-list-items">
