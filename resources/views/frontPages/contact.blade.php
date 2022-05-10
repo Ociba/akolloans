@@ -89,7 +89,7 @@
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-6">
                 <div class="contact_form_wrapper">
-                    <h3 class="title">Leave Your Comment </h3>
+                    <h3 class="title">Leave Your Comment Here</h3>
                      @include('layouts.message')
                     <div class="leave_comment">
                         <div class="contact_form">
@@ -132,13 +132,13 @@
                                     <div class="comment-list-wrapper">
                                         <div class="comment-list">
                                             <div class="commnet_img">
-                                                <img src="{{ asset('front/images/team/review_1.jpg')}}" alt="member img" class="img-fluid">
+                                                <img src="{{ asset('front/images/contact.jpeg')}}" alt="member img" class="img-fluid">
                                             </div>
                                             <div class="comment-text">
                                                 <div class="author_info"> 
                                                     <div class="author_name">
                                                         <a href="#" class="">{{$comment->names}}</a> 
-                                                        <span>{{ date('F d, Y', strtotime($comment->created_at))}} | {{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
+                                                        <span style="color:#ff3300">{{ date('F d, Y', strtotime($comment->created_at))}} | {{Carbon\Carbon::parse($comment->created_at)->diffForHumans()}}</span>
                                                      </div>
                                                      
                                                 </div>     
@@ -148,13 +148,13 @@
 
                                         <div class="comment-list reply_comment_text">
                                             <div class="commnet_img">
-                                               <img src="{{ asset('front/images/team/review_3.jpg')}}" alt="member img" class="img-fluid">
+                                               <img style="border-radius:50%; width:50px; height:50px;" src="{{ asset('front/images/logo.png')}}" alt="member img" class="img-fluid">
                                             </div>
                                             <div class="comment-text">
                                                 <div class="author_info"> 
                                                     <div class="author_name">
                                                         <a href="#" class="">Admin</a> 
-                                                        <span>{{ date('F d, Y', strtotime($comment->replied_at))}} | {{Carbon\Carbon::parse($comment->replied_at)->diffForHumans()}}</span>
+                                                        <span  style="color:blue;">{{ date('F d, Y', strtotime($comment->replied_at))}} | {{Carbon\Carbon::parse($comment->replied_at)->diffForHumans()}}</span>
                                                      </div>
                                                      
                                                 </div>     
