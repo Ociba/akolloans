@@ -30,7 +30,7 @@
                              <ul class="d-flex">
                                 <li class="nav-item"><a href="/" class="nav-link sign-in"><i class="fa fa-home"></i>Home</a></li>
                                 <li class="nav-item"><a href="#" class="nav-link sign-in js-modal-show"><i class="flaticon-user-male-black-shape-with-plus-sign"></i>Sign Up</a></li>
-                                <li class="nav-item"><a href="#" class="nav-link join_now js-modal-show"><i class="flaticon-padlock"></i>Lon In</a></li>
+                                <li class="nav-item"><a href="#" class="nav-link join_now js-modal-show"><i class="flaticon-padlock"></i>Log In</a></li>
                             </ul>
                         </div>
                     </div>
@@ -51,31 +51,35 @@
 
 <section class="contact_info_wrapper">
      <div class="container">  
-        <div class="row">  
+        <div class="row"> 
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 text-center" style="text-align:center;">
+            @include('frontlayouts.mini-menu') 
+            <hr>
+        </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-6">
                 <div class="contact_info">
                     <h3 class="title">Contact Details</h3>
-                    <p>You need to be sure there isn't anything embarrassing hidden in the repeat predefined chunks as nessing hidden in the repeat predefined chunks as necessary, making this the first true generator on the Internet.</p>
                     <div class="event_location_info">                  
                         <ul class="list-unstyled">
                             <li>
                                 <h4 class="info_title">Address : </h4>
                                 <ul class="list-unstyled">
-                                    <li>945 Somerset Street </li>
-                                    <li>Spartanburg, SC 29301</li>
+                                    <li><i class="fas fa-map-marker-alt"></i> Naboa Road, Mbale </li>
+                                    <li><i class="fas fa-map-marker-alt"></i> Makerere-Wandegeya, Kampala <br> P.O Box 26575, Kampala (U)</li>
                                 </ul>
                             </li>
                             <li>
                                 <h4 class="info_title">Phone Numbers :</h4>
                                 <ul class="list-unstyled">
-                                    <li>+000 251 215 1235</li>
-                                    <li>+000 320 542 6532</li>
+                                    <li><i class="fa fa-mobile"></i> +256 701 128 723</li>
+                                    <li> <i class="fa fa-mobile"></i> +256 774 712 500</li>
                                 </ul>
                             </li>
                             <li>
                                 <h4 class="info_title">Our E-mails :</h4>
                                 <ul class="list-unstyled">
-                                    <li>support@eduwais.com</li>                                    
+                                    <li><i class="fa fa-envelope"></i> info@technestholdings.com</li>  
+                                    <li><i class="fa fa-globe"></i> www.technestholdings.com</li>                                   
                                 </ul>
                             </li>                      
                         </ul>

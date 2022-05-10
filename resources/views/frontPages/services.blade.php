@@ -29,76 +29,25 @@
         <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                 <div class="sub_title" style="margin-top:80px;">
+                  @include('frontlayouts.mini-menu')
                     <h2>Our Services</h2>
+                   
                     <p>Lorem ipsum dolor sit amet mollis felis dapibus arcu donec viverra. Pede phasellus eget. Etiam maecenas vel vici quis dictum rutrum nec nisi et.</p>  
                 </div><!-- ends: .section-header -->
             </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-                 <div class="single_item single_item_first">
-                    <div class="icon_wrapper">
-                        <i class="flaticon-student"></i>
-                    </div>
-                    <div class="blog_title">
-                        <h3><a href="#" title="">Learn anywhere</a></h3> 
-                        <p>Lorem ipsum dolor consectetur sed do tempor incididunt ut laboris ut aliquip ex commodo nt ut laboris ut aliquip ex commodo conquat.</p>                    
-                    </div>   
-                </div>
-            </div>
+            @foreach($services as $service)
             <div class="col-12 col-sm-6 col-md-4 col-lg-4">
                 <div class="single_item single_item_center">
                     <div class="icon_wrapper">
-                        <i class="flaticon-university"></i>
+                    <a href="#" title=""><img src="{{ asset('service_images/'.$service->photo)}}" style="height:250px;" alt="" class="img-fluid"></a>
                     </div>
                     <div class="blog_title">
-                        <h3><a href="#" title="">Our Mission</a></h3> 
-                        <p>Lorem ipsum dolor consectetur sed do tempor incididunt ut laboris ut aliquip ex commodo nt ut laboris ut aliquip ex commodo conquat.</p>                    
+                        <h3><a href="#" title="">{{$service->service}}</a></h3> 
+                        <p>{{$service->content}}</p>                    
                     </div>   
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-               <div class="single_item single_item_last">
-                <div class="icon_wrapper">
-                        <i class="flaticon-diploma"></i>
-                    </div>
-                    <div class="blog_title">
-                        <h3><a href="#" title="">Diploma Course</a></h3> 
-                        <p>Lorem ipsum dolor consectetur sed do tempor incididunt ut laboris ut aliquip ex commodo nt ut laboris ut aliquip ex commodo conquat.</p>
-                    </div>   
-                </div>
-            </div>            
-            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-                 <div class="single_item single_item_center">
-                    <div class="icon_wrapper">
-                        <i class="flaticon-atom"></i>
-                    </div>
-                    <div class="blog_title">
-                        <h3><a href="#" title="">Physical Activity</a></h3> 
-                        <p>Lorem ipsum dolor consectetur sed do tempor incididunt ut laboris ut aliquip ex commodo nt ut laboris ut aliquip ex commodo conquat.</p>                    
-                    </div>   
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-                <div class="single_item single_item_last">
-                    <div class="icon_wrapper">
-                        <i class="flaticon-open-book"></i>
-                    </div>
-                    <div class="blog_title">
-                        <h3><a href="#" title="">Book Library</a></h3> 
-                        <p>Lorem ipsum dolor consectetur sed do tempor incididunt ut laboris ut aliquip ex commodo nt ut laboris ut aliquip ex commodo conquat.</p>                    
-                    </div>   
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-4 col-lg-4">
-               <div class="single_item single_item_first item_6">
-                <div class="icon_wrapper">
-                        <i class="flaticon-care"></i>
-                    </div>
-                    <div class="blog_title">
-                        <h3><a href="#" title="">Love & Care</a></h3> 
-                        <p>Lorem ipsum dolor consectetur sed do tempor incididunt ut laboris ut aliquip ex commodo nt ut laboris ut aliquip ex commodo conquat.</p>
-                    </div>   
-                </div>
-            </div>             
+            @endforeach            
         </div>
     </div>
 </section><!-- End Popular Courses -->

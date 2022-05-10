@@ -88,6 +88,12 @@
                             </div>
                         </div>
                         <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="floating-label" for="content">Brief Notes About Service</label>
+                                <textarea type="text" class="form-control" id="content" name="content" row="5" placeholder="Brief Notes about service"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
                             <div class="form-group fill">
                                 <label class="floating-label" for="photo">Upload Photo</label>
                                 <input type="file" class="form-control" id="photo" name="photo" placeholder="Photo">

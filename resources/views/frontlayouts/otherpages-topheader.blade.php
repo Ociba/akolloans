@@ -14,7 +14,7 @@
                         <ul class="d-flex">
                         <li class="nav-item"><a href="/" class="nav-link sign-in"><i class="fa fa-home"></i>Home</a></li>
                         <li class="nav-item"><a href="#" class="nav-link sign-in js-modal-show"><i class="flaticon-user-male-black-shape-with-plus-sign"></i>Sign Up</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link join_now js-modal-show"><i class="flaticon-padlock"></i>Lon In</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link join_now js-modal-show"><i class="flaticon-padlock"></i>Log In</a></li>
                     </ul>
                 </div>
             </div>

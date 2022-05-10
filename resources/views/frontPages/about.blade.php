@@ -33,10 +33,10 @@
                         <h3>Nest Tellers: Financial Services (Quick Loans)</h3>
                         <div class="review-option">
                             <div class="teacher-info single_items single_items_shape">
-                                <img src="{{ asset('front/images/team/review_1.jpg')}}" alt="" class="img-fluid">
+                                <img src="{{ asset('front/images/logo.png')}}" alt="" class="img-fluid">
                                 <div class="teacher-name">
-                                    <span>Teacher</span>
-                                    <span>DAVID MARTIN</span>
+                                    <span>Admin</span>
+                                    <span>Nest Tellers</span>
                                 </div>
                             </div>
                             <div class="review-rank single_items single_items_shape">
@@ -53,15 +53,15 @@
                                 </div>
                             </div>
                             <div class="teacher_fee single_items ">
-                                <span>Price</span>
-                                <span class="courses_price">$50.56</span>
+                                <span>Packages</span>
+                                <span class="courses_price" style="color:#ff3300;">Highest-Gold</span>
                             </div>
                             <div class="buy_btn single_items">
-                                <a href="#" title="">Buy Now</a>
+                                <a href="#" title="" style="background:#ff3300;">Buy Now</a>
                             </div>
                         </div>
                         <div class="details-img-bxo">
-                            <img src="{{ asset('front/images/blog/blog3-1.jpg')}}" alt="" class="img-fluid">
+                            <img src="{{ asset('front/images/banner/1.jpg')}}" alt="" class="img-fluid">
                         </div>
                     </div>
                     <div class="courses_tab_wrapper">   
@@ -111,15 +111,15 @@
                         </div>
                         <div class="features_items">
                             <ul class="list-unstyled">
-                                <li><a href="#" title=""><i class="flaticon-page"></i> About </a><span>69</span></li>
-                                <li><a href="#" title=""><i class="flaticon-eye-open"></i> Services </a><span>56</span></li>
-                                <li><a href="#" title=""><i class="flaticon-clock-circular-outline"></i> Jobs</a><span>5H</span></li>
-                                <li><a href="#" title=""><i class="flaticon-padlock"></i> Contact</a><span>No</span></li>
-                                <li><a href="#" title=""><i class="flaticon-diploma"></i> How to get Loan</a><span>Yes</span></li>                                
-                                <li><a href="#" title=""><i class="flaticon-language"></i> Terms & Conditions</a><span>Eng</span></li>                                
-                                <li><a href="#" title=""><i class="flaticon-thumbs-up-hand-symbol"></i> How To Buy Package</a><span>Any</span></li>                                
-                                <li><a href="#" title=""><i class="flaticon-edit"></i> Your Say</a><span>Yes</span></li>
-                                <li><a href="#" title=""><i class="flaticon-edit"></i> Read Our Feedback</a><span>Yes</span></li>
+                                <li><a href="/about" title=""><i class="flaticon-page"></i> About </a><span></span></li>
+                                <li><a href="/services" title=""><i class="flaticon-eye-open"></i> Services </a><span></span></li>
+                                <li><a href="/news" title=""><i class="flaticon-clock-circular-outline"></i> News and Updates</a><span></span></li>
+                                <li><a href="/contact" title=""><i class="flaticon-padlock"></i> Contact</a><span></span></li>
+                                <li><a href="/Pdf/loan steps.pdf" title="" target="_blank"><i class="flaticon-diploma"></i> How to get Loan</a><span></span></li>                                
+                                <li><a href="/Pdf/TermsConditions.pdf" title="" target="_blank"><i class="flaticon-language"></i> Terms & Conditions</a><span></span></li>                                
+                                <li><a href="/Pdf/loan steps.pdf" title="" target="_blank"><i class="flaticon-thumbs-up-hand-symbol"></i> How To Buy Package</a><span></span></li>                                
+                                <li><a href="/contact" title=""><i class="flaticon-edit"></i> Your Say</a><span></span></li>
+                                <li><a href="/contact" title=""><i class="flaticon-edit"></i> Read Our Feedback</a><span></span></li>
                             </ul>
                         </div>
                         <img src="{{ asset('front/images/shapes/testimonial_2_shpe_2.png')}}" alt="" class="courses_feaures_shpe">
@@ -131,52 +131,19 @@
                         <div class="items-title">
                             <h3 class="title">Our News & Updates</h3>
                         </div>
+                        @foreach($get_news as $news)
                         <div class="single-post">
                             <div class="recent_img">
-                                 <a href="#" title=""><img src="{{ asset('front/images/courses/spi-01.jpg')}}" alt="" class="img-fluid"></a>
+                                 <a href="#" title=""><img src="{{ asset('news_images/'.$news->image)}}" alt="" class="img-fluid"></a>
                             </div>
                             <div class="post_title">
-                                <a href="#" title="">How to Become Master In CSS within qa Week.</a>
+                                <a href="/news" title="">{{$news->title}}</a>
                                 <div class="courses_price">
-                                    <div class="price"><span><del>74$</del></span> <span class="new_price">49$</span></div>
+                                    <div class="price"><span>{{ date('F d, Y', strtotime($news->created_at))}}</span> <span class="new_price">{{Carbon\Carbon::parse($news->created_at)->diffForHumans()}}</span></div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="single-post">
-                            <div class="recent_img">
-                                <a href="#" title=""><img src="{{ asset('front/images/courses/spi-02.jpg')}}" alt="" class="img-fluid"></a>
-                            </div>
-                            <div class="post_title">
-                                <a href="#" title="">Connecting volunteers & nonprofitsz worldwide.</a>
-                                <div class="courses_price">
-                                    <div class="price"><span><del>60$</del></span> <span class="new_price">38$</span></div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="single-post">
-                            <div class="recent_img">
-                                <a href="#" title=""><img src="{{ asset('front/images/courses/spi-03.jpg')}}" alt="" class="img-fluid"></a>
-                            </div>
-                            <div class="post_title">
-                                <a href="#" title="">Research of Learn training process</a>
-                                <div class="courses_price">
-                                    <div class="price"><span class="new_price">79$</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="single-post">
-                            <div class="recent_img">
-                                <a href="#" title=""><img src="{{ asset('front/images/courses/spi-03.jpg')}}" alt="" class="img-fluid"></a>
-                            </div>
-                            <div class="post_title">
-                                <a href="#" title="">Research of Learn training process</a>
-                                <div class="courses_price">
-                                    <div class="price"><span class="new_price">79$</span></div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
 
                     <div class="get_discount widget_single">

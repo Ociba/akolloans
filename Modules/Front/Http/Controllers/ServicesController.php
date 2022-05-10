@@ -27,6 +27,7 @@ class ServicesController extends Controller
         $validated = $request->validate([
             'photo'     => 'required | max:255',
             'service'   => 'required | max:255',
+            'content'   => 'required | max:255',
             'user_id'   => '',
         ]);
         $service_image = request()->photo;
@@ -35,6 +36,7 @@ class ServicesController extends Controller
 
         $service_obj =new Service;
         $service_obj ->service   =request()->service;
+        $service_obj ->content   =request()->content;
         $service_obj ->photo  =$service_image_original_name;
         $service_obj->user_id =auth()->user()->id;
         $service_obj->save();
@@ -61,6 +63,7 @@ class ServicesController extends Controller
     {
         Service::where('id',$service_id)->update(array(
             'service' =>request()->service,
+            'content' =>request()->content,
             'user_id' =>auth()->user()->id
         ));
         return redirect('/front/get-services')->with('msg','Operation Successful');

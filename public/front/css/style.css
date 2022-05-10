@@ -6303,7 +6303,7 @@ footer .shapes1_footer {
 }
 #courses_details_wrapper .blog-right-items .courses_features,
 .event_details_wrapper .blog-right-items .courses_features {
-  background: linear-gradient(65deg, #5958a0 0%, #111b51 100%);
+  background: linear-gradient(65deg, #ff3300 0%, #ff3300 100%);
   padding: 50px 0px;
   position: relative;
   z-index: 1;
@@ -6347,7 +6347,7 @@ footer .shapes1_footer {
 #courses_details_wrapper .blog-right-items .courses_features .features_items ul li a i:before,
 .event_details_wrapper .blog-right-items .courses_features .features_items ul li a i:before {
   margin: 0;
-  color: #ff3300;
+  color: #ffffff;
   padding-right: 15px;
   font-size: 15px;
   font-weight: 600;
@@ -6355,7 +6355,7 @@ footer .shapes1_footer {
 }
 #courses_details_wrapper .blog-right-items .courses_features .features_items ul li a:hover,
 .event_details_wrapper .blog-right-items .courses_features .features_items ul li a:hover {
-  color: #ff3300;
+  color: #ffffff;
 }
 #courses_details_wrapper .blog-right-items .courses_features .features_items ul li a:hover:before,
 .event_details_wrapper .blog-right-items .courses_features .features_items ul li a:hover:before {

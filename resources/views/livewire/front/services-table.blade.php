@@ -41,6 +41,7 @@
                         <tr class="text-center">
                             <th>No.</th>
                             <th>Servive</th>
+                            <th>Explanation</th>
                             <th>Photo</th>
                             <th>Created By</th>
                             <th>Option</th>
@@ -59,6 +60,7 @@
                             <td>{{$i}}</td>
                             <td hidden>{{$services->id}}</td>
                             <td>{{$services->service}}</td>
+                            <td>{{$services->content}}</td>
                             <td><img style="width:60px; height:40px;" src="{{ asset('service_images/'.$services->photo)}}"></td>
                             <td>{{$services->name}}</td>
                             <td>

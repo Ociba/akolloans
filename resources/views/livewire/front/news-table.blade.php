@@ -40,7 +40,8 @@
                     <thead>
                         <tr class="text-center">
                             <th>No.</th>
-                            <th>Servive</th>
+                            <th>Title</th>
+                            <th>News Content</th>
                             <th>Photo</th>
                             <th>Created By</th>
                             <th>Option</th>

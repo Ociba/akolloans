@@ -17,6 +17,7 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('service');
+            $table->string('content');
             $table->string('photo');
             $table->timestamps();
         });
